@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 155.0, 369.0, 995.0, 480.0 ],
+		"rect" : [ 155.0, 369.0, 995.0, 555.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,25 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 600.0, 97.0, 123.0, 22.0 ],
+					"presentation_rect" : [ 601.0, 94.0, 0.0, 0.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "common-partials.js",
+						"parameter_enable" : 0
+					}
+,
+					"style" : "",
+					"text" : "js common-partials.js"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -82,26 +101,28 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-11",
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 486.0, 442.0, 101.0, 22.0 ],
+					"patching_rect" : [ 486.0, 442.0, 71.0, 50.0 ],
 					"style" : "",
-					"text" : "2 22 20.3 0.363"
+					"text" : "2 22 9 20.3 0.272246 22.5"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-7",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 696.0, 280.0, 77.0, 22.0 ],
+					"patching_rect" : [ 696.0, 280.0, 59.0, 36.0 ],
 					"style" : "",
-					"text" : "2 22 40.5 44"
+					"text" : "2 22 1 40.5 44 3"
 				}
 
 			}
@@ -112,14 +133,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 591.0, 401.0, 123.0, 22.0 ],
+					"patching_rect" : [ 591.0, 401.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "common-partials-reso.js",
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "js common-partials.js"
+					"text" : "js common-partials-reso.js"
 				}
 
 			}
@@ -183,9 +204,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.5, 324.0, 165.0, 36.0 ],
+					"patching_rect" : [ 358.5, 291.0, 103.0, 36.0 ],
 					"style" : "",
-					"text" : "4 0.736135 10 20.276855 0.269066 15"
+					"text" : "4 0.746985 16 20.3 0.272246 21"
 				}
 
 			}
@@ -417,6 +438,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-29", 1 ],
 					"source" : [ "obj-27", 0 ]
 				}
@@ -497,6 +525,13 @@
 			}
 , 			{
 				"name" : "update-partials.js",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "common-partials.js",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
