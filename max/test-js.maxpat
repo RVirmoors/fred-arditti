@@ -38,6 +38,25 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 600.0, 68.0, 114.0, 22.0 ],
+					"presentation_rect" : [ 600.0, 66.0, 0.0, 0.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "update-partials.js",
+						"parameter_enable" : 0
+					}
+,
+					"style" : "",
+					"text" : "js update-partials.js"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-19",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -95,7 +114,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 591.0, 401.0, 123.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "common-partials.js",
+						"filename" : "common-partials-reso.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -159,13 +178,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-26",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 343.0, 280.0, 165.0, 22.0 ],
+					"patching_rect" : [ 315.5, 324.0, 165.0, 36.0 ],
 					"style" : "",
-					"text" : "4 0.747038 20.3 0.272264"
+					"text" : "4 0.736135 10 20.276855 0.269066 15"
 				}
 
 			}
@@ -201,14 +221,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 314.0, 217.0, 114.0, 22.0 ],
+					"patching_rect" : [ 314.0, 217.0, 141.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "update-partials.js",
+						"filename" : "update-partials-reso.js",
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "js update-partials.js"
+					"text" : "js update-partials-reso.js"
 				}
 
 			}
@@ -462,14 +482,21 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "update-partials.js",
+				"name" : "update-partials-reso.js",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "common-partials.js",
+				"name" : "common-partials-reso.js",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "update-partials.js",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",

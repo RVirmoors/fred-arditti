@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1852.0, 930.0 ],
+		"rect" : [ 42.0, 84.0, 1852.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-123",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "list" ],
+					"patching_rect" : [ 1115.0, 1012.0, 117.0, 22.0 ],
+					"style" : "",
+					"text" : "resonators~ smooth"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-120",
 					"maxclass" : "toggle",
@@ -142,7 +155,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 366.0, 90.0, 94.0, 22.0 ],
 									"style" : "",
-									"text" : "888, 8888 7200"
+									"text" : "888, 8888 4000"
 								}
 
 							}
@@ -3952,7 +3965,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-7",
@@ -5320,7 +5332,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 814.5, 950.0, 114.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "update-partials.js",
+						"filename" : "update-partials-reso.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -8054,7 +8066,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "update-partials.js",
+				"name" : "update-partials-reso.js",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
@@ -8134,6 +8146,10 @@
 			}
 , 			{
 				"name" : "mubu.concat~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "resonators~.mxe",
 				"type" : "iLaF"
 			}
  ],
