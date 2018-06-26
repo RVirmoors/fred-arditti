@@ -9,9 +9,9 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1852.0, 930.0 ],
+		"rect" : [ 34.0, 76.0, 1535.0, 930.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -38,6 +38,19 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 89.0, 49.0, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ 1 ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -51,7 +64,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1061.0, 469.0, 340.0, 123.0 ],
+					"patching_rect" : [ 1045.0, 305.0, 333.0, 317.482422 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 9.25, 312.0, 333.0, 317.482422 ],
 					"viewvisibility" : 1
 				}
 
@@ -65,7 +80,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1339.0, 195.0, 81.0, 36.0 ],
-					"presentation_rect" : [ 1339.0, 195.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : ";\r\n1-capture in1"
 				}
@@ -1163,6 +1177,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"hidden" : 1,
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -1787,7 +1802,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 828.0, 83.0, 72.0, 22.0 ],
 					"style" : "",
-					"text" : "loadmess 1"
+					"text" : "loadmess 0"
 				}
 
 			}
@@ -1875,8 +1890,8 @@
 						"basictuning" : 440,
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
-						"loopend" : [ 0.0, "ms" ],
-						"loopstart" : [ 0.0, "ms" ],
+						"loopend" : [ 55630.636719, "ms" ],
+						"loopstart" : [ 49620.910156, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 76404.835938, "ticks" ],
 						"originaltempo" : 120.000008,
@@ -1893,6 +1908,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-128", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-136", 0 ],
 					"source" : [ "obj-128", 0 ]
@@ -2001,6 +2023,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
+					"hidden" : 1,
 					"order" : 0,
 					"source" : [ "obj-49", 0 ]
 				}
@@ -2009,6 +2032,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-78", 0 ],
+					"hidden" : 1,
 					"order" : 1,
 					"source" : [ "obj-49", 0 ]
 				}
@@ -2405,6 +2429,22 @@
 			}
 , 			{
 				"name" : "spat.times~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.granular~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
 				"type" : "iLaF"
 			}
  ],
