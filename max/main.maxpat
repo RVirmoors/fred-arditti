@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1535.0, 930.0 ],
+		"rect" : [ 42.0, 84.0, 1535.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -79,9 +79,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1339.0, 195.0, 81.0, 36.0 ],
+					"patching_rect" : [ 1339.0, 195.0, 78.0, 36.0 ],
 					"style" : "",
-					"text" : ";\r\n1-capture in1"
+					"text" : ";\r\n1-capture off"
 				}
 
 			}
@@ -1890,8 +1890,8 @@
 						"basictuning" : 440,
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
-						"loopend" : [ 55630.636719, "ms" ],
-						"loopstart" : [ 49620.910156, "ms" ],
+						"loopend" : [ 0.0, "ms" ],
+						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 76404.835938, "ticks" ],
 						"originaltempo" : 120.000008,

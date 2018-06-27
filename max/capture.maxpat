@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 335.0, 350.0, 1435.0, 587.0 ],
+		"rect" : [ 280.0, 313.0, 1118.0, 587.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 938.0, 366.5, 59.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 249.0, 75.625, 75.0, 22.0 ],
+					"presentation_rect" : [ 245.0, 75.625, 75.0, 22.0 ],
 					"style" : "",
 					"text" : "r #1-gran"
 				}
@@ -57,7 +57,7 @@
 					"bgcolor" : [ 0.639216, 0.458824, 0.070588, 1.0 ],
 					"bgcolor2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_autogradient" : 0.0,
 					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_color1" : [ 0.639216, 0.458824, 0.070588, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -86,7 +86,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 954.0, 24.5, 65.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 249.0, 56.0, 75.0, 22.0 ],
+					"presentation_rect" : [ 245.0, 56.0, 75.0, 22.0 ],
 					"style" : "",
 					"text" : "r #1-mubu"
 				}
@@ -218,7 +218,7 @@
 					"id" : "obj-55",
 					"layout" : 0,
 					"maxclass" : "imubu",
-					"name" : "granular-ring",
+					"name" : "#1-granular-ring",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"opacity" : 0.0,
@@ -341,9 +341,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 526.508789, 463.5, 423.0, 36.0 ],
+					"patching_rect" : [ 526.508789, 463.5, 523.0, 36.0 ],
 					"style" : "",
-					"text" : "mubu.track granular-ring 1 audio @samplerate audio @maxsize 15s @ringtail 256 @info gui \"autobounds 1\" @predef yes"
+					"text" : "mubu.track #1-granular-ring 1 audio @samplerate audio @maxsize 15s @ringtail 256 @info gui \"autobounds 1\" @predef yes"
 				}
 
 			}
@@ -354,9 +354,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 531.508789, 402.0, 418.0, 22.0 ],
+					"patching_rect" : [ 531.508789, 402.0, 436.0, 22.0 ],
 					"style" : "",
-					"text" : "mubu.granular~ granular-ring @audio audio @play 1 @maxresampling 4800"
+					"text" : "mubu.granular~ #1-granular-ring @audio audio @play 1 @maxresampling 4800"
 				}
 
 			}
@@ -408,7 +408,7 @@
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 341.0, 366.5, 80.0, 13.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 244.0, 38.0, 80.0, 13.0 ],
+					"presentation_rect" : [ 240.0, 41.0, 80.0, 13.0 ],
 					"style" : ""
 				}
 
@@ -442,7 +442,7 @@
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 15.0, 55.0, 85.0, 66.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 38.0, 85.0, 66.0 ],
+					"presentation_rect" : [ 12.0, 38.0, 312.0, 63.5 ],
 					"viewvisibility" : 1
 				}
 
@@ -689,7 +689,32 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "fx-input.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mubu.granular~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
