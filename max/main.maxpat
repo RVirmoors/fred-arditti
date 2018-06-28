@@ -44,6 +44,48 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"id" : "obj-10",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "warp.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1402.0, 664.5, 333.0, 103.982422 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-5",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "capture.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1402.0, 315.517578, 333.0, 317.482422 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 5.25, 313.0, 331.0, 317.482422 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-4",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -53,7 +95,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 791.0, 333.0, 105.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1057.0, 791.0, 333.0, 105.0 ],
+					"presentation_rect" : [ 9.25, 745.0, 333.0, 105.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -104,13 +146,13 @@
 					"id" : "obj-16",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "capture.maxpat",
+					"name" : "granular.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 315.517578, 333.0, 317.482422 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 9.25, 312.0, 333.0, 317.482422 ],
+					"presentation_rect" : [ 344.25, 313.0, 333.0, 317.482422 ],
 					"viewvisibility" : 1
 				}
 
@@ -2458,7 +2500,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "capture.maxpat",
+				"name" : "granular.maxpat",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -2500,6 +2542,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "capture.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "warp.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "spat.times~.mxe",
 				"type" : "iLaF"
 			}
@@ -2529,6 +2585,10 @@
 			}
 , 			{
 				"name" : "pipo~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "supervp.trans~.mxe",
 				"type" : "iLaF"
 			}
  ],

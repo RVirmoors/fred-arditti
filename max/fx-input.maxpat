@@ -186,7 +186,6 @@
 					}
 ,
 					"patching_rect" : [ 424.428589, 188.0, 44.0, 22.0 ],
-					"presentation_rect" : [ 433.428589, 185.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -350,7 +349,6 @@
 					}
 ,
 					"patching_rect" : [ 316.428589, 188.0, 44.0, 22.0 ],
-					"presentation_rect" : [ 325.428589, 188.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -514,7 +512,6 @@
 					}
 ,
 					"patching_rect" : [ 203.428574, 188.0, 44.0, 22.0 ],
-					"presentation_rect" : [ 201.0, 189.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -694,12 +691,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-28",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 755.0, 228.0, 50.0, 36.0 ],
+					"patching_rect" : [ 733.0, 228.0, 64.0, 22.0 ],
 					"style" : "",
 					"text" : "0. 0. 0. 0."
 				}
@@ -712,10 +708,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 570.0, 160.0, 31.0, 22.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 570.0, 110.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "+ 0."
+					"text" : "expr ($f1 + $f2) / 2"
 				}
 
 			}
