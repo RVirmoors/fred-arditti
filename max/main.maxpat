@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1535.0, 930.0 ],
+		"rect" : [ 34.0, 76.0, 1535.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,50 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-4",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "partials.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1057.0, 791.0, 333.0, 105.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1057.0, 791.0, 333.0, 105.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-2",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "cross.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1057.0, 664.5, 333.0, 103.982422 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 9.25, 634.5, 333.0, 103.982422 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -64,7 +108,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1045.0, 305.0, 333.0, 317.482422 ],
+					"patching_rect" : [ 1057.0, 315.517578, 333.0, 317.482422 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 9.25, 312.0, 333.0, 317.482422 ],
 					"viewvisibility" : 1
@@ -2428,6 +2472,34 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "cross.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "partials.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "update-partials-reso.js",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "common-partials-reso.js",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "spat.times~.mxe",
 				"type" : "iLaF"
 			}
@@ -2445,6 +2517,18 @@
 			}
 , 			{
 				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "supervp.cross~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "resonators~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "pipo~.mxe",
 				"type" : "iLaF"
 			}
  ],
