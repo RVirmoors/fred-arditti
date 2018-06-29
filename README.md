@@ -2,9 +2,9 @@
 
 Ableton Live Suite: Orchestral Strings pack
 
-Max: SuperVP, MuBu, Spat v4, zsa.descriptors
+Max: SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum)
 
 Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
 
-# How to use the performance patch
+# how to use the Max performance patch
 

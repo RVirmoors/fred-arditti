@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1535.0, 930.0 ],
+		"rect" : [ 42.0, 84.0, 1218.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -44,14 +44,38 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-10",
+					"id" : "obj-11",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "warp.maxpat",
+					"name" : "freeze.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1402.0, 664.5, 333.0, 103.982422 ],
+					"patching_rect" : [ 1402.0, 688.0, 329.0, 80.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 5.25, 658.482422, 329.0, 106.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-10",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "transform.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1402.0, 791.0, 333.0, 103.982422 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 344.25, 746.017578, 333.0, 132.982422 ],
 					"viewvisibility" : 1
 				}
 
@@ -71,9 +95,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1402.0, 315.517578, 333.0, 317.482422 ],
+					"patching_rect" : [ 1402.0, 315.517578, 333.0, 340.482422 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.25, 313.0, 331.0, 317.482422 ],
+					"presentation_rect" : [ 5.25, 313.0, 331.0, 342.482422 ],
 					"viewvisibility" : 1
 				}
 
@@ -95,7 +119,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 791.0, 333.0, 105.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 9.25, 745.0, 333.0, 105.0 ],
+					"presentation_rect" : [ 5.25, 774.0, 333.0, 105.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -117,7 +141,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 664.5, 333.0, 103.982422 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 9.25, 634.5, 333.0, 103.982422 ],
+					"presentation_rect" : [ 344.25, 634.5, 333.0, 103.982422 ],
 					"viewvisibility" : 1
 				}
 
@@ -165,9 +189,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1339.0, 195.0, 78.0, 36.0 ],
+					"patching_rect" : [ 1339.0, 195.0, 82.0, 36.0 ],
 					"style" : "",
-					"text" : ";\r\n1-capture off"
+					"text" : ";\r\n1-granular off"
 				}
 
 			}
@@ -179,9 +203,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1216.0, 195.0, 94.0, 36.0 ],
+					"patching_rect" : [ 1216.0, 195.0, 83.0, 36.0 ],
 					"style" : "",
-					"text" : ";\r\n1-capture vn1 1"
+					"text" : ";\r\ncapture vn1 1"
 				}
 
 			}
@@ -2484,6 +2508,7 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
 			"obj-58" : [ "live.gain~", "gain", 0 ]
 		}
 ,
@@ -2549,7 +2574,21 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "warp.maxpat",
+				"name" : "transform.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "freeze.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "freeze8tail.pfft.maxpat",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -2588,7 +2627,27 @@
 				"type" : "iLaF"
 			}
 , 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.concat~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.knn.mxe",
+				"type" : "iLaF"
+			}
+, 			{
 				"name" : "supervp.trans~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "jit.pass.mxe",
 				"type" : "iLaF"
 			}
  ],
