@@ -19,9 +19,9 @@ bla
 
 Antescofo is used for:
 
-synchronisation of electronic score and live instruments
-data routing
-signal routing
+* synchronisation of electronic score and live instruments
+* data routing & some processing
+* signal routing
 
 ## Transform modules
 
