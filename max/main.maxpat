@@ -229,7 +229,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 879.75, 718.0, 56.25, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 664.5, 284.0, 56.25, 20.0 ],
+					"presentation_rect" : [ 584.0, 286.0, 56.25, 20.0 ],
 					"style" : "",
 					"text" : "monitor"
 				}
@@ -245,7 +245,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 904.0, 744.482422, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 724.25, 284.0, 24.0, 24.0 ],
+					"presentation_rect" : [ 642.25, 284.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -720,7 +720,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 717.0, 802.0, 45.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 754.0, 263.0, 45.0, 45.0 ],
+					"presentation_rect" : [ 672.0, 263.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -1924,7 +1924,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 924.5, 67.017578, 56.25, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 667.75, 18.482422, 56.25, 20.0 ],
+					"presentation_rect" : [ 555.75, 20.482422, 56.25, 20.0 ],
 					"style" : "",
 					"text" : "audio in"
 				}
@@ -1953,7 +1953,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 960.0, 96.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 724.25, 16.482422, 24.0, 24.0 ],
+					"presentation_rect" : [ 612.25, 18.482422, 24.0, 24.0 ],
 					"style" : ""
 				}
 
