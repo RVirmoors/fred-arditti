@@ -44,6 +44,6 @@ These kinds of messages are to be sent by Antescofo, as part of the electronic s
 
 ## Output section
 
-The output module is controlled via Ircam Spat. As with all routing, three (possibly more?) sources can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
+The output module is controlled via Ircam Spat. As with all routing, three (or more, if needed) signal lines can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
 
 The spatialised signal is sent to 6 analog output channels.
