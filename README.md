@@ -8,7 +8,7 @@ Performance version to be released as a standalone Max app: https://github.com/R
 
 The overall interface looks something like:
 
-<img src="/blob/master/readme/overview.PNG" alt="drawing" width="200px"/>
+<img src="/readme/overview.PNG" alt="drawing" width="200px"/>
 
 
 We distinguish between 4 areas: input, scofo, transform, and output.
