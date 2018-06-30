@@ -8,7 +8,7 @@ Performance version to be released as a standalone Max app: https://github.com/R
 
 The overall interface looks something like:
 
-![Performance patch](https://github.com/RVirmoors/fred-arditti/blob/master/readme/overview.PNG)
+![Performance patch](https://github.com/RVirmoors/fred-arditti/blob/master/readme/overview.PNG =250x)
 
 
 We distinguish between 4 areas: input, scofo, transform, and output.
