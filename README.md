@@ -32,7 +32,7 @@ All orange receivers get messages from Antescofo. [r source] gets the instrument
 
 ## Transform modules
 
-All modules have 2 inputs (to be treated separately) or 4 inputs (to be added together), depending on their function. All module have one output.
+All modules have 2 inputs (to be treated separately) or 4 inputs (to be added together), depending on their function. All transform module haves one output.
 
 Routing is done via messages containing source-amplitude pairs. For example, the following set of messages sends the violins to the Transform module, its output is sent to Freeze, which ends in Output 1.
 
@@ -42,4 +42,6 @@ These messages are to be sent via Antescofo, as part of the electronic score.
 
 ## Output section
 
-The output is controlled via Ircam Spat. As with all routing, three (possibly more?) sources can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
+The output module is controlled via Ircam Spat. As with all routing, three (possibly more?) sources can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
+
+The spatialised signal is sent to 6 analog output channels.
