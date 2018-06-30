@@ -2,7 +2,7 @@
 
 Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum)
 
-Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
+Max patches are in the [/max/](/max/) subfolder. Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
 
 # how to use the Max performance patch
 
@@ -34,11 +34,13 @@ All orange receivers get messages from Antescofo. [r source] gets the instrument
 
 All modules have 2 inputs (to be treated separately) or 4 inputs (to be added together), depending on their function. All transform module haves one output.
 
+If needed, you can add more instances of an effect by creating e.g. [bpatcher freeze @args 2] etc.
+
 Routing is done via messages containing source-amplitude pairs. For example, the following set of messages sends the violins to the Transform module, its output is sent to Freeze, which ends in Output 1.
 
 ![Routing messages](/readme/routing.PNG)
 
-These messages are to be sent via Antescofo, as part of the electronic score.
+These kinds of messages are to be sent by Antescofo, as part of the electronic score.
 
 ## Output section
 
