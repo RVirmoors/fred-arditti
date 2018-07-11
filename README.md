@@ -1,6 +1,6 @@
 # dependencies
 
-Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum)
+Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT Externals
 
 Max patches are in the [/max/](/max/) subfolder. Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
 

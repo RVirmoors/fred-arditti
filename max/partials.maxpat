@@ -248,7 +248,6 @@
 					}
 ,
 					"patching_rect" : [ 411.0, 294.0, 51.0, 22.0 ],
-					"presentation_rect" : [ 415.0, 306.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1124,9 +1123,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 625.0, 748.0, 64.0, 22.0 ],
+					"patching_rect" : [ 625.0, 748.0, 67.0, 22.0 ],
 					"style" : "",
-					"text" : "send~ #1f"
+					"text" : "send~ #1p"
 				}
 
 			}
