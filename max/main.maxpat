@@ -666,7 +666,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"id" : "obj-94",
-					"items" : [ "m1", ",", "cello-jos", ",", "viola-e3", ",", "viola-a3", ",", "imperc", ",", "silence", ",", "delic", ",", "gsharp", ",", "silence", ",", "atrill", ",", "m6", ",", "cl-gliss", ",", "m7", ",", "v1-improv", ",", "m8", ",", "v2-improv", ",", "m9", ",", "pizz1", ",", "pizz2", ",", "pizz3", ",", "pizz4", ",", "pizz5", ",", "m10", ",", "up", ",", "pizz1", ",", "m11", ",", "pizz2", ",", "pizz3", ",", "pizz4", ",", "pizz5" ],
+					"items" : [ "m1", ",", "cello-jos", ",", "va-e3", ",", "va-a3", ",", "imperc", ",", "silence", ",", "delic", ",", "gsharp", ",", "silence", ",", "atrill", ",", "m6", ",", "cl-gliss", ",", "m7", ",", "v1-improv", ",", "m8", ",", "v2-improv", ",", "m9", ",", "cpizz1", ",", "cpizz2", ",", "cpizz3", ",", "cpizz4", ",", "cpizz5", ",", "m10", ",", "down", ",", "up", ",", "vpizz1", ",", "m11", ",", "vpizz2", ",", "vpizz3", ",", "vpizz4", ",", "vpizz5", ",", "vn1", ",", "m12", ",", "FL", ",", "fs", ",", "g", ",", "g_hi", ",", "m13", ",", "TA" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1599,6 +1599,7 @@
 			}
 , 			{
 				"box" : 				{
+					"color" : [ 1.0, 0.741176, 0.196078, 1.0 ],
 					"id" : "obj-21",
 					"items" : [ "SCOFO", "Source", ",", "Violin", 1, ",", "Violin", 2, ",", "Viola", ",", "Cello" ],
 					"maxclass" : "umenu",
@@ -1683,16 +1684,15 @@
 					"fontface" : 0,
 					"fontsize" : 30.0,
 					"id" : "obj-17",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.5, 935.0, 52.0, 77.0 ],
+					"patching_rect" : [ 122.5, 935.0, 52.0, 43.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "pizz5",
+					"text" : "TA",
 					"textjustification" : 1
 				}
 
@@ -2910,7 +2910,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 89.0, 80.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "takes/part1-3.wav"
+					"text" : "takes/part1-2.wav"
 				}
 
 			}

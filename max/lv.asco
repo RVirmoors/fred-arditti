@@ -26,8 +26,8 @@ NOTE F1 5 cello-jos @fermata
 
 5 input-sel 3 ; VA
 
-NOTE E3 5 viola-e3 @fermata
-NOTE A3 1 viola-a3
+NOTE E3 5 va-e3
+NOTE A3 1 va-a3
 input-gain 8
 CHORD (-A3 F#3) 2 imperc
 
@@ -37,60 +37,72 @@ NOTE G#3 1 gsharp
 NOTE 0 1 silence @fermata
 TRILL (A3) 2 atrill
 
-2 input-gain 3
+;2 input-gain 5
 CHORD (Ab3 E4) 2 m6		; score says 2, works better this way(?)
 
 2 input-sel 4 ; CL
-MULTI (C1 F#1) 3 cl-gliss @hook
+MULTI (C1 F#1) 3 cl-gliss
 TRILL (F#1) 2 m7
 
-3 input-sel 1 ; VN1
+2 input-sel 1 ; VN1
+;input-gain 3
 
 NOTE 0 1
 TRILL (F5 G6) 2 v1-improv
 NOTE -F5 2 m8
+input-gain 3
 
 2 input-sel 2 ; VN2
+input-gain 10
 
-TRILL (Eb4 E5) 3 v2-improv
+TRILL (Eb4 E5) 3 v2-improv @fermata
 
-3 input-sel 4 ; CL
+NOTE 0 1/2 m9
+input-sel 4 ; CL
 input-gain 1
-
-NOTE 0 1/2 m9 @fermata
-NOTE F1 1/2 @pizz pizz1
+NOTE F1 1/2 @pizz cpizz1
 NOTE 0 1/2
-NOTE F1 1/2 @pizz pizz2
+NOTE F1 1/2 @pizz cpizz2
 NOTE 0 1/2 
-NOTE F1 1/2 @pizz pizz3
+NOTE F1 1/2 @pizz cpizz3
 NOTE 0 1/2 
-NOTE F1 1/2 @pizz pizz4
+NOTE F1 1/2 @pizz cpizz4
 NOTE 0 1/2 
-NOTE F1 1/2 @pizz pizz5
+NOTE F1 1/2 @pizz cpizz5
 
-1/3 curve INPUTS @Action := {input-gain $x}
+1/3 curve INPUTS @Grain := 0.05s, @Action := {input-gain $x}
 	{ $x {
 			{ 5. }
 		2	{ 2. }
 	}}
-MULTI ((F1 G1) -> (C1 G1)) 3 m10
+MULTI ((F1 G1) -> (C1 G1)) 2 m10
+NOTE C1 1	down
 NOTE F3 1	up
 
 input-sel 3 ; VA
 
-NOTE 0 3/5 @fermata
-NOTE F2 2/5 @pizz pizz1
-NOTE 0 1/5 @fermata m11
-NOTE F2 2/5 @pizz pizz2
+NOTE 0 3/5
+NOTE F2 2/5 @pizz vpizz1
+NOTE 0 1/5 m11
+NOTE F2 2/5 @pizz vpizz2
 NOTE 0 2/5
-NOTE F2 2/5 @pizz pizz3
+NOTE F2 2/5 @pizz vpizz3
 NOTE 0 1/5
-NOTE F2 2/5 @pizz pizz4
+NOTE F2 2/5 @pizz vpizz4
 NOTE 0 1/5
-NOTE F2 2/5 @pizz pizz5
+NOTE F2 2/5 @pizz vpizz5
 NOTE 0 2/5
+input-sel 1 ; VN1
 
-2/5 input-sel 1 ; VN1
+CHORD (F#5 G5) 1 vn1
+NOTE F4 3 m12
+NOTE G6 1 FL
+NOTE F#5 1/2 fs
+NOTE G5 1/2 g 
+NOTE G6 1 g_hi
+
+NOTE D6 1 m13
+CHORD (F#6 D#7) 4 TA
 
 ;MULTI (Eb2 -> (C1 C2)) 1 m11
 ;MULTI ()
