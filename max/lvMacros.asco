@@ -1,60 +1,19 @@
-@macro_def @resetRoom  {
-	spat reset
-	spat source 1 doppler 1
-	room reverberance 64, heaviness 24, liveness 36, size 2000, infinite 0
-	spat source 4 az -5  ; granular
-	spat source 5 early width 90, source 5 pres 60	; tape
+@macro_def @start {
+	1-out off
+	1-granular off
+	1-mubu clearall
+	1-gran positionvar 3
 }
 
-@macro_def @resetVn {
-	vn-del-wet 0
-	vn-pan -45.
-	;vn-trans remix on
-	vn-trans envtrans 600
-	vn-gran 0	
-	vn-amp 1
-	vn-gizmo 0
-}
+@macro_def @m6gran {
+	1-granular vn1 1 vn2 1 va 1
+	1-out 1g 1
+	1-g_rec 1
+	1-gran positionvar 5000
+	}
 
-@macro_def @resetPn {
-	pn-del-wet 0
-	pn-pan -30.
-	pn-gran 0
-	pn-amp 1
-	pn-trans envtrans 0
-	pn-trans transpose 0
-}
-
-@macro_def @resetCl {
-	cl-del-wet 0
-	cl-pan 15.
-	cl-gran 0
-	cl-amp 1
-}
-
-@macro_def @resetTp {
-	tape-pan 5.
-}
-
-@macro_def @resetAll {
-	@resetRoom
-	@resetVn
-	@resetPn
-	@resetCl
-	@resetTp
-	vn-trans envtrans on
-	cl-trans envtrans on
-	pn-trans envtrans on
-	vn-trans remix on
-	cl-trans remix on
-	pn-trans remix on
-	trans-wet 100
-	spat-wet 100
-	gran-rand 0.5
-	gran-delay 50
-	gran-degrade 1
-}
-
-@macro_def @noiseOnly {
-	remix 0.01 1. 0.37 78. 0.11
+@macro_def @m9granOff {
+	1-g_rec 0
+	1-granular off
+	1-out off
 }

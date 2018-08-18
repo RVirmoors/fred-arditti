@@ -325,9 +325,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 334.0, 190.5, 206.0, 22.0 ],
+					"patching_rect" : [ 334.0, 190.5, 272.0, 22.0 ],
 					"style" : "",
-					"text" : "mubu.record~ #1-granular-ring audio"
+					"text" : "mubu.record~ #1-granular-ring audio @append 1"
 				}
 
 			}
