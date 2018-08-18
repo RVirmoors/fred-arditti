@@ -22,7 +22,7 @@ TRILL (C4 D#6) 3	m1
 
 3 input-sel 4	; CELLO
 
-NOTE F1 5 cello-jos @fermata
+NOTE F1 5 cl-low @fermata
 
 5 input-sel 3 ; VA
 
