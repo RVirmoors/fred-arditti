@@ -7,9 +7,11 @@ antescofo::analysis 4096 512
 antescofo::suivi 1
 antescofo::pedal 0
 
-BPM 60 ; 1 quarternote = 1 second
+BPM 60 ; 1 beat = 1 second
 
 @start ; reset initial params
+
+print @oddHarms(265)
 
 
 ; ==============
@@ -38,7 +40,7 @@ NOTE 0 1 silence @fermata
 TRILL (A3) 2 atrill
 
 ;2 input-gain 5
-CHORD (Ab3 E4) 2 m6		; score says 2, works better this way(?)
+CHORD (Ab3 E4) 2 m6	
 	@m6gran		; activate granular
 
 2 input-sel 4 ; CL

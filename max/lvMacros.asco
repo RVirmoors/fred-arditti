@@ -17,3 +17,8 @@
 	1-granular off
 	1-out off
 }
+
+@macro_def @oddHarms($root) {
+// freq-amp-decayrate triplets for use with [resonators]
+	$root 0.1 1 ($root * 3) 0.72 1 ($root * 5) 0.75 1 ($root * 7) 0.77 1 ($root * 9) 0.8 1 ($root * 11) 0.83 8 ($root * 13) 0.86 10 ($root * 15) 0.9 14 ($root * 17) 0.95 20 ($root * 19) 1 50
+}
