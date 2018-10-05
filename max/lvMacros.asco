@@ -9,6 +9,7 @@
 	1-gran positionvar 3
 }
 
+
 @macro_def @m6gran {
 	1-granular vn1 1 vn2 1 va 1
 	1-out 1g 1
@@ -19,7 +20,7 @@
 @macro_def @m9granOff {
 	1-g_rec 0
 	1-granular off
-	1-out off
+;	1-out off
 }
 
 @macro_def @oddHarms($root) {
