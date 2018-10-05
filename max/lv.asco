@@ -11,7 +11,8 @@ BPM 60 ; 1 beat = 1 second
 
 @start ; reset initial params
 
-print @oddHarms(265)
+;print @note2hz("A4")
+print @oddHarms(100)
 
 
 ; ==============
