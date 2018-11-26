@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1149.0, 922.0 ],
+		"rect" : [ 42.0, 84.0, 1404.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,20 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 163.0, 48.0, 56.0, 22.0 ],
+					"style" : "",
+					"text" : "r loadfile"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-131",
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
@@ -64,7 +78,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1402.0, 666.5, 333.0, 105.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 344.25, 639.017578, 333.0, 105.0 ],
+					"presentation_rect" : [ 340.25, 565.035156, 333.0, 105.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -1890,7 +1904,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1402.0, 791.0, 333.0, 103.982422 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 344.25, 746.017578, 333.0, 132.982422 ],
+					"presentation_rect" : [ 340.25, 672.035156, 333.0, 132.982422 ],
 					"viewvisibility" : 1
 				}
 
@@ -1956,7 +1970,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 664.5, 333.0, 103.982422 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 340.25, 871.5, 333.0, 103.982422 ],
+					"presentation_rect" : [ 340.25, 807.017578, 333.0, 103.982422 ],
 					"viewvisibility" : 1
 				}
 
@@ -1971,28 +1985,6 @@
 					"patching_rect" : [ 89.0, 49.0, 60.0, 22.0 ],
 					"style" : "",
 					"text" : "loadbang"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ 1 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-16",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "granular.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1057.0, 315.517578, 333.0, 317.482422 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 344.25, 313.0, 333.0, 317.482422 ],
-					"viewvisibility" : 1
 				}
 
 			}
@@ -4019,6 +4011,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-136", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-110", 0 ]
 				}
@@ -5000,15 +4999,15 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
 			"obj-48" : [ "output", "output", 0 ],
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ]
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5024,7 +5023,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "granular.maxpat",
+				"name" : "cross.maxpat",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -5032,13 +5031,6 @@
 			}
 , 			{
 				"name" : "fx-input.maxpat",
-				"bootpath" : "~/Documents/fred-arditti/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "cross.maxpat",
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -5104,22 +5096,6 @@
 				"type" : "iLaF"
 			}
 , 			{
-				"name" : "mubu.granular~.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
 				"name" : "supervp.cross~.mxe",
 				"type" : "iLaF"
 			}
@@ -5140,7 +5116,15 @@
 				"type" : "iLaF"
 			}
 , 			{
-				"name" : "mubu.concat~.mxe",
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.granular~.mxe",
 				"type" : "iLaF"
 			}
 , 			{
@@ -5216,8 +5200,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
