@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 280.0, 313.0, 1118.0, 587.0 ],
+		"rect" : [ 548.0, 307.0, 621.0, 587.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,35 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 240.0, 55.0, 75.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 130.5, 38.0, 75.0, 22.0 ],
+					"style" : "",
+					"text" : "r #1-granset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 240.0, 85.0, 95.0, 22.0 ],
+					"style" : "",
+					"text" : "prepend restore"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"autosave" : 1,
 					"bgmode" : 1,
@@ -86,7 +115,7 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Dry/Wet" : 100.0,
-									"Envelope" : 0.0,
+									"Envelope" : 4.0,
 									"Jump" : 0.0,
 									"Length" : 100.0,
 									"Mode" : 0.0,
@@ -118,7 +147,7 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Dry/Wet" : 100.0,
-												"Envelope" : 0.0,
+												"Envelope" : 4.0,
 												"Jump" : 0.0,
 												"Length" : 100.0,
 												"Mode" : 0.0,
@@ -138,7 +167,7 @@
 										"filename" : "µKflux.amxd.maxsnap",
 										"filepath" : "Mac SSD:/Users/andrewbenson/Documents/Max 7/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "d41d8cd98f00b204e9800998ecf8427e"
+										"snapshotfileid" : "ea87cd43572f848f149f3c3cefe90476"
 									}
 
 								}
@@ -228,9 +257,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 44.0, 328.0, 64.0, 22.0 ],
+					"patching_rect" : [ 44.0, 328.0, 67.0, 22.0 ],
 					"style" : "",
-					"text" : "send~ #1f"
+					"text" : "send~ #1g"
 				}
 
 			}
@@ -291,11 +320,11 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 11.0, 45.0, 22.0 ],
+					"patching_rect" : [ 15.0, 11.0, 59.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 11.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "r #1-fx"
+					"text" : "r #1-gran"
 				}
 
 			}
@@ -355,6 +384,20 @@
 					"destination" : [ "obj-24", 0 ],
 					"order" : 1,
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}

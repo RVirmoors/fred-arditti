@@ -38,6 +38,50 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-132",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "delayer.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1402.0, 905.0, 333.0, 211.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 685.0, 678.0, 336.0, 233.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-124",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "gran.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 1057.0, 318.0, 333.0, 272.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 338.25, 313.0, 333.0, 315.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
 					"id" : "obj-11",
 					"maxclass" : "newobj",
@@ -3755,7 +3799,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 26.25, 46.0, 517.75, 64.0 ],
 					"selectioncolor" : [ 1.0, 1.0, 0.4, 0.5 ],
-					"setmode" : 3,
+					"setmode" : 1,
 					"style" : "",
 					"ticks" : 8,
 					"vlabels" : 1,
@@ -5005,7 +5049,9 @@
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
+			"obj-132::obj-9" : [ "amxd~", "amxd~", 0 ],
 			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
+			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
 			"obj-48" : [ "output", "output", 0 ],
 			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ]
 		}
@@ -5092,6 +5138,91 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "gran.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µKflux.amxd[1].maxsnap",
+				"bootpath" : "~/Documents/Max 7/Snapshots",
+				"patcherrelativepath" : "../../Max 7/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µKflux.amxd[2].maxsnap",
+				"bootpath" : "~/Documents/Max 7/Snapshots",
+				"patcherrelativepath" : "../../Max 7/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µKflux.amxd[3].maxsnap",
+				"bootpath" : "~/Documents/Max 7/Snapshots",
+				"patcherrelativepath" : "../../Max 7/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µKflux.amxd",
+				"bootpath" : "~/Documents/Max 7/Packages/µK Bundle/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../../Max 7/Packages/µK Bundle/patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "kfluxini_main 001.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "kfluxini_display_001.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "kinicoreee.maxpat",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "delayer.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Max SpectralDelay.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 7/Snapshots",
+				"patcherrelativepath" : "../../Max 7/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Max SpectralDelay.amxd",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.bal2~.maxpat",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.delay.pfft~.maxpat",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "anton.aif",
+				"bootpath" : "C74:/media/msp",
+				"type" : "AIFF",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "spat.times~.mxe",
 				"type" : "iLaF"
 			}
@@ -5157,6 +5288,10 @@
 			}
 , 			{
 				"name" : "spat.hostinfos.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "jit.pass.mxe",
 				"type" : "iLaF"
 			}
  ],
