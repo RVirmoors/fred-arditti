@@ -53,7 +53,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1402.0, 905.0, 333.0, 211.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 685.0, 678.0, 336.0, 233.0 ],
+					"presentation_rect" : [ 667.5, 605.0, 546.0, 306.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -995,7 +995,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 708.0, 993.0, 41.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 899.25, 466.0, 54.0, 22.0 ],
+					"presentation_rect" : [ 978.75, 383.0, 54.0, 22.0 ],
 					"style" : "",
 					"text" : "r spat"
 				}
@@ -1295,7 +1295,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1089.0, 935.0, 45.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 899.25, 545.0, 54.0, 22.0 ],
+					"presentation_rect" : [ 978.75, 462.0, 54.0, 22.0 ],
 					"style" : "",
 					"text" : "r 3-out"
 				}
@@ -1311,7 +1311,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1028.5, 935.0, 45.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 899.25, 521.0, 54.0, 22.0 ],
+					"presentation_rect" : [ 978.75, 438.0, 54.0, 22.0 ],
 					"style" : "",
 					"text" : "r 2-out"
 				}
@@ -1327,7 +1327,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 968.0, 935.0, 45.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 899.25, 497.0, 54.0, 22.0 ],
+					"presentation_rect" : [ 978.75, 414.0, 54.0, 22.0 ],
 					"style" : "",
 					"text" : "r 1-out"
 				}
@@ -1363,7 +1363,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 764.0, 1118.0, 290.0, 153.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 947.5, 466.0, 99.0, 153.0 ],
+					"presentation_rect" : [ 1027.0, 383.0, 99.0, 153.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "output",
@@ -1459,7 +1459,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 807.375, 993.0, 47.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 846.0, 466.0, 47.0, 22.0 ],
+					"presentation_rect" : [ 925.5, 383.0, 47.0, 22.0 ],
 					"style" : "",
 					"text" : "wclose"
 				}
@@ -1474,7 +1474,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 764.0, 993.0, 37.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 802.625, 466.0, 37.0, 22.0 ],
+					"presentation_rect" : [ 882.125, 383.0, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "open"
 				}
@@ -2620,7 +2620,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 717.0, 802.0, 45.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 903.75, 574.0, 45.0, 45.0 ],
+					"presentation_rect" : [ 983.25, 491.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -3799,7 +3799,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 26.25, 46.0, 517.75, 64.0 ],
 					"selectioncolor" : [ 1.0, 1.0, 0.4, 0.5 ],
-					"setmode" : 1,
+					"setmode" : 3,
 					"style" : "",
 					"ticks" : 8,
 					"vlabels" : 1,
@@ -5044,16 +5044,17 @@
  ],
 		"parameters" : 		{
 			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
-			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
+			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
+			"obj-132::obj-9" : [ "amxd~", "amxd~", 0 ],
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-132::obj-9" : [ "amxd~", "amxd~", 0 ],
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
-			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
-			"obj-48" : [ "output", "output", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ]
+			"obj-58" : [ "live.gain~", "gain", 0 ],
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5101,6 +5102,18 @@
 				"bootpath" : "~/Documents/fred-arditti/max/old sounds",
 				"patcherrelativepath" : "./old sounds",
 				"type" : "WAVE",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Dynamical.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 7/Snapshots",
+				"patcherrelativepath" : "../../Max 7/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Dynamical.amxd",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
