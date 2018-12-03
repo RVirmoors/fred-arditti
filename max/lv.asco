@@ -2,7 +2,6 @@
 
 @insert lvMacros.asco
 
-
 antescofo::analysis 4096 512
 antescofo::suivi 1
 antescofo::pedal 0
@@ -10,6 +9,8 @@ antescofo::pedal 0
 BPM 60 ; 1 beat = 1 second
 
 @start ; reset initial params
+
+loadfile takes/part1-3.wav
 
 ;print @note2hz("A4")
 ;print @oddHarms(100)

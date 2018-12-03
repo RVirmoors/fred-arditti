@@ -4,8 +4,8 @@
 
 @macro_def @start {
 	1-out off
-	1-granular off
-	1-mubu clearall
+	1-gran off
+	capture clearall
 	1-gran positionvar 3
 }
 
