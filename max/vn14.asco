@@ -1,0 +1,11 @@
+antescofo::analysis 4096 512
+antescofo::suivi 1
+antescofo::pedal 0
+
+BPM 60 ; 1 beat = 1 second
+
+demoms 1000
+
+whenever ($playing < 2) {
+	print $playing	
+}
