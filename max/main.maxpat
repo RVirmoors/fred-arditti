@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 85.0, 998.0, 921.0 ],
+		"rect" : [ 34.0, 77.0, 1295.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,43 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-108",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 113.0, 761.0, 93.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 550.75, 199.0, 93.0, 22.0 ],
+					"style" : "",
+					"text" : "read vn14.asco"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-1",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "delayer.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 742.0, 805.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 675.25, 608.0, 485.0, 303.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
 					"id" : "obj-135",
@@ -93,7 +130,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 163.0, 48.0, 56.0, 22.0 ],
+					"patching_rect" : [ 89.0, 48.0, 56.0, 22.0 ],
 					"style" : "",
 					"text" : "r loadfile"
 				}
@@ -866,7 +903,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"id" : "obj-94",
-					"items" : [ "m1", ",", "cl-low", ",", "va-e3", ",", "va-a3", ",", "imperc", ",", "silence", ",", "delic", ",", "gsharp", ",", "silence", ",", "atrill", ",", "m6", ",", "cl-gliss", ",", "m7", ",", "v1-improv", ",", "m8", ",", "v2-improv", ",", "m9", ",", "cpizz1", ",", "cpizz2", ",", "cpizz3", ",", "cpizz4", ",", "cpizz5", ",", "m10", ",", "down", ",", "up", ",", "vpizz1", ",", "m11", ",", "vpizz2", ",", "vpizz3", ",", "vpizz4", ",", "vpizz5", ",", "vn1", ",", "m12", ",", "FL", ",", "fs", ",", "g", ",", "g_hi", ",", "m13", ",", "TA" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -900,6 +937,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 26.5, 761.0, 74.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 550.75, 178.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "read lv.asco"
 				}
@@ -1884,15 +1923,16 @@
 					"fontface" : 0,
 					"fontsize" : 30.0,
 					"id" : "obj-17",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.5, 935.0, 52.0, 43.0 ],
+					"patching_rect" : [ 122.5, 935.0, 52.0, 77.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "up",
+					"text" : "cl-low",
 					"textjustification" : 1
 				}
 
@@ -2293,13 +2333,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 176.5, 147.0, 50.0, 22.0 ],
+									"patching_rect" : [ 176.5, 147.0, 50.0, 36.0 ],
 									"style" : "",
-									"text" : "0."
+									"text" : "999.977356"
 								}
 
 							}
@@ -3214,7 +3255,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 89.0, 80.0, 105.0, 22.0 ],
+					"patching_rect" : [ 118.0, 76.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "takes/part1-3.wav"
 				}
@@ -3943,10 +3984,10 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"loopend" : [ 0.0, "ms" ],
-						"loopstart" : [ 0.0, "ms" ],
+						"loopstart" : [ 999.977356, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 76404.835938, "ticks" ],
-						"originaltempo" : 124.160072,
+						"originaltempo" : 60.027504,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -4073,6 +4114,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-104", 0 ],
 					"source" : [ "obj-106", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-108", 0 ]
 				}
 
 			}
@@ -5080,17 +5128,18 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
-			"obj-58" : [ "live.gain~", "gain", 0 ],
-			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
-			"obj-48" : [ "output", "output", 0 ],
 			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
+			"obj-1::obj-9" : [ "amxd~", "amxd~", 0 ],
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
+			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ]
+			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
+			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5199,6 +5248,34 @@
 , 			{
 				"name" : "kinicoreee.maxpat",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "delayer.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Max SpectralDelay.amxd",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.bal2~.maxpat",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.delay.pfft~.maxpat",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "anton.aif",
+				"bootpath" : "C74:/media/msp",
+				"type" : "AIFF",
 				"implicit" : 1
 			}
 , 			{
@@ -5314,8 +5391,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
