@@ -6,10 +6,13 @@ BPM 60 ; 1 beat = 1 second
 $playing := 0
 
 loadfile takes/m14-37-v1.wav
+
+EVENT 10 a
 if ($playing == 0) {
 	demoms 1000
 }
 
-whenever ($playing < 2) {
-	print $playing	
+EVENT 10 b
+if ($playing == 0) {
+	demoms 9000
 }
