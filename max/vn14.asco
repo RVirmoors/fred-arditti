@@ -11,6 +11,8 @@ EVENT 10 a
 if ($playing == 0) {
 	demoms 1000
 }
+rec 1
+2 rec 0
 
 EVENT 10 b
 if ($playing == 0) {
