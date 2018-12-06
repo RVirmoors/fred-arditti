@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 347.0, 54.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
 					"id" : "obj-7",
@@ -114,7 +127,7 @@
 							"origname" : "~/Documents/Max 7/Packages/µK Bundle/patchers/Max Audio Effect/µKflux.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"Dry/Wet" : 100.0,
+									"Dry/Wet" : 97.086617,
 									"Envelope" : 4.0,
 									"Jump" : 0.0,
 									"Length" : 100.0,
@@ -146,7 +159,7 @@
 										"origname" : "~/Documents/Max 7/Packages/µK Bundle/patchers/Max Audio Effect/µKflux.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"Dry/Wet" : 100.0,
+												"Dry/Wet" : 97.086617,
 												"Envelope" : 4.0,
 												"Jump" : 0.0,
 												"Length" : 100.0,
@@ -167,7 +180,7 @@
 										"filename" : "µKflux.amxd.maxsnap",
 										"filepath" : "Mac SSD:/Users/andrewbenson/Documents/Max 7/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "ea87cd43572f848f149f3c3cefe90476"
+										"snapshotfileid" : "45bd0d263ba049e49ef17f01c2d1bdb1"
 									}
 
 								}
@@ -186,42 +199,6 @@
 										"filepath" : "~/Documents/Max 7/Snapshots",
 										"filepos" : -1,
 										"snapshotfileid" : "b61461e5fe60a595cb8c3d228ae32c50"
-									}
-
-								}
-, 								{
-									"filetype" : "C74Snapshot",
-									"version" : 2,
-									"minorversion" : 0,
-									"name" : "voce rar",
-									"origin" : "µKflux.amxd",
-									"type" : "amxd",
-									"subtype" : "Undefined",
-									"embed" : 0,
-									"fileref" : 									{
-										"name" : "voce rar",
-										"filename" : "µKflux.amxd[2].maxsnap",
-										"filepath" : "~/Documents/Max 7/Snapshots",
-										"filepos" : -1,
-										"snapshotfileid" : "8dc02d79c86c276a2d436eda84267ca8"
-									}
-
-								}
-, 								{
-									"filetype" : "C74Snapshot",
-									"version" : 2,
-									"minorversion" : 0,
-									"name" : "transparent",
-									"origin" : "µKflux.amxd",
-									"type" : "amxd",
-									"subtype" : "Undefined",
-									"embed" : 0,
-									"fileref" : 									{
-										"name" : "transparent",
-										"filename" : "µKflux.amxd[3].maxsnap",
-										"filepath" : "~/Documents/Max 7/Snapshots",
-										"filepos" : -1,
-										"snapshotfileid" : "dc2c56fcea1605b829f152cd5b61dc9f"
 									}
 
 								}
@@ -401,6 +378,13 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
 			"obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ]
@@ -415,20 +399,6 @@
 			}
 , 			{
 				"name" : "µKflux.amxd[1].maxsnap",
-				"bootpath" : "~/Documents/Max 7/Snapshots",
-				"patcherrelativepath" : "../../Max 7/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µKflux.amxd[2].maxsnap",
-				"bootpath" : "~/Documents/Max 7/Snapshots",
-				"patcherrelativepath" : "../../Max 7/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µKflux.amxd[3].maxsnap",
 				"bootpath" : "~/Documents/Max 7/Snapshots",
 				"patcherrelativepath" : "../../Max 7/Snapshots",
 				"type" : "mx@s",
