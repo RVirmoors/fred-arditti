@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 85.0, 1192.0, 929.0 ],
+		"rect" : [ 42.0, 85.0, 972.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -947,8 +947,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1046,15 +1046,15 @@
 											"valuedictionary" : 											{
 												"parameter_values" : 												{
 													"Dry/Wet" : 50.0,
-													"Envelope" : 0.0,
-													"Jump" : 0.0,
+													"Envelope" : 1.0,
+													"Jump" : 66.0,
 													"Length" : 100.0,
 													"Mode" : 0.0,
-													"Reverse" : 0.0,
-													"Shift" : 0.0,
-													"Silence" : 0.0,
-													"Time" : 463.298035,
-													"Time Noise" : 0.0
+													"Reverse" : 20.0,
+													"Shift" : 25.0,
+													"Silence" : 15.0,
+													"Time" : 440.389801,
+													"Time Noise" : 15.0
 												}
 
 											}
@@ -1078,15 +1078,15 @@
 														"valuedictionary" : 														{
 															"parameter_values" : 															{
 																"Dry/Wet" : 50.0,
-																"Envelope" : 0.0,
-																"Jump" : 0.0,
+																"Envelope" : 1.0,
+																"Jump" : 66.0,
 																"Length" : 100.0,
 																"Mode" : 0.0,
-																"Reverse" : 0.0,
-																"Shift" : 0.0,
-																"Silence" : 0.0,
-																"Time" : 463.298035,
-																"Time Noise" : 0.0
+																"Reverse" : 20.0,
+																"Shift" : 25.0,
+																"Silence" : 15.0,
+																"Time" : 440.389801,
+																"Time Noise" : 15.0
 															}
 
 														}
@@ -1098,7 +1098,7 @@
 														"filename" : "µKflux.amxd.maxsnap",
 														"filepath" : "Mac SSD:/Users/andrewbenson/Documents/Max 7/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "07f196cd60e5689f042216c4c5acb8a9"
+														"snapshotfileid" : "c11b6a6243a717fbd253d873e7fd0307"
 													}
 
 												}
@@ -1280,7 +1280,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 99.0, 11.0, 225.0, 22.0 ],
 									"style" : "",
-									"text" : "1p 6 vn2 30",
+									"text" : "1p 6 off",
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
@@ -3271,7 +3271,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "cl-low",
+					"text" : "m10",
 					"textjustification" : 1
 				}
 
@@ -3671,14 +3671,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 176.5, 147.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1002.834473"
+									"text" : "0."
 								}
 
 							}
@@ -5324,8 +5323,8 @@
 						"basictuning" : 440,
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
-						"loopend" : [ 3379.932129, "ms" ],
-						"loopstart" : [ 1002.834473, "ms" ],
+						"loopend" : [ 0.0, "ms" ],
+						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 76404.835938, "ticks" ],
 						"originaltempo" : 124.160072,
@@ -6445,18 +6444,18 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
-			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
 			"obj-48" : [ "output", "output", 0 ],
 			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-1::obj-9" : [ "amxd~", "amxd~", 0 ],
-			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
+			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
+			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
+			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
 			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
-			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ]
+			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
+			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -6736,8 +6735,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

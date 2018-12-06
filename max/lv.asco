@@ -17,9 +17,8 @@ loadfile takes/part1-3.wav
 ;print @note2hz("A4")
 ;print @oddHarms(100)
 
-	@resoScreen(vn2 30)
-	1-granset Dry/Wet 60, Envelope 2, Time 232, Length 100, Shift 85, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
-
+@resoScreen(vn2 30)
+1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 
 ; ==============
 
@@ -34,18 +33,32 @@ TRILL (C4 D#6) 3	m1
 
 NOTE F1 5 cl-low @fermata
 
-	@resoScreen()	; close screen
+@resoScreen(off)
+@noiseRec(vn2 15)	
+3 @resoScreen(vn2 28)	; reopen
+@noiseOff
 
-5 input-sel 3 ; VA
+2 input-sel 3 ; VA
+@resoScreen(off)
 
 
 NOTE E3 5 va-e3
-;	1-setpartials @oddHarms(164.83)
+@noiseRec(vn2 15 vn1 10)
+3 @resoScreen(vn2 26 cl 20)
+@noiseOn(vn1 15)
+;2 @resoScreen(off)
+
 NOTE A3 1 va-a3
+@noiseOn(vn2 10)
 input-gain 8
+
 CHORD (-A3 F#3) 2 imperc
+@resoScreen(vn2 22 cl 20)
+@noiseOff
 
 NOTE 0 3 silence @fermata
+@resoScreen(off)
+
 TRILL (A4 G5) 2 delic
 NOTE G#3 1 gsharp
 NOTE 0 1 silence @fermata
