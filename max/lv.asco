@@ -17,7 +17,8 @@ loadfile takes/part1-3.wav
 ;print @note2hz("A4")
 ;print @oddHarms(100)
 
-@resoScreen(vn2 1)
+	@resoScreen(vn2 30)
+	1-granset Dry/Wet 60, Envelope 2, Time 232, Length 100, Shift 85, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 
 
 ; ==============
@@ -32,6 +33,8 @@ TRILL (C4 D#6) 3	m1
 3 input-sel 4	; CELLO
 
 NOTE F1 5 cl-low @fermata
+
+	@resoScreen()	; close screen
 
 5 input-sel 3 ; VA
 
