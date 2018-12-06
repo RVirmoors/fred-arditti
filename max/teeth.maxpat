@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 283.0, 84.0, 1191.0, 914.0 ],
+		"rect" : [ 35.0, 82.0, 890.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,85 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"bgcolor" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 24.0,
+					"format" : 6,
+					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
+					"id" : "obj-34",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 878.0, 809.0, 90.5, 36.0 ],
+					"style" : "",
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+					"triscale" : 0.9
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"id" : "obj-38",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 888.0, 829.0, 54.0, 17.0 ],
+					"style" : "",
+					"text" : "frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-40",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 878.0, 777.0, 256.0, 22.0 ],
+					"style" : "",
+					"text" : "unpack 0. 0. 0. 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-41",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "float", "" ],
+					"patching_rect" : [ 878.0, 743.5, 62.0, 22.0 ],
+					"style" : "",
+					"text" : "pipo~ psy"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 620.0, 430.0, 46.0, 22.0 ],
+					"style" : "",
+					"text" : "noise~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-22",
 					"maxclass" : "button",
@@ -70,9 +149,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "float", "float" ],
-					"patching_rect" : [ 849.099976, 329.0, 207.0, 22.0 ],
+					"patching_rect" : [ 849.099976, 329.0, 203.0, 22.0 ],
 					"style" : "",
-					"text" : "unpack 0.58 164.83 1. 0.75 0.28 -0.4"
+					"text" : "unpack 0.58 164.83 1. 0.75 0.1 0.85"
 				}
 
 			}
@@ -484,26 +563,26 @@
 					"clipheight" : 103.0,
 					"data" : 					{
 						"clips" : [ 							{
-								"filename" : "C:\\Users\\prow\\Documents\\fred-arditti\\max\\old sounds\\solovn.wav",
+								"filename" : "C:\\Users\\rv\\Documents\\fred-arditti\\max\\old sounds\\solovn.wav",
 								"filekind" : "audiofile",
-								"selection" : [ 0.2875, 0.385714 ],
+								"selection" : [ 0.285714, 0.373214 ],
 								"loop" : 1,
 								"content_state" : 								{
-									"followglobaltempo" : [ 0 ],
-									"slurtime" : [ 0.0 ],
-									"originaltempo" : [ 120.0 ],
-									"formantcorrection" : [ 0 ],
-									"pitchshift" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ],
-									"quality" : [ "basic" ],
 									"formant" : [ 1.0 ],
-									"speed" : [ 1.0 ],
+									"pitchcorrection" : [ 0 ],
+									"slurtime" : [ 0.0 ],
 									"timestretch" : [ 0 ],
+									"quality" : [ "basic" ],
 									"play" : [ 0 ],
 									"mode" : [ "basic" ],
 									"basictuning" : [ 440 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"originallengthms" : [ 0.0 ]
+									"speed" : [ 1.0 ],
+									"pitchshift" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"originaltempo" : [ 120.0 ],
+									"originallengthms" : [ 0.0 ],
+									"formantcorrection" : [ 0 ]
 								}
 
 							}
@@ -677,6 +756,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"order" : 1,
+					"source" : [ "obj-123", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"order" : 2,
 					"source" : [ "obj-123", 0 ]
 				}
 
@@ -891,7 +978,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 1 ],
-					"disabled" : 1,
+					"order" : 2,
 					"source" : [ "obj-37", 0 ]
 				}
 
@@ -899,7 +986,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 1,
+					"order" : 3,
 					"source" : [ "obj-37", 0 ]
 				}
 
@@ -914,14 +1001,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"order" : 2,
-					"source" : [ "obj-37", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-39", 0 ]
 				}
@@ -929,7 +1008,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-123", 0 ],
+					"order" : 1,
 					"source" : [ "obj-47", 0 ]
 				}
 
@@ -937,7 +1031,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 1,
+					"order" : 0,
 					"source" : [ "obj-47", 0 ]
 				}
 
@@ -986,6 +1080,10 @@
 				"patcherrelativepath" : "./old sounds",
 				"type" : "WAVE",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "pipo~.mxe",
+				"type" : "iLaF"
 			}
  ],
 		"autosave" : 0

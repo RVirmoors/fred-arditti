@@ -27,10 +27,6 @@ input-gain 30 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 rec 1
 
-	1-partials va 1
-	1-teeth va 1
-	1-out 1t 1
-
 TRILL (C4 D#6) 3	m1
 
 3 input-sel 4	; CELLO
