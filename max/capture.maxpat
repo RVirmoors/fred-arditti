@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1038.0, 930.0 ],
+		"rect" : [ 42.0, 85.0, 1038.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,22 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 793.0, 371.0, 65.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 197.0, 69.625, 69.0, 22.0 ],
+					"style" : "",
+					"text" : "r mubuffer"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "number",
@@ -155,7 +171,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -465,7 +481,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -509,7 +525,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x86",
 											"modernui" : 1
 										}
@@ -788,7 +804,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1080,7 +1096,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1198,7 +1214,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x86",
 											"modernui" : 1
 										}
@@ -1991,7 +2007,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 384.0, 830.325012, 163.0, 49.0 ],
-					"presentation_rect" : [ 373.0, 677.0, 50.0, 49.0 ],
+					"presentation_rect" : [ 373.0, 677.0, 50.0, 35.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -2021,7 +2037,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -2313,7 +2329,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -2704,6 +2720,7 @@
 				"box" : 				{
 					"alignviewbounds" : 0,
 					"autobounds" : 0,
+					"autorefreshrate" : 0,
 					"autoupdate" : 120.0,
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bufferchooser_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -2712,10 +2729,10 @@
 					"bufferchooser_shape" : "buttons",
 					"bufferchooser_size" : 15,
 					"bufferchooser_visible" : 1,
-					"content" : [ 2, [ [  ] ], [ "audio", 1, 1, 0, [  ], 0, "none", [ [ 2944355, 0, 44100.0, 0.0, 1, 1, 0, 0, 0, 0, 0, 0, [ "FileName", "m56-64-va.wav", "AudioFile", 1, "meta_bwav description", "", "meta_bwav originator", "REAPER", "meta_bwav originator ref", "", "meta_bwav origination date", "2018-11-22", "meta_bwav origination time", "00-36-51", "meta_bwav time reference", "57291286", "meta_bwav coding history", "", "meta_MetaDataSource", "WAV", "ExternalFile", 1 ] ] ] ], [ "descr", 1, 9, 0, [ "FrequencyMax", "EnergyMax", "PeriodicityMax", "AC1Max", "LoudnessMax", "CentroidMax", "SpreadMax", "SkewnessMax", "KurtosisMax" ], 1, "none", [ [ 29443, 0, 441.0, 0.0, 1, 9, 0, 0, 0, 0, 0, 0, 0 ] ] ], [ "onsets", 1, 1, 0, [ "Duration" ], 1, "none", [ [ 11501, 0, 172.265625, 0.0, 1, 1, 0, 0, 0, 0, 0, 0, [ "gui", "interface markers, autobounds 1" ] ] ] ], [ "peaks", 10, 2, 1, [ "Frequency", "Amplitude" ], 1, "none", [ [ 294423, 0, 4410.0, 0.0, 10, 2, 0, 0, 0, 0, 0, 0, [ "gui", "autobounds 1, interface traces, colormode fgcolor, paramcols Frequency Amplitude, shape steps, paramautodisplayrange color 1, mixedlayout superposed" ] ] ] ] ],
+					"content" : [ 2, [ [  ] ], [ "audio", 1, 1, 0, [  ], 0, "none", [ [ 661500, 0, 44100.0, 0.0, 1, 1, 0, 0, 0, 0, 0, 0, [ "FileName", "m56-64-va.wav", "AudioFile", 1, "meta_bwav description", "", "meta_bwav originator", "REAPER", "meta_bwav originator ref", "", "meta_bwav origination date", "2018-11-22", "meta_bwav origination time", "00-36-51", "meta_bwav time reference", "57291286", "meta_bwav coding history", "", "meta_MetaDataSource", "WAV", "ExternalFile", 1 ] ] ] ], [ "descr", 1, 9, 0, [ "FrequencyMax", "EnergyMax", "PeriodicityMax", "AC1Max", "LoudnessMax", "CentroidMax", "SpreadMax", "SkewnessMax", "KurtosisMax" ], 1, "none", [ [ 29443, 0, 441.0, 0.0, 1, 9, 0, 0, 0, 0, 0, 0, 0 ] ] ], [ "onsets", 1, 1, 0, [ "Duration" ], 1, "none", [ [ 11501, 0, 172.265625, 0.0, 1, 1, 0, 0, 0, 0, 0, 0, [ "gui", "interface markers, autobounds 1" ] ] ] ], [ "peaks", 10, 2, 1, [ "Frequency", "Amplitude" ], 1, "none", [ [ 294423, 0, 4410.0, 0.0, 10, 2, 0, 0, 0, 0, 0, 0, [ "gui", "autobounds 1, interface traces, colormode fgcolor, paramcols Frequency Amplitude, shape steps, paramautodisplayrange color 1, mixedlayout superposed" ] ] ] ] ],
 					"cursor_color" : [ 1.0, 0.0, 0.0, 1.0 ],
 					"cursor_followmouse" : 1,
-					"cursor_position" : 15533.402344,
+					"cursor_position" : -1.0,
 					"cursor_shape" : "bar",
 					"cursor_size" : 3,
 					"cursor_visible" : 1,
@@ -2767,7 +2784,7 @@
 					"toolbar_size" : 30,
 					"toolbar_visible" : 2,
 					"useplaceholders" : 1,
-					"viewconfig" : [ "interface wave, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time", "interface matrix, , visible 1, autobounds 0, hidenotforemost 0, allbuffersvisible 0, domainalign time, header bordercolor 200 200 200 1", "interface markers, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time", "interface traces, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time, colormode fgcolor, paramcols Frequency Amplitude -, shape steps, depth -148.221 0" ],
+					"viewconfig" : [ "interface wave, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time", "interface matrix, , visible 1, autobounds 0, hidenotforemost 0, allbuffersvisible 0, domainalign time, header bordercolor 200 200 200 1", "interface markers, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time", "interface traces, , visible 1, autobounds 1, hidenotforemost 0, allbuffersvisible 0, domainalign time, colormode fgcolor, paramcols Frequency Amplitude -, shape steps, depth -0.5 0.5" ],
 					"windresize" : 0
 				}
 
@@ -3068,6 +3085,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-19", 0 ]
 				}
 
 			}

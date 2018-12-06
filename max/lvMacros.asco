@@ -8,14 +8,20 @@
 	spat source 3 aed 0 0 1
 	1-out off
 	1-gran off
-	capture clearall
 	1-gran positionvar 3
+	1-partials off
+	1-teeth off
+	1-trans off
+	1-cross off
+	1-delay off
+	capture off
+	mubuffer clearall
 }
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	1-gran 1p
-	1-out 1g
+	1-gran 1p 1
+	1-out 1g 1
 }
 
 @macro_def @toneScreen($in) {

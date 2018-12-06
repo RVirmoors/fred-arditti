@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 85.0, 1082.0, 929.0 ],
+		"rect" : [ 35.0, 82.0, 890.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -204,7 +204,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1057.0, 318.0, 333.0, 272.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 338.25, 313.0, 333.0, 315.0 ],
+					"presentation_rect" : [ 338.25, 313.0, 333.0, 257.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -813,14 +813,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-109",
-					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "float", "" ],
-					"patching_rect" : [ 399.5, 874.0, 256.0, 50.0 ],
+					"patching_rect" : [ 399.5, 874.0, 62.0, 22.0 ],
 					"style" : "",
-					"text" : "pipo~ slice:yin @slice.size 1710 @slice.hop 100 @slice.wind none @yin.minfreq 50 @yin.downsampling 4"
+					"text" : "pipo~ psy"
 				}
 
 			}
@@ -2001,15 +2000,16 @@
 					"fontface" : 0,
 					"fontsize" : 30.0,
 					"id" : "obj-17",
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.5, 935.0, 52.0, 43.0 ],
+					"patching_rect" : [ 122.5, 935.0, 52.0, 112.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "m8",
+					"text" : "cl-gliss",
 					"textjustification" : 1
 				}
 
@@ -3035,6 +3035,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 4,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -3060,6 +3061,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 3,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -3085,6 +3087,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 2,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -5270,6 +5273,13 @@
 				"bootpath" : "~/Documents/fred-arditti/max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "solovn.wav",
+				"bootpath" : "~/Documents/fred-arditti/max/old sounds",
+				"patcherrelativepath" : "./old sounds",
+				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
