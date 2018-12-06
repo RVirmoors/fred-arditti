@@ -37,7 +37,7 @@ NOTE F1 5 cl-low @fermata
 
 
 NOTE E3 5 va-e3
-	1-setpartials @oddHarms(164.83)
+;	1-setpartials @oddHarms(164.83)
 NOTE A3 1 va-a3
 input-gain 8
 CHORD (-A3 F#3) 2 imperc
