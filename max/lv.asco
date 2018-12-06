@@ -8,6 +8,8 @@ antescofo::pedal 0
 
 BPM 60 ; 1 beat = 1 second
 
+$playing := 0 ; for debugging
+
 @start ; reset initial params
 
 loadfile takes/part1-3.wav
@@ -15,12 +17,15 @@ loadfile takes/part1-3.wav
 ;print @note2hz("A4")
 ;print @oddHarms(100)
 
+@resoScreen(vn1 1 va 0.5)
+
 
 ; ==============
 
 
 input-gain 30 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
+rec 1
 
 	1-partials va 1
 	1-teeth va 1
@@ -63,18 +68,17 @@ TRILL (F#1) 2 m7
 
 NOTE 0 1
 TRILL (F5 G6) 2 v1-improv
-	1-granular vn1 0 vn2 0 va 1 vc 1
+;	1-granular vn1 0 vn2 0 va 1 vc 1
 NOTE -F5 2 m8
 input-gain 3
 
 2 input-sel 2 ; VN2
 input-gain 10
-	1-granular vn1 1 vn2 0 va 0.8 vc 0
+;	1-granular vn1 1 vn2 0 va 0.8 vc 0
 
 TRILL (Eb4 E5) 3 v2-improv @fermata
 
 NOTE 0 1/2 m9
-	@m9granOff
 input-sel 4 ; CL
 input-gain 1
 NOTE F1 1/2 @pizz cpizz1
