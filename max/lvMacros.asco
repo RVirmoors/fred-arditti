@@ -5,12 +5,13 @@
 @macro_def @start {
 	spat source 1 aed -90 0 1
 	spat source 2 aed 90 0 1
-	spat source 3 aed 0 0 1
+	spat source 3 aed 0 0 2
 	1-out off
 	1-gran off
 	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
 	1-teeth off
+	1-tw 0.58 164.83 1. 0.38 0.15 0.37
 	1-trans off
 	1-cross off
 	1-delay off
@@ -60,8 +61,13 @@
 	1-dfb 50
 }
 
-@macro_def @toneScreen($in) {
+@macro_def @toneScreen($in, $delay) {
 	1-teeth $in
+	1-trans 1w 1
+	3-out 1t
+	1-tdel $delay 
+	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
+	1-envwarp 58.27 1.1
 }
 
 @macro_def @oddHarms($root) {

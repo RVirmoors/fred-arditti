@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 82.0, 1180.0, 920.0 ],
+		"rect" : [ 42.0, 82.0, 1084.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -2373,7 +2373,7 @@
 														"filename" : "µKflux.amxd.maxsnap",
 														"filepath" : "Mac SSD:/Users/andrewbenson/Documents/Max 7/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "34a3276bbe0a78f35f79cd0003dcc1ff"
+														"snapshotfileid" : "aa934972cc2365ff6980e81899c791d2"
 													}
 
 												}
@@ -4537,16 +4537,15 @@
 					"fontface" : 0,
 					"fontsize" : 30.0,
 					"id" : "obj-17",
-					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.5, 935.0, 52.0, 112.0 ],
+					"patching_rect" : [ 122.5, 935.0, 52.0, 43.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "silence",
+					"text" : "TA",
 					"textjustification" : 1
 				}
 
@@ -5834,21 +5833,21 @@
 												"selection" : [ 0.301786, 0.351786 ],
 												"loop" : 1,
 												"content_state" : 												{
-													"formantcorrection" : [ 0 ],
-													"speed" : [ 1.0 ],
-													"play" : [ 0 ],
-													"pitchcorrection" : [ 0 ],
-													"pitchshift" : [ 1.0 ],
-													"timestretch" : [ 0 ],
-													"mode" : [ "basic" ],
-													"originallengthms" : [ 0.0 ],
-													"quality" : [ "basic" ],
-													"basictuning" : [ 440 ],
-													"originallength" : [ 0.0, "ticks" ],
 													"formant" : [ 1.0 ],
+													"timestretch" : [ 0 ],
 													"followglobaltempo" : [ 0 ],
+													"quality" : [ "basic" ],
+													"formantcorrection" : [ 0 ],
+													"originallengthms" : [ 0.0 ],
 													"originaltempo" : [ 120.0 ],
-													"slurtime" : [ 0.0 ]
+													"mode" : [ "basic" ],
+													"play" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"slurtime" : [ 0.0 ],
+													"speed" : [ 1.0 ],
+													"pitchcorrection" : [ 0 ],
+													"originallength" : [ 0.0, "ticks" ],
+													"pitchshift" : [ 1.0 ]
 												}
 
 											}
@@ -5982,7 +5981,7 @@
 									"presentation_linecount" : 2,
 									"presentation_rect" : [ 12.0, 197.5, 321.0, 36.0 ],
 									"style" : "",
-									"text" : "29.14 0.5 50 49 0.7 25 110 1 3 130.81 1 2 196 1 1 293.66 1 1 440 1.1 1 659 1.2 1"
+									"text" : "29.14 0.2 50 49 0.4 25 110 0.8 3 130.81 1 2 196 1 1 293.66 1 1 440 1.1 1 659 1.2 1"
 								}
 
 							}
@@ -9583,17 +9582,17 @@
  ],
 		"parameters" : 		{
 			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
+			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
+			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
+			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
 			"obj-58" : [ "live.gain~", "gain", 0 ],
 			"obj-1::obj-9" : [ "amxd~", "amxd~", 0 ],
-			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
-			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
-			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
-			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
-			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
 			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
-			"obj-48" : [ "output", "output", 0 ]
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
+			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
