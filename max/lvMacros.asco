@@ -3,12 +3,12 @@
 ;} 
 
 @macro_def @start {
-	spat source 1 aed 0 0 1
-	spat source 2 aed 0 0 1
+	spat source 1 aed -90 0 1
+	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1
 	1-out off
 	1-gran off
-	1-gran positionvar 3
+	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
 	1-teeth off
 	1-trans off
@@ -16,39 +16,48 @@
 	1-delay off
 	capture off
 	mubuffer clearall
+	$peaks := 0
+	mugran duration 512, durationvar 64, positionvar 512, periodvar 50
 }
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	1-gran 1p 6 $in
-	1-out 1g 1
+	1-gran 1p 10 $in
+	1-out 1g 0.2
 	; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
-	1-setpartials 29.14 0.5 50 49 0.7 25 110 1 3 130.81 1 2 196 1 1 293.66 1 1 440 1.1 1 659 1.2 1
+	1-setpartials 29.14 0.2 50 49 0.4 25 110 0.8 3 130.81 1 2 196 1 1 293.66 1 1 440 1.1 1 659 1.2 1
 }
 
 @macro_def @noiseRec($in) {
 	capture $in
-	2-out c
+	mugran play 0
 	record 1
-	playmode 2
-	loop noiseloop 120ms {
-		cursor @rand_int(2000)
-	}
+	playmode 0
+;	loop noiseloop 120ms {
+;		cursor @rand_int(2000)
+	;	mugran frequency 29.14
+;	}
 }
 
-@macro_def @noiseOff {
+@macro_def @noiseStop {
 	capture off
+	@noiseScreen(off)
+	mugran play 0
 	record 0
-	2-out off
-	1 abort noiseloop
+	playmode 0
 }
 
-@macro_def @noiseOn($in) {
+@macro_def @noiseScreen($in) {
 	capture $in
-	2-out c
+	1-cross c 1 $in
+	1-delay 1x 1 c 0.2
+	2-out 1d
+	mugran play 1
 	playmode 1
 	record 0
-	abort noiseloop
+	1-svpcross scaling 0.3 1 0.7 0
+	1-dtime 1000
+	1-dfb 50
 }
 
 @macro_def @toneScreen($in) {
