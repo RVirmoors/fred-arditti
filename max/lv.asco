@@ -32,8 +32,8 @@ TRILL (C4 D#6) 3	m1
 
 NOTE F1 5 cl-low @fermata
 
-@toneScreen(cl 15, 0.73)
-@resoScreen(off)
+@toneScreen(vc 15, 0.73)
+; @resoScreen(off)
 @noiseRec(vn2 15)	
 3 @resoScreen(vn2 28)	; reopen
 @noiseStop
@@ -43,20 +43,20 @@ NOTE F1 5 cl-low @fermata
 
 
 NOTE E3 5 va-e3
-@toneScreen(cl 10 va 15, 0.77)
+@toneScreen(vc 10 va 15, 0.77)
 @noiseScreen(vn2 15 vn1 10)
-3 @resoScreen(vn2 26 cl 20)
+3 @resoScreen(vn2 26 vc 20)
 @noiseScreen(vn1 15)
 ;2 @resoScreen(off)
 
 NOTE A3 1 va-a3
-@toneScreen(cl 10 va 15 vn1 15, 0.7)
+@toneScreen(vc 10 va 15 vn1 15, 0.7)
 @noiseScreen(vn2 10)
 input-gain 8
 
 CHORD (-A3 F#3) 2 imperc
-@toneScreen(cl 10 va 15 vn1 15, 0.67)
-@resoScreen(vn2 22 cl 20)
+@toneScreen(vc 10 va 15 vn1 15, 0.67)
+@resoScreen(vn2 22 vc 20)
 @noiseStop
 
 NOTE 0 3 silence @fermata

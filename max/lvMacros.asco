@@ -2,10 +2,17 @@
 ;	@midicent2hz(@symb2midicent($note))
 ;} 
 
+@macro_def @oddHarms($root, $amp) {
+// freq-amp-decayrate triplets for use with [resonators]
+
+	$root $amp @rand_int(50) ($root * 3) $amp @rand_int(20) ($root * 5) ($amp * 1.2) @rand_int(10) ($root * 7) ($amp * 1.3) @rand_int(20) ($root * 9) 0.53 @rand_int(13) ($root * 11) 0.6 @rand_int(25) ($root * 13) 0.8 @rand_int(18) ($root * 15) 0.9 @rand_int(31) ($root * 17) 0.95 @rand_int(20) ($root * 19) 1 @rand_int(50)
+}
+
+
 @macro_def @start {
-	spat source 1 aed -90 0 1
+	spat source 1 aed -90 0 2
 	spat source 2 aed 90 0 1
-	spat source 3 aed 0 0 2
+	spat source 3 aed 0 0 1
 	1-out off
 	1-gran off
 	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
@@ -23,10 +30,10 @@
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	1-gran 1p 10 $in
+	1-gran 1p 2 $in
 	1-out 1g 0.2
 	; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
-	1-setpartials 29.14 0.2 50 49 0.4 25 110 0.8 3 130.81 1 2 196 1 1 293.66 1 1 440 1.1 1 659 1.2 1
+	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2)
 }
 
 @macro_def @noiseRec($in) {
@@ -34,6 +41,7 @@
 	mugran play 0
 	record 1
 	playmode 0
+	2-out $in
 ;	loop noiseloop 120ms {
 ;		cursor @rand_int(2000)
 	;	mugran frequency 29.14
@@ -63,18 +71,13 @@
 
 @macro_def @toneScreen($in, $delay) {
 	1-teeth $in
-	1-trans 1w 1
+	1-trans 1w 1.2 $in
 	3-out 1t
 	1-tdel $delay 
 	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
 	1-envwarp 58.27 1.1
 }
 
-@macro_def @oddHarms($root) {
-// freq-amp-decayrate triplets for use with [resonators]
-
-	$root 0.2 50 ($root * 3) 0.2 20 ($root * 5) 0.4 10 ($root * 7) 0.68 5 ($root * 9) 0.53 3 ($root * 11) 0.6 5 ($root * 13) 0.8 8 ($root * 15) 0.9 11 ($root * 17) 0.95 20 ($root * 19) 1 50
-}
 
 
 
