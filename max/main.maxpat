@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 82.0, 1084.0, 920.0 ],
+		"rect" : [ 35.0, 85.0, 890.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1003,8 +1003,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2237,8 +2237,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2388,7 +2388,7 @@
 														"filename" : "µKflux.amxd.maxsnap",
 														"filepath" : "Mac SSD:/Users/andrewbenson/Documents/Max 7/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "1b07bd468e6e9d700e8e10dc04414bf4"
+														"snapshotfileid" : "b45cd3c0ac8e2a3fd28c98e7e9c56c15"
 													}
 
 												}
@@ -5391,8 +5391,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5848,21 +5848,21 @@
 												"selection" : [ 0.301786, 0.351786 ],
 												"loop" : 1,
 												"content_state" : 												{
-													"speed" : [ 1.0 ],
-													"formant" : [ 1.0 ],
-													"originaltempo" : [ 120.0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"timestretch" : [ 0 ],
-													"play" : [ 0 ],
 													"pitchshift" : [ 1.0 ],
-													"quality" : [ "basic" ],
+													"originallengthms" : [ 0.0 ],
+													"originaltempo" : [ 120.0 ],
 													"followglobaltempo" : [ 0 ],
+													"pitchcorrection" : [ 0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"basictuning" : [ 440 ],
 													"mode" : [ "basic" ],
+													"timestretch" : [ 0 ],
 													"formantcorrection" : [ 0 ],
+													"play" : [ 0 ],
 													"slurtime" : [ 0.0 ],
-													"originallengthms" : [ 0.0 ],
-													"pitchcorrection" : [ 0 ]
+													"quality" : [ "basic" ],
+													"speed" : [ 1.0 ],
+													"formant" : [ 1.0 ]
 												}
 
 											}
@@ -5986,15 +5986,15 @@
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-6",
-									"linecount" : 40,
+									"linecount" : 39,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1002.0, 666.0, 154.0, 560.0 ],
+									"patching_rect" : [ 1002.0, 666.0, 158.0, 547.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 18,
-									"presentation_rect" : [ 12.0, 197.5, 321.0, 257.0 ],
+									"presentation_rect" : [ 12.0, 197.5, 325.0, 257.0 ],
 									"style" : "",
 									"text" : "29.14 0.2 36 87.42 0.2 3 145.7 0.24 5 203.98 0.26 6 262.26 0.53 1 320.54 0.6 13 378.82 0.8 7 437.1 0.9 23 495.38 0.95 4 553.66 1 48 49 0.4 23 147 0.4 19 245 0.48 7 343 0.52 6 441 0.53 4 539 0.6 5 637 0.8 8 735 0.9 21 833 0.95 11 931 1 25 110 0.8 5 330 0.8 1 550 0.96 9 770 1.04 16 990 0.53 7 1210 0.6 15 1430 0.8 0 1650 0.9 30 1870 0.95 15 2090 1 13 130.81 1 42 392.43 1 16 654.05 1.2 8 915.67 1.3 12 1177.29 0.53 3 1438.91 0.6 6 1700.53 0.8 1 1962.15 0.9 1 2223.77 0.95 4 2485.39 1 5 196 1 26 588 1 12 980 1.2 5 1372 1.3 13 1764 0.53 3 2156 0.6 11 2548 0.8 12 2940 0.9 1 3332 0.95 14 3724 1 44 293.66 1 6 880.98 1 12 1468.3 1.2 6 2055.620117 1.3 18 2642.94 0.53 7 3230.26 0.6 5 3817.58 0.8 9 4404.9 0.9 15 4992.220215 0.95 10 5579.54 1 41 440 1.1 25 1320 1.1 11 2200 1.32 7 3080 1.43 6 3960 0.53 8 4840 0.6 0 5720 0.8 10 6600 0.9 27 7480 0.95 13 8360 1 3 659 1.2 16 1977 1.2 12 3295 1.44 8 4613 1.56 2 5931 0.53 3 7249 0.6 4 8567 0.8 13 9885 0.9 18 11203 0.95 3 12521 1 6"
 								}
@@ -7449,7 +7449,6 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
-					"chanoffset" : 4,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -7475,7 +7474,6 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
-					"chanoffset" : 3,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -7501,7 +7499,6 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
-					"chanoffset" : 2,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -9603,18 +9600,18 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
 			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-48" : [ "output", "output", 0 ],
-			"obj-58" : [ "live.gain~", "gain", 0 ],
-			"obj-1::obj-9" : [ "amxd~", "amxd~", 0 ],
-			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
 			"obj-124::obj-2" : [ "amxd~[2]", "amxd~[2]", 0 ],
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ]
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
+			"obj-58" : [ "live.gain~", "gain", 0 ],
+			"obj-1::obj-9" : [ "amxd~", "amxd~", 0 ],
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-4::obj-32" : [ "amxd~[3]", "amxd~", 0 ],
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -9895,8 +9892,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

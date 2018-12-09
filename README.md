@@ -89,18 +89,39 @@ Receiver:
 
 W implements the [teeth~] comb filtering MSP object. The feedback delay value of the filter corresponds to the fundamental frequency of the comb. See the annex at the bottom for a list of delay-frequency values.
 
+Receivers:
+* tw - a list of comb filter params: mod depth, mod rate, fb delay, gain, ff gain, fb gain
+* tdel - change just the fb delay parameter
+
 ### T / trans
 
 4 ins - 1 out
+
+T implements the [supervp.trans~] object, used to alter the input audio's spectral and temporal shapes.
+
+Receivers:
+* envwarp - accepts a pair of freq-scale values (e.g. 120 1.1) and warps the spectrum starting from the given fundamental frequency, by the given multiplier scale
+* remix - 0/1 toggles remixing; lists specify the 3 components and 2 params: tones, noise, transients, "relax", "error"
 
 ### X / cross
 
 2 ins - 1 out
 
+X implements the [supervp.cross~] object, which combines the amplitude/frequency characteristics of two input streams
+
+Receiver:
+* svpcross - a list of four [0...1] values: L amp, L freq, R amp, R freq
+
 ### D / delay
 
 4 ins - 1 out
 
+D implements the [Max SpectralDelay] M4L object, where different frequency bins have varying delay time & feedback values.
+
+Receivers:
+* dtime - sets the time scale, up to 5 seconds
+* dfb - sets the feedback scale, up to 100%
+* dset - sets the snapshot preset # of the device, controlling the response curves of time/fb
 
 ## Output section
 
@@ -110,29 +131,52 @@ The spatialised signal is sent to 6 analog output channels.
 
 
 ### Annex: TEETH~ FB DELAY <-> FUNDAMENTAL FREQ
-; https://docs.cycling74.com/max7/maxobject/teeth~
-;
-; 1.03 - 245 (B)
-; 1 - 1002 (B+)
-; 0.99 - 256 (B-C)
-; 0.97 - 525 (C)
-; 0.94 - 269 (C+)
-; 0.92 - 1102 (C#)
-; 0.89 - 283 (D--)
-; 0.88 - 580 (D-)
-; 0.86 - 298 (D+)
-; 0.83 - 1225 (D#-)
-; 0.81 - 315 (D#+)
-; 0.79 - 648 (E-)
-; 0.77 - 334 (E+)
-; 0.73 - 1378 (F-)
-; 0.71 - 356 (F+)
-; 0.70 = 735 (F#)
-; 0.67 - 380 (F#-G)
-; 0.64 - 1575 (G+)
-; 0.62 - 408 (G#-)
-; 0.60 - 848 (G#+)
-; 0.58 - 441 (A)
-; 0.56 - 1837 (A#-)
-; 0.53 - 479 (A#-B)
-; 0.5 - 1002 (B+)
+https://docs.cycling74.com/max7/maxobject/teeth~
+
+1.03 - 245 (B)
+
+ 1 - 1002 (B+)
+
+ 0.99 - 256 (B-C)
+
+ 0.97 - 525 (C)
+
+ 0.94 - 269 (C+)
+
+ 0.92 - 1102 (C#)
+
+ 0.89 - 283 (D--)
+
+ 0.88 - 580 (D-)
+
+ 0.86 - 298 (D+)
+
+ 0.83 - 1225 (D#-)
+
+ 0.81 - 315 (D#+)
+
+ 0.79 - 648 (E-)
+
+ 0.77 - 334 (E+)
+
+ 0.73 - 1378 (F-)
+
+ 0.71 - 356 (F+)
+
+ 0.70 = 735 (F#)
+
+ 0.67 - 380 (F#-G)
+
+ 0.64 - 1575 (G+)
+
+ 0.62 - 408 (G#-)
+
+ 0.60 - 848 (G#+)
+
+ 0.58 - 441 (A)
+
+ 0.56 - 1837 (A#-)
+
+ 0.53 - 479 (A#-B)
+
+ 0.5 - 1002 (B+)
