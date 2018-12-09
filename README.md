@@ -46,7 +46,7 @@ These kinds of messages are to be sent by Antescofo, as part of the electronic s
 
 The available transform modules are:
 
-### C: capture
+### C / capture
 
 4 ins - 1 out
 
@@ -63,27 +63,41 @@ Receivers:
 
 also see help files for [mubu], [mubu.knn], [mubu.granular~]
 
-### P: partials
+### P / partials
 
 4 ins - 1 out
 
-### G: gran
+P accepts a list of frequency / amplitude / decay rate triplets, to activate resonators which respond to the input audio.
+
+Receivers:
+* setpartials - sets the list of partials to resonate
+* cp2 - an alternate set of partials
+* cp1 - the list in [r cp2] is combined with the list in this one (in this order)
+
+### G / gran
 
 4 ins - 1 out
 
-### W: teeth
+G implements the [uKflux] M4L real-time granular device. Its behaviour is different from C, in that it acts on the incoming audio buffer, instead of a previously recorded clip.
+
+Receiver:
+* granset - sets the snapshot preset # of the M4L device
+
+### W / teeth
 
 4 ins - 1 out
 
-### T: trans
+W implements the [teeth~] comb filtering MSP object. The feedback delay value of the filter corresponds to the fundamental frequency of the comb. See the annex at the bottom for a list of delay-frequency values.
+
+### T / trans
 
 4 ins - 1 out
 
-### X: cross
+### X / cross
 
 2 ins - 1 out
 
-### D: delay
+### D / delay
 
 4 ins - 1 out
 
@@ -93,3 +107,32 @@ also see help files for [mubu], [mubu.knn], [mubu.granular~]
 The output module is controlled via Ircam Spat. As with all routing, three (or more, if needed) signal lines can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
 
 The spatialised signal is sent to 6 analog output channels.
+
+
+### Annex: TEETH~ FB DELAY <-> FUNDAMENTAL FREQ
+; https://docs.cycling74.com/max7/maxobject/teeth~
+;
+; 1.03 - 245 (B)
+; 1 - 1002 (B+)
+; 0.99 - 256 (B-C)
+; 0.97 - 525 (C)
+; 0.94 - 269 (C+)
+; 0.92 - 1102 (C#)
+; 0.89 - 283 (D--)
+; 0.88 - 580 (D-)
+; 0.86 - 298 (D+)
+; 0.83 - 1225 (D#-)
+; 0.81 - 315 (D#+)
+; 0.79 - 648 (E-)
+; 0.77 - 334 (E+)
+; 0.73 - 1378 (F-)
+; 0.71 - 356 (F+)
+; 0.70 = 735 (F#)
+; 0.67 - 380 (F#-G)
+; 0.64 - 1575 (G+)
+; 0.62 - 408 (G#-)
+; 0.60 - 848 (G#+)
+; 0.58 - 441 (A)
+; 0.56 - 1837 (A#-)
+; 0.53 - 479 (A#-B)
+; 0.5 - 1002 (B+)
