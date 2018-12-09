@@ -20,6 +20,8 @@ For performance, the first 4 analog inputs will be used (activate "audio in").
 
 "monitor" sends the inputs straight to the Stereo Out, will be off in performance.
 
+"calibration mode" sends the actively followed track to the Stereo Out.
+
 ## Score following
 
 Antescofo is used for:
@@ -32,7 +34,7 @@ All orange receivers get messages from Antescofo. [r source] gets the instrument
 
 ## Transform modules
 
-All modules have 2 inputs (to be treated separately) or 4 inputs (to be added together), depending on their function. All transform module haves one output.
+All modules have 4 inputs (which are summed together), except for X (cross) which has 2 (independent). All transform modules have one output.
 
 If needed, you can add more instances of an effect by creating e.g. [bpatcher freeze @args 2] etc.
 
@@ -41,6 +43,50 @@ Routing is done via messages containing source-amplitude pairs. For example, the
 ![Routing messages](/readme/routing.PNG)
 
 These kinds of messages are to be sent by Antescofo, as part of the electronic score.
+
+The available transform modules are:
+
+### C: capture
+
+4 ins - 1 out
+
+This module has only one instance (there is no 1-capture, 2-capture etc). Still, the [capture] MuBu object allows switching between several buffers.
+
+C is used to record buffers and replay them through a granulator at varying speeds/positions. There are two playback modes: "cursor" simply plays back whichever grain is under the playback cursor; "KNN" matches the incoming sound to the most similar grain, and plays that.
+
+Receivers:
+* record - 0/1 stops/starts recording
+* mubuffer - used to select the buffer #, or to clearall
+* cursor - positions the playback cursor (in ms)
+* playmode - switch between 0 (inactive), 1 (KNN mode) and 2 (cursor)
+* mugran - controls grain parameters such as positionvar, duration, etc
+
+also see help files for [mubu], [mubu.knn], [mubu.granular~]
+
+### P: partials
+
+4 ins - 1 out
+
+### G: gran
+
+4 ins - 1 out
+
+### W: teeth
+
+4 ins - 1 out
+
+### T: trans
+
+4 ins - 1 out
+
+### X: cross
+
+2 ins - 1 out
+
+### D: delay
+
+4 ins - 1 out
+
 
 ## Output section
 
