@@ -6,6 +6,9 @@ antescofo::analysis 4096 512
 antescofo::suivi 1
 antescofo::pedal 0
 
+; DEMO BUFFER RECORDING
+rec 0
+
 BPM 60 ; 1 beat = 1 second
 
 $playing := 0 ; for debugging
@@ -17,14 +20,15 @@ loadfile takes/part1-3.wav
 ;print @note2hz("A4")
 ;print @oddHarms(100)
 
-@resoScreen(vn2 30)
+@resoScreen(vn2 10)
+$p1 := ::spat_circular(1, -90, 2, 1)
 
 ; ==============
 
 
 input-gain 30 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
-rec 1
+
 
 TRILL (C4 D#6) 3	m1
 

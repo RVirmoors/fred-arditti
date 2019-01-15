@@ -23,14 +23,16 @@
 	capture off
 	mubuffer clearall
 	$peaks := 0
+	$energy := 0
+	$periodicity := 0
 	mugran duration 512, durationvar 64, positionvar 512, periodvar 50
 }
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	1-gran 1p 2 $in
-	1-out 1g 0.2
-	1-setpartials @oddHarms(29.14, 0.2); @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
+	1-gran 1p 3 $in
+	1-out 1g
+	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
 }
 
 @macro_def @noiseRec($in) {
@@ -73,6 +75,20 @@
 	1-tdel $delay 
 	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
 	1-envwarp 58.27 1.1
+}
+
+@proc_def ::spat_circular($source, $start_a, $start_d, $dir) {
+	$end_a := $start_a + $dir * (1.1 - $periodicity) * 10
+	$end_d := $start_d * (1 - $energy) + 0.1
+	print $end_a $end_d
+
+	curve Spat_circ @action := {spat source $source aed $a 0 $d} {
+		$a, $d {
+			{$start_a, $start_d}
+			1 {$end_a, $end_d}
+		}
+	}
+	1 ::spat_circular($source, $end_a, $end_d, $dir)
 }
 
 
