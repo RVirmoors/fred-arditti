@@ -8,7 +8,7 @@
 
 
 @macro_def @start {
-	spat source 1 aed -90 0 2
+	spat source 1 aed -90 0 1
 	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1
 	1-out off
@@ -30,7 +30,7 @@
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	1-gran 1p 3 $in
+	1-gran 1p 1 ;$in
 	1-out 1g
 	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
 }
@@ -78,17 +78,19 @@
 }
 
 @proc_def ::spat_circular($source, $start_a, $start_d, $dir) {
+	@local $end_a, $end_d
 	$end_a := $start_a + $dir * (1.1 - $periodicity) * 10
-	$end_d := $start_d * (1 - $energy) + 0.1
-	print $end_a $end_d
-
-	curve Spat_circ @action := {spat source $source aed $a 0 $d} {
-		$a, $d {
-			{$start_a, $start_d}
-			1 {$end_a, $end_d}
+	$end_d := $start_d * (1 - $energy) * 1.5
+	curve Spat_circ 
+		@action := {spat source $source aed $a 0 $end_d} 
+		@grain := 0.1
+		{
+		$a {
+			{$start_a}
+			1 {$end_a}
 		}
 	}
-	1 ::spat_circular($source, $end_a, $end_d, $dir)
+	1 ::spat_circular($source, $end_a, $start_d, $dir)
 }
 
 

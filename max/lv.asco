@@ -20,8 +20,7 @@ loadfile takes/part1-3.wav
 ;print @note2hz("A4")
 ;print @oddHarms(100)
 
-@resoScreen(vn2 10)
-$p1 := ::spat_circular(1, -90, 2, 1)
+@resoScreen(vn2 25)
 
 ; ==============
 
@@ -31,6 +30,8 @@ input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
 
 TRILL (C4 D#6) 3	m1
+$spat1 := ::spat_circular(1, -90, 1, 1) ; start spinning screen1
+$spat2 := ::spat_circular(2, 90, 1.2, -20)
 
 3 input-sel 4	; CELLO
 
@@ -66,6 +67,7 @@ CHORD (-A3 F#3) 2 imperc
 NOTE 0 3 silence @fermata
 @toneScreen(vn2 15, 0.58)
 @resoScreen(off)
+abort $spat1
 
 TRILL (A4 G5) 2 delic
 @toneScreen(off, 0)
