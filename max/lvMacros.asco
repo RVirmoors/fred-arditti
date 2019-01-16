@@ -93,8 +93,20 @@
 	1 ::spat_circular($source, $end_a, $start_d, $dir)
 }
 
+@proc_def ::spat_teleport($source, $a, $d) {
+	whenever ($BEAT_POS) { // for each new event, teleport
+		@local $end_a, $end_d
+		$end_a := $a + @rand_int(270)
+		$end_d := $d * (1 - $energy) * 1.5
+		spat source $source aed $end_a 0 $end_d
+	}
+}
 
-
+@proc_def ::spat_radial($source, $a, $d) {
+	whenever ($energy) {
+		spat source $source aed ($a + $periodicity * 45) 0 ($d * (1 - $energy))
+	}
+}
 
 ; TEETH FB DELAY <-> FUNDAMENTAL FREQ
 ; https://docs.cycling74.com/max7/maxobject/teeth~
