@@ -16,7 +16,7 @@ $playing := 0 ; for debugging
 
 @start ; reset initial params
 
-grillHarm(400,50,30)
+print @grillHarms(400, 50, 30)
 
 loadfile takes/part1-3.wav
 

@@ -7,14 +7,14 @@
 }
 
 // root, interval, amp -> triplets for [resonators]
-@fun_def grillHarm($root, $i, $amp) {
-	$t := [ $x in $root .. ($root*2) : $i ]
+@fun_def @grillHarms($root, $i, $amp) {
+	$t := [ $x | $x in $root .. ($root*2+1) : $i ]
 	$output := ""
 	forall $freq in $t 
 	{
-		$output := $output + $freq + $amp + $rand_int(30)
+		$output := $output + " " + $freq + " " + $amp * (@rand(0.5)+0.5) + " " + @rand_int(30)
 	}
-    print $output
+    return $output
 }
 
 @macro_def @start {
