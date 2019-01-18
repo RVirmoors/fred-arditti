@@ -19,6 +19,7 @@ $playing := 0 ; for debugging
 print @grillHarms(400, 50, 30)
 
 loadfile takes/part1-3.wav
+mubuffer readall capture_init.mubu
 
 ;print @note2hz("A4")
 ;print @oddHarms(100)
@@ -43,7 +44,8 @@ NOTE F1 5 cl-low @fermata
 
 @toneScreen(vc 15, 0.73)
 ; @resoScreen(off)
-@noiseRec(vn2 15)	
+;@noiseRec(vn2 15)	
+@noiseScreen(vn2 15)
 3 @resoScreen(vn2 28)	; reopen
 @noiseStop
 
@@ -61,7 +63,6 @@ NOTE E3 5 va-e3
 NOTE A3 1 va-a3
 @toneScreen(vc 10 va 15 vn1 15, 0.7)
 @noiseScreen(vn2 1)
-$spatNoise.$start_d := $spatNoise.$start_d * 2
 input-gain 8
 
 CHORD (-A3 F#3) 2 imperc
