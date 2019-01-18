@@ -50,7 +50,7 @@
 	mugran play 0
 	record 1
 	playmode 0
-	2-out $in
+;	2-out $in
 ;	loop noiseloop 120ms {
 ;		cursor @rand_int(2000)
 	;	mugran frequency 29.14
@@ -87,6 +87,20 @@
 	1-envwarp 58.27 1.1
 }
 
+
+@macro_def @loopScreen($in) {
+	capture $in
+	1-trans c 1
+	1-delay 1t 1 c 0.2
+	1-out 1d
+	mugran play 1
+	playmode 2
+	record 0
+	1-remix 1
+	1-remix 0.5 0.2 1 1 1
+	1-dtime 666
+	1-dfb 50
+}
 
 
 ; TEETH FB DELAY <-> FUNDAMENTAL FREQ
