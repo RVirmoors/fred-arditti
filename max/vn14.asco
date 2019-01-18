@@ -1,20 +1,33 @@
+@insert lvMacros.asco
+@insert lvSpat.asco
+
 antescofo::analysis 4096 512
 antescofo::suivi 1
 antescofo::pedal 0
 
 BPM 60 ; 1 beat = 1 second
+
 $playing := 0
+
+@start ; reset initial params
+demoms 0
 
 loadfile takes/m14-37-v1.wav
 
-EVENT 10 a
 if ($playing == 0) {
-	demoms 1000
+	demoms 800
 }
-rec 1
-2 rec 0
+EVENT 10 m14 ;
 
-EVENT 10 b
+;rec 1
+;2 rec 0
+
 if ($playing == 0) {
-	demoms 9000
+	demoms 14500
 }
+EVENT 10 m16
+
+if ($playing == 0) {
+	demoms 30500
+}
+EVENT 10 m18 
