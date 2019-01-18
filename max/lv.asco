@@ -1,6 +1,7 @@
 ; F.P. - lvbeet
 
 @insert lvMacros.asco
+@insert lvSpat.asco
 
 antescofo::analysis 4096 512
 antescofo::suivi 1
@@ -14,6 +15,8 @@ BPM 60 ; 1 beat = 1 second
 $playing := 0 ; for debugging
 
 @start ; reset initial params
+
+grillHarm(400,50,30)
 
 loadfile takes/part1-3.wav
 
