@@ -92,7 +92,7 @@
 	capture $in
 	1-trans c 1
 	1-delay 1t 1 c 0.2
-	1-out 1d
+	2-out 1d
 	mugran play 1
 	playmode 2
 	record 0
@@ -100,6 +100,13 @@
 	1-remix 0.5 0.2 1 1 1
 	1-dtime 666
 	1-dfb 50
+}
+
+@macro_def @resoGrill($in) {
+	1-partials $in
+	1-gran 1p 1 ;$in
+	1-out 1g
+	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
 }
 
 

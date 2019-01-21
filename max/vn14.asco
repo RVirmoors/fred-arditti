@@ -14,9 +14,11 @@ demoms 0
 
 loadfile takes/m14-37-v1.wav
 
-if ($playing == 0) {
-	demoms 800
-}
+@resoGrill(vn1 1)
+
+;if ($playing == 0) {
+;	demoms 800
+;}
 EVENT 10 m14 ;
 @noiseRec(vn1 1)
 
@@ -31,11 +33,11 @@ EVENT 10 m16
 @loopScreen(vn1 1)
 curve playLoop 
 	@action := {cursor $x} 
-	@grain := 0.1
+	@grain := 0.01
 	{
 	$x {
 		{0}
-		10 {10000}
+		15 {15000}
 	}
 }
 
