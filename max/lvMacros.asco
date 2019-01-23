@@ -8,8 +8,8 @@
 
 // root, interval, amp -> triplets for [resonators]
 @fun_def @grillHarms($root, $i, $amp) {
-	$t := [ $x | $x in $root .. ($root*2+1) : $i ]
-	$output := ""
+	$t := [ $x | $x in $root+$i .. ($root*2+1) : $i ]
+	$output := $root + " " + $amp + " " + 30
 	forall $freq in $t 
 	{
 		$output := $output + " " + $freq + " " + $amp * (@rand(0.5)+0.5) + " " + @rand_int(30)
@@ -106,7 +106,7 @@
 	1-partials $in
 	1-gran 1p 2 ;$in
 	1-out 1g
-	1-setpartials @grillHarms(400, 40, 1)
+	1-setpartials @grillHarms(400, 100, 1)
 }
 
 
