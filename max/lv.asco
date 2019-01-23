@@ -16,8 +16,6 @@ $playing := 0 ; for debugging
 
 @start ; reset initial params
 
-print @grillHarms(400, 50, 30)
-
 loadfile takes/part1-3.wav
 mubuffer readall capture_init.mubu
 
