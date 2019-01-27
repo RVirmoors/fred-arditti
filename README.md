@@ -114,14 +114,15 @@ Receiver:
 
 ### D / delay
 
-4 ins - 1 out
+4 ins - 2 outs
 
-D implements the [Max SpectralDelay] M4L object, where different frequency bins have varying delay time & feedback values.
+This module has only one instance (there is no 1-delay, 2-delay etc).
+It is typically placed at the end of a chain. It's the only module with a stereo out, so you can route d1 to screen 1 and d2 to screen 2 in the output section.
+
+D implements the [Granular Mirror Maze] M4L object by Maurizio Giri. You need to copy the .amxd file to your Max program folder (I have it in c:\Program Files (x86)\Cycling '74\Max 7\resources\packages\Max for Live\patchers\ )
 
 Receivers:
-* dtime - sets the time scale, up to 5 seconds
-* dfb - sets the feedback scale, up to 100%
-* dset - sets the snapshot preset # of the device, controlling the response curves of time/fb
+* mirror - control the following parameters: feedbk, grains_on_off, grain_freq, scrub_freq, max_delay, highpass, lowpass
 
 ## Output section
 

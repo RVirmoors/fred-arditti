@@ -29,7 +29,9 @@
 	1-tw 0.58 164.83 1. 0.38 0.15 0.37
 	1-trans off
 	1-cross off
-	1-delay off
+	delay off
+	mirror dry -70
+	mirror grains_on_off 0
 	capture off
 	mubuffer clearall
 	$peaks := 0
@@ -68,14 +70,17 @@
 @macro_def @noiseScreen($in) {
 	capture $in
 	1-cross c 1 $in
-	1-delay 1x 1 c 0.2
-	2-out 1d
+	delay 1x 1 c 0.2
+	2-out d1
 	mugran play 1
 	playmode 1
 	record 0
-	1-svpcross scaling 0.3 1 0.7 0
-	1-dtime 1000
-	1-dfb 50
+	1-svpcross 0.3 1 0.7 0
+	mirror grains_on_off 1
+	mirror feedbk 0.5
+	mirror grain_freq 6.14
+	mirror scrub_freq 5
+	mirror max_delay 370
 }
 
 @macro_def @toneScreen($in, $delay) {
@@ -91,15 +96,13 @@
 @macro_def @loopScreen($in) {
 	capture $in
 	1-trans c 1
-	1-delay 1t 1 c 0.2
-	2-out 1d
+	delay 1t 1 c 0.2
+	2-out d1
 	mugran play 1
 	playmode 2
 	record 0
 	1-remix 1
 	1-remix 0.5 0.2 1 1 1
-	1-dtime 666
-	1-dfb 50
 }
 
 @macro_def @resoGrill($in) {
