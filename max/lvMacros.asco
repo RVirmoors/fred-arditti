@@ -104,10 +104,12 @@
 }
 
 @macro_def @resoGrill($in) {
-	1-partials $in
-	1-gran 1p 2 ;$in
+	;1-partials $in
+	1-teeth $in
+	1-gran 1w 1.5 ;$in
 	1-out 1g
-	1-setpartials @grillHarms(400, 100, 1)
+	1-tdel 0.36
+	;1-setpartials @grillHarms(293.66, 36.7, 1) ; from D4
 }
 
 @macro_def @mirror($in) {
@@ -116,15 +118,13 @@
 	3-out d2
 	mirror grains_on_off 1
 	mirror feedbk 1.02, grain_freq 30, scrub_freq 0.25
-	mirror highpass 634, lowpass 10100
-	::energy_mirror()
+	mirror highpass 1760, lowpass 14080		; A6 to A9
+	;::energy_mirror()
 }
 
 @proc_def ::energy_mirror() {
 	whenever ($energy) {
-		if (@rand_int(100) < 10) {
-			mirror max_delay (200 + (1-$energy) * 1800)
-		}
+		mirror max_delay (200 + (1-$energy) * 1800)
 	}
 }
 

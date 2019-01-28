@@ -13,10 +13,12 @@ $playing := 0
 demoms 0
 
 input-sel 1 ; vn1
+input-gain 1
 
 loadfile takes/m14-v1v2va.wav
 
-@resoGrill(vn1 1 vn2 1 va 0.5)
+NOTE D5 1/7	m14
+;@resoGrill(vn1 1 vn2 1 va 0.5)
 
-@mirror(vn1 1 vn2 1)
+;@mirror(vn1 1 vn2 1)
 ;5 @mirrorOff
