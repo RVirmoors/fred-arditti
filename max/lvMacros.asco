@@ -96,6 +96,7 @@
 	1-trans c 1
 	delay 1t 1 c 0.2
 	2-out d1
+	3-out d2
 	mugran play 1
 	playmode 2
 	record 0
@@ -117,14 +118,20 @@
 	2-out d1
 	3-out d2
 	mirror grains_on_off 1
-	mirror feedbk 1.02, grain_freq 30, scrub_freq 0.25
+	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25
 	mirror highpass 1760, lowpass 14080		; A6 to A9
-	;::energy_mirror()
+	::energy_mirror()
 }
 
 @proc_def ::energy_mirror() {
 	whenever ($energy) {
 		mirror max_delay (200 + (1-$energy) * 1800)
+		if ($energy < 0.3 && $energy > 0.1 ) {
+			mirror grains_on_off 1
+		}
+		if ($energy > 0.4 || $energy < 0.1) {
+			mirror grains_on_off 0
+		}
 	}
 }
 

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 82.0, 890.0, 920.0 ],
+		"rect" : [ 612.0, 178.0, 890.0, 695.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,51 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 110.0, 67.5, 36.0, 48.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 107.0, 75.5, 51.0, 20.0 ],
+					"style" : "helpfile_label",
+					"text" : "fb delay"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 61.0, 69.5, 36.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 62.0, 75.5, 47.0, 20.0 ],
+					"style" : "helpfile_label",
+					"text" : "m rate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 18.0, 84.5, 36.0, 48.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 8.0, 75.5, 53.0, 20.0 ],
+					"style" : "helpfile_label",
+					"text" : "m depth"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"channels" : 1,
 					"id" : "obj-1",
@@ -122,7 +167,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 467.0, 416.0, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 158.0, 71.5, 54.0, 23.0 ],
+					"presentation_rect" : [ 158.0, 97.5, 54.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -189,7 +234,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 264.0, 322.5, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 111.0, 71.5, 43.0, 23.0 ],
+					"presentation_rect" : [ 111.0, 97.5, 43.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -218,6 +263,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 476.0, 438.0, 36.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 167.0, 75.5, 36.0, 20.0 ],
 					"style" : "helpfile_label",
 					"text" : "gain"
 				}
@@ -239,13 +286,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 623.099976, 427.0, 67.0, 34.0 ],
+					"patching_rect" : [ 623.099976, 427.0, 67.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 274.0, 75.5, 46.0, 20.0 ],
 					"style" : "helpfile_label",
-					"text" : "feedback gain"
+					"text" : "fb gain"
 				}
 
 			}
@@ -275,7 +323,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 526.5, 383.0, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 214.0, 71.5, 54.0, 23.0 ],
+					"presentation_rect" : [ 214.0, 97.5, 54.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -297,7 +345,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 611.099976, 405.0, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 270.0, 71.5, 54.0, 23.0 ],
+					"presentation_rect" : [ 270.0, 97.5, 54.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -319,7 +367,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 222.5, 292.5, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 60.0, 71.5, 47.0, 23.0 ],
+					"presentation_rect" : [ 60.0, 97.5, 47.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -341,7 +389,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 188.0, 262.5, 54.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 71.5, 45.0, 23.0 ],
+					"presentation_rect" : [ 12.0, 97.5, 45.0, 23.0 ],
 					"style" : "",
 					"tricolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"triscale" : 0.9
@@ -381,13 +429,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-36",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 538.099976, 405.0, 83.0, 34.0 ],
+					"patching_rect" : [ 538.099976, 405.0, 83.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 218.5, 75.5, 45.0, 20.0 ],
 					"style" : "helpfile_label",
-					"text" : "feedforward gain"
+					"text" : "ff gain"
 				}
 
 			}
