@@ -9,10 +9,10 @@
 // root, interval, amp -> triplets for [resonators]
 @fun_def @grillHarms($root, $i, $amp) {
 	$t := [ $x | $x in $root+$i .. ($root*2+1) : $i ]
-	$output := $root + " " + $amp + " " + 30
+	$output := $root + " " + $amp + " " + 10
 	forall $freq in $t 
 	{
-		$output := $output + " " + $freq + " " + $amp * (@rand(0.5)+0.5) + " " + @rand_int(30)
+		$output := $output + " " + $freq + " " + $amp * (@rand(0.5)+0.5) + " " + @rand_int(10)
 	}
     return $output
 }
@@ -22,6 +22,8 @@
 	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1
 	1-out off
+	2-out off
+	3-out off
 	1-gran off
 	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
@@ -30,8 +32,7 @@
 	1-trans off
 	1-cross off
 	delay off
-	mirror dry -70
-	mirror grains_on_off 0
+	mirror dry -70, grains_on_off 0
 	capture off
 	mubuffer clearall
 	$peaks := 0
@@ -77,10 +78,7 @@
 	record 0
 	1-svpcross 0.3 1 0.7 0
 	mirror grains_on_off 1
-	mirror feedbk 0.5
-	mirror grain_freq 6.14
-	mirror scrub_freq 5
-	mirror max_delay 370
+	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 370
 }
 
 @macro_def @toneScreen($in, $delay) {
@@ -110,6 +108,31 @@
 	1-gran 1p 2 ;$in
 	1-out 1g
 	1-setpartials @grillHarms(400, 100, 1)
+}
+
+@macro_def @mirror($in) {
+	delay $in
+	2-out d1
+	3-out d2
+	mirror grains_on_off 1
+	mirror feedbk 1.02, grain_freq 30, scrub_freq 0.25
+	mirror highpass 634, lowpass 10100
+	::energy_mirror()
+}
+
+@proc_def ::energy_mirror() {
+	whenever ($energy) {
+		if (@rand_int(100) < 10) {
+			mirror max_delay (200 + (1-$energy) * 1800)
+		}
+	}
+}
+
+@macro_def @mirrorOff {	
+	@mirror(off)
+	abort ::energy_mirror()
+	2 2-out off
+	3-out off
 }
 
 
