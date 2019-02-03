@@ -1,33 +1,47 @@
+$a := [-90, 0, 90]
+$d := [1, 1, 1]
+
+whenever ($a[0] || $d[0]) {
+	spat source 1 aed ($a[0]) 0 ($d[0])
+}
+whenever ($a[1] || $d[1]) {
+	spat source 2 aed ($a[1]) 0 ($d[1])
+}
+whenever ($a[2] || $d[2]) {
+	spat source 3 aed ($a[2]) 0 ($d[2])
+}
+
+
 // dynamic spat processes
 
-@proc_def ::spat_circular($source, $start_a, $start_d, $dir) {
-	@local $end_a, $end_d
-	$end_a := $start_a + $dir * (1.1 - $periodicity) * 10
-	$end_d := $start_d * (1 - $energy) * 1.5
-	curve Spat_circ 
-		@action := {spat source $source aed $a 0 $end_d} 
-		@grain := 0.1
-		{
-		$a {
-			{$start_a}
-			1 {$end_a}
-		}
+@proc_def ::spat_circular($source, $dir) {
+	@local $start_a, $start_d
+	$start_d := $d[($source-1)]
+	loop circular 0.5 {
+		$start_a := $a[($source-1)]
+		$a[($source-1)] := $start_a + $dir * (1.1 - $periodicity)
+		$d[($source-1)] := $start_d * ($energy + 0.5)
+		$a := $a
 	}
-	1 ::spat_circular($source, $end_a, $start_d, $dir)
 }
 
-@proc_def ::spat_teleport($source, $a, $d) {
+@proc_def ::spat_teleport($source) {
+	@local $start_d
+	$start_d := $d[($source-1)]
 	whenever ($BEAT_POS) { // for each new event, teleport
-		@local $end_a, $end_d
-		$end_a := $a + @rand_int(270)
-		$end_d := $d * (1 - $energy) * 1.5
-		spat source $source aed $end_a 0 $end_d
+		$a[($source-1)] := $a[($source-1)] + @rand_int(360)
+		$d[($source-1)] := $start_d * ($energy + 0.5)
+		$a := $a
 	}
 }
 
-@proc_def ::spat_radial($source, $a, $d) {
+@proc_def ::spat_radial($source) {
+	@local $start_a, $start_d
+	$start_d := $d[($source-1)]
+	$start_a := $a[($source-1)]
 	whenever ($energy) {
-		spat source $source aed ($a + $periodicity * 45) 0 ($d * (1 - $energy))
+		$a[($source-1)] := $start_a + $periodicity * 45
+		$d[($source-1)] := $start_d * (1 - $energy)
 	}
 }
 

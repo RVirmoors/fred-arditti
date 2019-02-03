@@ -27,11 +27,10 @@ mubuffer readall capture_init.mubu
 input-gain 30 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
-
 TRILL (C4 D#6) 3	m1
-	$spatReso := ::spat_circular(1, -90, 1, 1) ; start spinning screen1
-	$spatNoise := ::spat_radial(2, 90, 1)
-	$spatTone := ::spat_teleport(3, 0, 1)
+	$spatReso := ::spat_circular(1, 1) ; start spinning screen1
+	$spatNoise := ::spat_radial(2)
+	$spatTone := ::spat_teleport(3)
 ;	abort $spatNoise
 
 	3 input-sel 4	; CELLO
