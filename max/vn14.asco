@@ -14,15 +14,50 @@ demoms 0
 
 loadfile takes/m14-37-v1.wav
 
+input-sel 1 ; vn1
+input-gain 1
+
 @resoGrill(vn1 1)
 
 ;if ($playing == 0) {
 ;	demoms 800
 ;}
-NOTE D5 10	m14
+
+NOTE D5 1/6	m14
 	@resoGrill(vn1 1 vn2 1 va 0.5)
 	@mirror(vn1 1 vn2 1)
 	@noiseRec(vn1 1)
+NOTE Eb5 1/6 e2
+NOTE 0 1/3
+NOTE C#4 1/6 e3
+NOTE B3 1/6 e4
+
+NOTE 0 3/7
+NOTE Gb5 1/7 e5
+NOTE F3 1/7 e6
+NOTE 0 2/7
+
+NOTE D3 1/7 e7
+NOTE Db4 1/7 e8
+NOTE C4 1/7 e9
+NOTE 0 3/7
+NOTE G2 1/7 e10
+
+NOTE G2 2 e10_2
+
+EVENT 1 m15		; TODO: fix (move tracking to vn2)
+NOTE C3 1/5 e1
+NOTE F4 1/5 e2
+NOTE A2 1/5 e3
+NOTE Bb4 1/5 e4
+NOTE Db5 1/5 e5
+NOTE B2 1/5 e6
+NOTE C#4 1/5 e7
+NOTE 0 1/5
+NOTE D#5 1/5 e8
+NOTE E5 1/5 e9
+
+NOTE E5 2 e9_2
 
 if ($playing == 0) {
 	demoms 14500
