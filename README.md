@@ -12,7 +12,7 @@ The overall interface looks something like:
 
 <img src="/readme/overview.PNG" alt="drawing" width="400px"/>
 
-We distinguish 4 areas: input (top-left), scofo (top-right), transform (lower-left), and output (lower-right).
+We distinguish 4 areas: input (top-left), scofo (top-right), transform (lower-left), and output (mid-right).
 
 ## Input section
 
