@@ -29,6 +29,7 @@ For performance, the first 4 analog inputs will be used (activate "audio in").
 Antescofo is used for:
 
 * synchronisation of electronic score and live instruments
+* navigation to key events in the score
 * data routing & some processing
 * signal routing
 
