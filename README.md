@@ -4,6 +4,8 @@ Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT
 
 Max patches are in the [/max/](/max/) subfolder. Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
 
+Copy "Granular Mirror Maze 1.0.amxd" to your Max program folder (I have it in c:\Program Files (x86)\Cycling '74\Max 7\resources\packages\Max for Live\patchers\ )
+
 # how to use the Max performance patch
 
 The overall interface looks something like:
@@ -119,7 +121,7 @@ Receiver:
 This module has only one instance (there is no 1-delay, 2-delay etc).
 It is typically placed at the end of a chain. It's the only module with a stereo out, so you can route d1 to screen 1 and d2 to screen 2 in the output section.
 
-D implements the [Granular Mirror Maze] M4L object by Maurizio Giri. You need to copy the .amxd file to your Max program folder (I have it in c:\Program Files (x86)\Cycling '74\Max 7\resources\packages\Max for Live\patchers\ )
+D implements the [Granular Mirror Maze](https://www.amazingnoises.com/free-devices/granular-mirror-maze/) M4L object by Maurizio Giri. 
 
 Receivers:
 * mirror - control the following parameters: feedbk, grains_on_off, grain_freq, scrub_freq, max_delay, highpass, lowpass
