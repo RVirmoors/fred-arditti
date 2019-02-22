@@ -113,8 +113,11 @@ TRILL (Eb4 E5) 3 @fermata ;v2-improv
 	1 print inside m8...
 	@resoScreen(off)
 
-NOTE 0 1/2 ;m9
-	@resoScreen(vn1 1 vn2 1)
+if ($playing == 0) {
+	demoms 46464
+}
+NOTE 0 1/2 m9
+	@resoScreen(vn1 1.5 vn2 1.5)
 	@toneScreen(off, 0)
 
 	input-sel 4 ; CL
@@ -135,15 +138,12 @@ NOTE F1 1/2 @pizz ;cpizz5
 			{ 5. }
 		2	{ 2. }
 	}}
-	@resoScreen(vn1 1 vc 1)
+	@resoScreen(vn1 1.5 vc 1)
 
 
-if ($playing == 0) {
-	demoms 52259
-}
-MULTI ((F1 G1) -> (C1 G1)) 2 m10
+MULTI ((F1 G1) -> (C1 G1)) 2 ;m10
 	@noiseScreen(vc 1 va 1 vn2 0.5)
-	@toneScreen(vn2 1, 0.81)
+	@toneScreen(vn2 2, 0.81)
 NOTE C1 1	;down
 NOTE F3 1	;up
 
