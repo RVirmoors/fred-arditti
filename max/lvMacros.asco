@@ -18,7 +18,7 @@
 }
 
 @macro_def @start {
-	spat reverberance 95, air 0
+	spat room 1 reverberance 95, room 1 air 0
 	spat source 1 aed -90 0 1
 	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1

@@ -84,7 +84,7 @@ if ($playing == 0) {
 	demoms 29400
 }
 CHORD (Ab3 E4) 2 m6	
-	@mirror(vn1 1 vn2 1 va 1)
+	@toneScreen(vn1 1 vn2 1 va 1, 0.53)
 	@noiseScreen(vc 1)
 
 	2 input-sel 4 ; CL

@@ -26,12 +26,22 @@ whenever ($a[2] || $d[2]) {
 }
 
 @proc_def ::spat_teleport($source) {
-	@local $start_d
+	@local $start_a, $start_d, $rand
 	$start_d := $d[($source-1)]
 	whenever ($BEAT_POS) { // for each new event, teleport
-		$a[($source-1)] := $a[($source-1)] + @rand_int(360)
-		$d[($source-1)] := $start_d * ($energy + 0.5)
-		$a := $a
+		if (@rand_int(100) < 33) {
+			$start_a := $a[($source-1)]
+			$rand := @rand_int(360)
+			curve MOVE @Grain := 0.05s, @Action := {
+				$a[($source-1)] := $x1; $a[($source-1)] + @rand_int(360)
+				$d[($source-1)] := $x2; $start_d * ($energy + 0.5)
+				$a := $a
+			}
+			{ $x1, $x2 {
+					{ $start_a, $start_d}
+				1	{ ($start_a + $rand), ($start_d * ($energy + 0.5))}
+			}}			
+		}
 	}
 }
 
