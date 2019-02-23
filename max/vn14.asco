@@ -17,14 +17,9 @@ loadfile takes/m14-37-v1.wav
 input-sel 1 ; vn1
 input-gain 1
 
-@resoGrill(vn1 1)
-
-;if ($playing == 0) {
-;	demoms 800
-;}
-
 NOTE D5 1/6	m14
 	@resoGrill(vn1 1 vn2 1 va 0.5)
+	$spatReso := ::spat_teleport(1)
 	@mirror(vn1 1 vn2 1)
 	@noiseRec(vn1 1)
 NOTE Eb5 1/6 e2
@@ -63,6 +58,8 @@ if ($playing == 0) {
 	demoms 14500
 }
 EVENT 10 m16
+	$loopL := ::spat_circular(2, 1) ; start spinning L
+	$loopR := ::spat_circular(3, 1) ; start spinning R
 	@noiseStop
 	@mirrorOff
 	@loopScreen
@@ -75,6 +72,7 @@ EVENT 10 m16
 			15 {15000}
 		}
 	}
+
 
 if ($playing == 0) {
 	demoms 30500

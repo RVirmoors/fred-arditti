@@ -54,11 +54,6 @@
 	mugran play 0
 	record 1
 	playmode 0
-;	2-out $in
-;	loop noiseloop 120ms {
-;		cursor @rand_int(2000)
-	;	mugran frequency 29.14
-;	}
 }
 
 @macro_def @noiseStop {
@@ -76,10 +71,11 @@
 	2-out d1
 	mugran play 1
 	playmode 1
+	mugran periodvar 50
 	record 0
 	1-svpcross 0.3 1 0.7 0
 	mirror grains_on_off 1
-	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 370
+	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
 }
 
 @macro_def @toneScreen($in, $delay) {
@@ -100,7 +96,9 @@
 	3-out d2
 	mugran play 1
 	playmode 2
+	mugran periodvar 250
 	record 0
+	abort ENMIR
 	mirror grains_on_off 1, max_delay 333
 }
 
@@ -118,13 +116,13 @@
 	2-out d1
 	3-out d2
 	mirror grains_on_off 1
-	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25
+	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 433
 	mirror highpass 1760, lowpass 14080		; A6 to A9
-	::energy_mirror()
+	@energy_mirror
 }
 
-@proc_def ::energy_mirror() {
-	whenever ($energy) {
+@macro_def @energy_mirror {
+	whenever ENMIR ($energy) {
 		mirror max_delay (200 + (1-$energy) * 1800)
 		if ($energy < 0.3 && $energy > 0.1 ) {
 			mirror grains_on_off 1
@@ -137,7 +135,7 @@
 
 @macro_def @mirrorOff {	
 	@mirror(off)
-	abort ::energy_mirror()
+	abort ENMIR
 	2 2-out off
 	3-out off
 }
