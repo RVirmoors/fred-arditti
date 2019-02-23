@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 858.0, 930.0 ],
+		"rect" : [ 42.0, 84.0, 1355.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -2110,7 +2110,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 769.0, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "1x 1 c 0.2",
+					"text" : "off",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2153,7 +2153,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 814.125, 542.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "d2",
+					"text" : "off",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2180,7 +2180,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 765.5, 542.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "d1",
+					"text" : "off",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2305,7 +2305,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.0, 259.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "24"
+									"text" : "1"
 								}
 
 							}
@@ -3054,16 +3054,16 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-144",
-					"linecount" : 15,
+					"linecount" : 11,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1339.0, 31.0, 153.0, 213.0 ],
+					"patching_rect" : [ 1339.0, 31.0, 153.0, 158.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 13,
-					"presentation_rect" : [ 1171.0, 6.0, 218.0, 186.0 ],
+					"presentation_linecount" : 10,
+					"presentation_rect" : [ 1171.0, 6.0, 240.0, 144.0 ],
 					"style" : "",
-					"text" : "INSTRUCTIONS:\n\n0) turn audio on\n1) press \"start\"\n2) press \"PLAY\" or start playing\n\n\n1a) to start playing from a specific event in the score, use the dropdown below the \"monitor\" toggle\n\nuse 44.1k sample rate\noverdrive ON"
+					"text" : "INSTRUCTIONS:\n\n0) turn audio on\n1) press \"start\" or pick from the \"start from\" dropdown\n2) press \"PLAY\" or start playing live\n\n\nuse 44.1k sample rate\noverdrive ON"
 				}
 
 			}
@@ -4387,7 +4387,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 99.0, 11.0, 225.0, 22.0 ],
 									"style" : "",
-									"text" : "1w 1.5",
+									"text" : "1p 1.5",
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
@@ -6356,7 +6356,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "m18",
 					"textjustification" : 1
 				}
 
@@ -10873,6 +10872,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 4,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -10898,6 +10898,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 3,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -10923,6 +10924,7 @@
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.368627, 0.65098, 0.662745, 1.0 ],
 					"buffername" : "takes",
+					"chanoffset" : 2,
 					"fontsize" : 13.0,
 					"grid" : 500.0,
 					"gridcolor" : [ 0.423529, 0.423529, 0.423529, 1.0 ],
@@ -11900,7 +11902,7 @@
 						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 76404.835938, "ticks" ],
-						"originaltempo" : 60.027504,
+						"originaltempo" : 124.160072,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
 						"quality" : "basic",
