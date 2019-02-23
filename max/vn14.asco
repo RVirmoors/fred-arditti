@@ -18,6 +18,7 @@ input-sel 1 ; vn1
 input-gain 1
 
 NOTE D5 1/6	m14
+	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@resoGrill(vn1 1 vn2 1 va 0.5)
 	$spatReso := ::spat_teleport(1)
 	@mirror(vn1 1 vn2 1)
