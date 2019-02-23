@@ -19,9 +19,9 @@ input-gain 1
 
 NOTE D5 1/6	m14
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
-	@resoGrill(vn1 1 vn2 1 va 0.5)
+	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
 	$spatReso := ::spat_teleport(1)
-	@mirror(vn1 1 vn2 1)
+	@mirror(vn1 0.75 vn2 0.75)
 	@noiseRec(vn1 1)
 NOTE Eb5 1/6 e2
 NOTE 0 1/3
