@@ -1,6 +1,6 @@
 # dependencies
 
-Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT Externals + K-Devices uK Bundle
+Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT Externals
 
 Max patches are in the [/max/](/max/) subfolder. Performance version to be released as a standalone Max app: https://github.com/RVirmoors/fred-arditti/releases
 
@@ -76,15 +76,6 @@ Receivers:
 * setpartials - sets the list of partials to resonate
 * cp2 - an alternate set of partials
 * cp1 - the list in [r cp2] is combined with the list in this one (in this order)
-
-### G / gran
-
-4 ins - 1 out
-
-G implements the [uKflux] M4L real-time granular device. Its behaviour is different from C, in that it acts on the incoming audio buffer, instead of a previously recorded clip.
-
-Receiver:
-* granset - sets the snapshot preset # of the M4L device
 
 ### W / teeth
 
