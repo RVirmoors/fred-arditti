@@ -44,8 +44,9 @@
 
 @macro_def @resoScreen($in) {
 	1-partials $in
-	delay 1p 1.5 ;$in
+	gran 1p 1.5 ;$in
 	1-out d1
+	2-out d2
 	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
 }
 
@@ -68,6 +69,7 @@
 	capture $in
 	1-cross c 1 $in
 	delay 1x 1 c 0.2
+	1-out d1
 	2-out d2
 	mugran play 1
 	playmode 1
