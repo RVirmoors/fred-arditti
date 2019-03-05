@@ -1,3 +1,5 @@
+<img src="/readme/stageplot.PNG" alt="stageplot"/>
+
 # dependencies
 
 Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT Externals
@@ -10,7 +12,7 @@ Copy "Granular Mirror Maze 1.0.amxd" to your Max program folder (I have it in c:
 
 The overall interface looks something like:
 
-<img src="/readme/overview.PNG" alt="drawing" width="400px"/>
+<img src="/readme/overview.PNG" alt="sshot" width="400px"/>
 
 We distinguish 4 areas: input (top-left), scofo (top-right), transform (lower-left), and output (mid-right).
 
