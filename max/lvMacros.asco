@@ -25,8 +25,8 @@
 	1-out off
 	2-out off
 	3-out off
-	1-gran off
-	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
+	gran off
+;	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
 	1-teeth off
 	1-tw 0.58 164.83 1. 0.38 0.15 0.37
@@ -48,6 +48,8 @@
 	1-out d1
 	2-out d2
 	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
+	mirror grains_on_off 1
+	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
 }
 
 @macro_def @noiseRec($in) {
@@ -67,7 +69,7 @@
 
 @macro_def @noiseScreen($in) {
 	capture $in
-	1-cross c 1 $in
+/*	1-cross c 1 $in
 	delay 1x 1 c 0.2
 	1-out d1
 	2-out d2
@@ -77,7 +79,7 @@
 	record 0
 	1-svpcross 0.3 1 0.7 0
 	mirror grains_on_off 1
-	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
+	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50*/
 }
 
 @macro_def @toneScreen($in, $delay) {
