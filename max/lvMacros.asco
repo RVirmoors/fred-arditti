@@ -127,12 +127,14 @@
 
 @macro_def @energy_mirror {
 	whenever ENMIR ($energy) {
-		mirror max_delay (50 + (1-$energy) * 550)
+;		mirror max_delay (50 + (1-$energy) * 550)
 		if ($energy < 0.3 && $energy > 0.1 ) {
 			mirror grains_on_off 1
+			spat room 1 infinite 0
 		}
-		if ($energy > 0.4 || $energy < 0.1) {
+		if ($energy > 0.7 || $energy < 0.001) {
 			mirror grains_on_off 0
+			spat room 1 infinite 1
 		}
 	}
 }
