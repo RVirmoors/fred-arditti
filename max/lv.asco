@@ -32,7 +32,6 @@ TRILL (C4 D#6) 3	m1
 	$spatGran2 := ::spat_circular(2, -1) ; start spinning screen2
 	$spatRepel1 := ::spat_repelAttacks(1)
 	$spatRepel2 := ::spat_repelAttacks(2)
-;	$spatNoise := ::spat_radial(2)
 	$spatTone := ::spat_radial(3)
 ;	abort $spatNoise
 
@@ -40,7 +39,8 @@ TRILL (C4 D#6) 3	m1
 
 NOTE F1 5 @fermata ;cl-low 
 
-	@toneScreen(vc 15, 0.73)	
+	@toneScreen(vc 5, 0.73) ; 3-out
+	curve 3-gain -70, 0.0	3
 	@noiseScreen(vn2 5)
 	3 @resoScreen(vn2 28)	; reopen
 	@noiseStop
@@ -49,7 +49,7 @@ NOTE F1 5 @fermata ;cl-low
 	@resoScreen(off)
 
 NOTE E3 5 ;va-e3
-	@toneScreen(vc 10 va 15, 0.77)
+	@toneScreen(vc 3 va 5, 0.77)
 	@noiseStop
 	0.1 @noiseScreen(vn2 5 vn1 3)
 	2.9 @resoScreen(vn2 26 vc 20)

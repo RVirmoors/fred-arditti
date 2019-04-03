@@ -61,7 +61,7 @@
 
 @macro_def @noiseStop {
 	capture off
-	@noiseScreen(off)
+;	@noiseScreen(off)
 	mugran play 0
 	record 0
 	playmode 0
