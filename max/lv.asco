@@ -41,17 +41,19 @@ TRILL (C4 D#6) 3	m1
 NOTE F1 5 @fermata ;cl-low 
 
 	@toneScreen(vc 15, 0.73)	
-	@noiseScreen(vn2 15)
+	@noiseScreen(vn2 5)
 	3 @resoScreen(vn2 28)	; reopen
 	@noiseStop
+	@noiseRec(vc 15)
 	2 input-sel 3 ; VA
 	@resoScreen(off)
 
 NOTE E3 5 ;va-e3
 	@toneScreen(vc 10 va 15, 0.77)
-	@noiseScreen(vn2 15 vn1 10)
-	3 @resoScreen(vn2 26 vc 20)
-	@noiseScreen(vn1 15)
+	@noiseStop
+	0.1 @noiseScreen(vn2 5 vn1 3)
+	2.9 @resoScreen(vn2 26 vc 20)
+	@noiseScreen(vn1 5)
 
 NOTE A3 1 ;va-a3
 	@toneScreen(vc 10 va 15 vn1 15, 0.7)

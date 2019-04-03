@@ -69,7 +69,7 @@
 
 @macro_def @noiseScreen($in) {
 	capture $in
-/*	1-cross c 1 $in
+	1-cross c 1 $in
 	delay 1x 1 c 0.2
 	1-out d1
 	2-out d2
@@ -79,7 +79,7 @@
 	record 0
 	1-svpcross 0.3 1 0.7 0
 	mirror grains_on_off 1
-	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50*/
+	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
 }
 
 @macro_def @toneScreen($in, $delay) {
@@ -93,8 +93,8 @@
 
 
 @macro_def @loopScreen {
-	;capture $in
-	;1-trans c 1
+	capture $in
+	1-trans c 1
 	delay c 1;1t 1 c 0.2
 	2-out d1
 	3-out d2
