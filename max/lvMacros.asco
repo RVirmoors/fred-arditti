@@ -97,7 +97,6 @@
 
 
 @macro_def @loopScreen {
-	capture $in
 	1-trans c 1
 	delay c 1;1t 1 c 0.2
 	2-out d1
@@ -113,8 +112,9 @@
 @macro_def @resoGrill($in) {
 	;1-partials $in
 	1-teeth $in
-	1-gran 1w 1.5 ;$in
-	1-out 1g
+	gran 1w 1.5 ;$in
+	1-out d1
+	2-out d2
 	1-tdel 0.36
 	;1-setpartials @grillHarms(293.66, 36.7, 1) ; from D4
 }

@@ -38,6 +38,35 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "bang" ],
+					"patching_rect" : [ 802.5, 138.0, 34.0, 22.0 ],
+					"style" : "",
+					"text" : "t b b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 802.5, 109.0, 56.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 283.0, 79.5, 44.0, 22.0 ],
+					"style" : "",
+					"text" : "r clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 0.290196, 0.309804, 0.301961, 0.04 ],
 					"cantchange" : 1,
 					"fontname" : "Arial",
@@ -2432,9 +2461,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 810.5, 412.0, 49.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 275.0, 79.5, 49.0, 22.0 ],
+					"patching_rect" : [ 867.5, 371.0, 49.0, 22.0 ],
 					"style" : "",
 					"text" : "clearall"
 				}
@@ -2445,11 +2472,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-31",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 793.0, 814.5, 417.0, 22.0 ],
+					"patching_rect" : [ 696.0, 738.5, 349.0, 36.0 ],
 					"style" : "",
 					"text" : "mubu.track capture 1 audio @samplerate audio @maxsize 15s @predef yes"
 				}
@@ -2498,7 +2526,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -3055,6 +3082,19 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 696.0, 708.5, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "clear"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -3140,6 +3180,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
@@ -3265,6 +3312,21 @@
 			}
 , 			{
 				"patchline" : 				{
+					"color" : [ 0.65098, 0.65098, 0.65098, 0.0 ],
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-35", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
 					"source" : [ "obj-36", 0 ]
 				}
@@ -3372,6 +3434,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"source" : [ "obj-52", 0 ]
 				}
 
 			}
@@ -3544,48 +3613,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-12" : [ "live.gain~[1]", "capture", 0 ]
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "fx-input.maxpat",
-				"bootpath" : "~/Documents/fred-arditti/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.granular~.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "pipo~.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.knn.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
