@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 80.0, 1096.0, 922.0 ],
+		"rect" : [ 42.0, 84.0, 1096.0, 922.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -254,17 +254,6 @@
 					"presentation_rect" : [ 15.0, 105.0, 75.0, 22.0 ],
 					"style" : "",
 					"text" : "r playmode"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 268.0, 904.0, 45.0, 45.0 ],
-					"style" : ""
 				}
 
 			}
@@ -2995,7 +2984,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.0, 914.5, 53.0, 22.0 ],
+					"patching_rect" : [ 384.0, 895.5, 53.0, 22.0 ],
 					"style" : "",
 					"text" : "send~ c"
 				}
