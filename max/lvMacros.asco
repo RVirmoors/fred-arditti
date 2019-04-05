@@ -98,15 +98,13 @@
 
 @macro_def @loopScreen {
 	1-trans c 1
-	delay c 1;1t 1 c 0.2
-	2-out d1
-	3-out d2
+	3-out 1t
 	mugran play 1
 	playmode 2
 	mugran periodvar 250
 	record 0
-	abort ENMIR
-	mirror grains_on_off 1, max_delay 333
+	1-remix 0.1 0.5 0.8 0 0.5 ; sin noiz trans relax error
+	1-envwarp 98 1.2	; G2
 }
 
 @macro_def @resoGrill($in) {
@@ -121,8 +119,8 @@
 
 @macro_def @mirror($in) {
 	delay $in
-	2-out d2
 	1-out d1
+	2-out d2
 	mirror grains_on_off 1
 	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 333
 	mirror highpass 1760, lowpass 14080		; A6 to A9

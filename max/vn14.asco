@@ -19,8 +19,10 @@ input-gain 1
 
 NOTE D5 1/6	m14
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
+	@toneScreen(off, 0)
 	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
-	$spatReso := ::spat_teleport(1)
+	$spatResoL := ::spat_teleport(1)
+	$spatResoR := ::spat_teleport(2)
 	@mirror(vn1 0.75 vn2 0.75)
 ;	clear buffer
 	@noiseRec(vn1 1)
@@ -40,7 +42,7 @@ NOTE C4 1/7 e9
 NOTE 0 3/7
 NOTE G2 1/7 e10
 
-NOTE G2 2 e10_2
+NOTE 0 2 pause
 
 EVENT 1 m15		; TODO: fix (move tracking to vn2)
 NOTE C3 1/5 e1
@@ -60,8 +62,8 @@ if ($playing == 0) {
 	demoms 14500
 }
 EVENT 10 m16
-	$loopL := ::spat_circular(2, 1) ; start spinning L
-	$loopR := ::spat_circular(3, 1) ; start spinning R
+	$a[2] := -75
+	$spatLoop := ::spat_circular(3, 1) ; start spinning loop
 	@noiseStop
 	@mirrorOff
 	@loopScreen

@@ -186,7 +186,6 @@ NOTE D6 1 ;m13
 	@mirrorOff
 	@toneScreen(vc 0.7, 0.97)
 CHORD (F#6 D#7) 4 ;TA
-	@mirror(vn2 1)
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
 	abort $spatRepel1
 	abort $spatRepel2
