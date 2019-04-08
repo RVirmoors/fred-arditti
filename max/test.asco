@@ -1,0 +1,21 @@
+@insert lvMacros.asco
+@insert lvSpat.asco
+
+antescofo::analysis 4096 512
+antescofo::suivi 1
+antescofo::pedal 0
+
+BPM 60 ; 1 beat = 1 second
+
+$playing := 0
+
+@start ; reset initial params
+demoms 0
+
+input-sel 1 ; vn1
+input-gain 1
+
+;=====================================
+
+
+@resoGrill(vn1 1.5 vn2 1.5 va 0.8)

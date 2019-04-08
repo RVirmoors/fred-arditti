@@ -28,6 +28,7 @@
 	1-gain 0
 	2-gain 0
 	3-gain 0
+	getfreq 0
 	gran off
 ;	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
@@ -110,10 +111,19 @@
 @macro_def @resoGrill($in) {
 	;1-partials $in
 	1-teeth $in
-	gran 1w 1.5 ;$in
+	gran 1w 2 $in
 	1-out d1
 	2-out d2
 	1-tdel 0.36
+	mirror grains_on_off 1
+	mirror highpass 9000, lowpass 15555	
+	mirror feedbk 0.9, grain_freq 128, scrub_freq 75
+	getfreq 1
+
+	whenever FFUND ($fund) {
+		mirror max_delay ($fund / 4)
+	}
+	@energy_mirror
 	;1-setpartials @grillHarms(293.66, 36.7, 1) ; from D4
 }
 
@@ -144,6 +154,8 @@
 @macro_def @mirrorOff {	
 	@mirror(off)
 	abort ENMIR
+	abort FFUND
+	getfreq 0
 ;	2 2-out off
 ;	3-out off
 }

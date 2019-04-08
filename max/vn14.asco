@@ -23,7 +23,6 @@ NOTE D5 1/6	m14
 	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
 	$spatResoL := ::spat_teleport(1)
 	$spatResoR := ::spat_teleport(2)
-	@mirror(vn1 0.75 vn2 0.75)
 ;	clear buffer
 	@noiseRec(vn1 1)
 NOTE Eb5 1/6 e2
@@ -65,7 +64,7 @@ EVENT 10 m16
 	$a[2] := -75
 	$spatLoop := ::spat_circular(3, 1) ; start spinning loop
 	@noiseStop
-	@mirrorOff
+;	@mirrorOff
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x} 
