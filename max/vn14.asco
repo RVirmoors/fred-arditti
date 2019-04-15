@@ -40,10 +40,11 @@ NOTE Db4 1/7 e8
 NOTE C4 1/7 e9
 NOTE 0 3/7
 NOTE G2 1/7 e10
+1/5 input-sel 2
 
 NOTE 0 2 pause
 
-EVENT 1 m15		; TODO: fix (move tracking to vn2)
+EVENT 1 m15		; TODO: fix (move tracking to vn2?)
 NOTE C3 1/5 e1
 NOTE F4 1/5 e2
 NOTE A2 1/5 e3
