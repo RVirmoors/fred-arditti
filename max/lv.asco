@@ -16,7 +16,7 @@ $playing := 0 ; for debugging
 
 @start ; reset initial params
 
-loadfile takes/part1-3.wav
+loadfile takes/p1-m1-29.wav
 mubuffer readall capture_init.mubu
 
 @resoScreen(vn2 25)
@@ -189,3 +189,94 @@ CHORD (F#6 D#7) 4 ;TA
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
 	abort $spatRepel1
 	abort $spatRepel2
+
+if ($playing == 0) {
+	demoms 74262
+}
+
+input-sel 1 ; vn1
+input-gain 1
+
+NOTE D5 1/6	m14
+	spat room 1 reverberance 65 ; reduce reverb, tighter sound
+	@toneScreen(off, 0)
+	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
+	$spatResoL := ::spat_teleport(1)
+	$spatResoR := ::spat_teleport(2)
+;	clear buffer
+	@noiseRec(vn1 1)
+NOTE Eb5 1/6 ;e2
+NOTE 0 1/3
+NOTE C#4 1/6 ;e3
+NOTE B3 1/6 ;e4
+
+NOTE 0 3/7
+NOTE Gb5 1/7 ;e5
+NOTE F3 1/7 ;e6
+NOTE 0 2/7
+
+NOTE D3 1/7 ;e7
+NOTE Db4 1/7 ;e8
+NOTE C4 1/7 ;e9
+NOTE 0 3/7
+NOTE G2 1/7 ;e10
+1/5 input-sel 2 
+
+NOTE 0 2 pause
+
+EVENT 1 m15		; TODO: fix (move tracking to vn2?)
+NOTE C3 1/5 ;e1
+NOTE F4 1/5 ;e2
+NOTE A2 1/5 ;e3
+NOTE Bb4 1/5 ;e4
+NOTE Db5 1/5 ;e5
+NOTE B2 1/5 ;e6
+NOTE C#4 1/5 ;e7
+NOTE 0 1/5
+NOTE D#5 1/5 ;e8
+NOTE E5 1/5 ;e9
+
+NOTE E5 2 e9_2
+
+if ($playing == 0) {
+	demoms 89189
+}
+EVENT 10 m16
+	$a[2] := -75
+	$spatLoop := ::spat_circular(3, 1) ; start spinning loop
+	@noiseStop
+;	@mirrorOff
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			15 {15000}
+		}
+	}
+
+
+if ($playing == 0) {
+	demoms 102365
+}
+EVENT 10 m18 
+	@noiseStop
+
+; ...
+
+loadfile takes/p1-m30-37.wav
+if ($playing == 0) {
+	demoms 1
+}
+EVENT 10 m30
+
+
+; ...
+
+loadfile takes/p1-m56-64.wav
+if ($playing == 0) {
+	demoms 1
+}
+EVENT 10 m56

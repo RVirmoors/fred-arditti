@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
@@ -150,7 +150,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 922.0, 506.0, 93.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 550.75, 242.0, 93.0, 22.0 ],
+					"presentation_rect" : [ 550.75, 200.0, 93.0, 22.0 ],
 					"style" : "",
 					"text" : "read lv-p2.asco"
 				}
@@ -168,7 +168,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -989,7 +989,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1869,7 +1869,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -2710,7 +2710,25 @@
 										"filename" : "Granular Mirror Maze 1.0.amxd.maxsnap",
 										"filepath" : "~/Documents/Max 7/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "cda8bdccd5fef493ef4031c9d92e9ae2"
+										"snapshotfileid" : "27a252224bfedfe24f6be1e1b56e8990"
+									}
+
+								}
+, 								{
+									"filetype" : "C74Snapshot",
+									"version" : 2,
+									"minorversion" : 0,
+									"name" : "Granular Mirror Maze 1.0.amxd",
+									"origin" : "Granular Mirror Maze 1.0.amxd",
+									"type" : "amxd",
+									"subtype" : "Undefined",
+									"embed" : 0,
+									"fileref" : 									{
+										"name" : "Granular Mirror Maze 1.0.amxd",
+										"filename" : "Granular Mirror Maze 1.0.amxd.maxsnap",
+										"filepath" : "~/Documents/Max 7/Snapshots",
+										"filepos" : -1,
+										"snapshotfileid" : "27a252224bfedfe24f6be1e1b56e8990"
 									}
 
 								}
@@ -2909,7 +2927,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -3186,7 +3204,7 @@
 					"fontsize" : 16.0,
 					"id" : "obj-149",
 					"ignoreclick" : 1,
-					"items" : "<empty>",
+					"items" : [ "m1", ",", "m6", ",", "m9" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3210,7 +3228,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 94.0, 1050.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "m18"
+					"text" : "m9"
 				}
 
 			}
@@ -3265,7 +3283,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -3362,7 +3380,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
 									"patching_rect" : [ 92.0, 171.0, 62.0, 22.0 ],
-									"presentation_rect" : [ 80.0, 197.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "slide 1 30"
 								}
@@ -4055,21 +4072,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-108",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 113.0, 761.0, 93.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 550.75, 200.0, 93.0, 22.0 ],
-					"style" : "",
-					"text" : "read vn14.asco"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
 					"id" : "obj-135",
 					"maxclass" : "newobj",
@@ -4091,7 +4093,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 10.0, 649.0, 90.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 550.75, 220.0, 86.0, 22.0 ],
+					"presentation_rect" : [ 550.75, 265.0, 86.0, 22.0 ],
 					"style" : "",
 					"text" : "read test.asco"
 				}
@@ -4331,7 +4333,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -4853,7 +4855,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"id" : "obj-94",
-					"items" : "<empty>",
+					"items" : [ "m1", ",", "m6", ",", "m9" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4978,7 +4980,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -5506,7 +5508,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -6169,7 +6171,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -6653,7 +6655,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -6978,7 +6980,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -7358,7 +7360,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -8045,13 +8047,6 @@
 					"destination" : [ "obj-37", 0 ],
 					"order" : 0,
 					"source" : [ "obj-106", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-108", 0 ]
 				}
 
 			}
@@ -9617,23 +9612,23 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-58" : [ "live.gain~[4]", "gain", 0 ],
-			"obj-141" : [ "live.gain~[10]", "3", 0 ],
-			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
-			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
-			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
 			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
-			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-138" : [ "live.gain~[9]", "2", 0 ],
-			"obj-2::obj-10" : [ "live.gain~", "x cross", 0 ],
-			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-103" : [ "live.gain~[8]", "1", 0 ],
-			"obj-48" : [ "output", "output", 0 ],
 			"obj-129::obj-1" : [ "live.gain~[3]", "w teeth", 0 ],
 			"obj-10::obj-1" : [ "live.gain~[2]", "transform", 0 ],
+			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
+			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
 			"obj-168" : [ "amxd~", "amxd~", 0 ],
-			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ]
+			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ],
+			"obj-58" : [ "live.gain~[4]", "gain", 0 ],
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-141" : [ "live.gain~[10]", "3", 0 ],
+			"obj-2::obj-10" : [ "live.gain~", "x cross", 0 ],
+			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
+			"obj-138" : [ "live.gain~[9]", "2", 0 ],
+			"obj-103" : [ "live.gain~[8]", "1", 0 ],
+			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
