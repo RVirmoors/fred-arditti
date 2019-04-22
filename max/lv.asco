@@ -197,7 +197,7 @@ if ($playing == 0) {
 input-sel 1 ; vn1
 input-gain 1
 
-NOTE D5 1/6	m14
+NOTE D5 1/6	m14-r
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
 	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
@@ -244,16 +244,15 @@ NOTE 0 1/5
 NOTE D#5 1/5 ;e8
 NOTE E5 1/5 ;e9
 
-NOTE E5 2 e9_2
+NOTE E5 2 ;e9_2
 
 if ($playing == 0) {
 	demoms 89189
 }
-EVENT 10 m16
+EVENT 10 m16-p
 	$a[2] := -75
 	$spatLoop := ::spat_circular(3, 1) ; start spinning loop
 	@noiseStop
-;	@mirrorOff
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x} 
@@ -269,13 +268,61 @@ EVENT 10 m16
 if ($playing == 0) {
 	demoms 102365
 }
-EVENT 10 m18 
+MULTI (D4 E6) 4 ;m18 
+	@noiseStop
+MULTI (E6 E5) 1
+
+EVENT 5 m19-r
+	@noiseRec(vn1 1 vn2 1 va 1)
+EVENT 10 m20-p
+	@noiseStop
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			20 {10000}
+		}
+	}
+
+EVENT 10 m22
+	@noiseRec(vn1 1 vn2 1 va 1)
+EVENT 10 m24
+	@noiseStop
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			15 {15000}
+		}
+	}
+
+EVENT 5 m26
 	@noiseStop
 
-; ...
+EVENT 5 m27
+	@noiseRec(vn1 1 vn2 1 vc 1)
+EVENT 10 m28
+	@noiseStop
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			10 {10000}
+		}
+	}
 
-30 loadfile takes/p1-m30-37.wav
-if ($playing == 0) {
+
+10 if ($playing == 0) {
+	loadfile takes/p1-m30-37.wav
 	demoms 1
 }
 EVENT 10 m30
