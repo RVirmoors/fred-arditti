@@ -19,3 +19,5 @@ input-gain 1
 
 
 @resoGrill(vn1 1.5 vn2 1.5 va 0.8)
+
+; todo: add trans (in jos)

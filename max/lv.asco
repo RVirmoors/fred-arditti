@@ -272,7 +272,7 @@ if ($playing == 0) {
 }
 EVENT 10 m30
 
-
+print at m30
 ; ...
 
 loadfile takes/p1-m56-64.wav
