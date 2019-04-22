@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 760.0, 310.0, 679.0, 587.0 ],
+		"rect" : [ 760.0, 310.0, 798.0, 587.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,7 @@
 					"presentation_rect" : [ 99.0, 38.0, 136.0, 42.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "live.gain~",
+							"parameter_longname" : "live.gain~[11]",
 							"parameter_shortname" : "transform",
 							"parameter_type" : 0,
 							"parameter_mmin" : -70.0,
@@ -73,7 +73,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 685.0, 193.0, 29.5, 22.0 ],
+					"patching_rect" : [ 688.5, 193.0, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "0"
 				}
@@ -86,7 +86,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 650.0, 195.0, 29.5, 22.0 ],
+					"patching_rect" : [ 653.0, 193.0, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -99,7 +99,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 569.0, 140.0, 71.0, 22.0 ],
+					"patching_rect" : [ 653.0, 91.0, 71.0, 22.0 ],
 					"style" : "",
 					"text" : "route on off"
 				}
@@ -112,7 +112,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 701.0, 161.0, 72.0, 22.0 ],
+					"patching_rect" : [ 716.5, 221.0, 72.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess 1"
 				}
@@ -181,7 +181,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 447.0, 221.0, 87.0, 22.0 ],
+					"patching_rect" : [ 516.0, 182.0, 87.0, 22.0 ],
 					"style" : "",
 					"text" : "prepend remix"
 				}
@@ -195,7 +195,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 569.0, 113.0, 65.0, 22.0 ],
+					"patching_rect" : [ 653.0, 64.0, 65.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 238.5, 59.25, 83.0, 22.0 ],
 					"style" : "",
@@ -306,7 +306,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -570,7 +570,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 205.0, 268.0, 254.0, 22.0 ],
+					"patching_rect" : [ 150.0, 306.0, 254.0, 22.0 ],
 					"style" : "",
 					"text" : "supervp.trans~ @transients on @envscale on"
 				}
@@ -609,11 +609,11 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 328.0, 236.0, 206.0, 22.0 ],
+					"patching_rect" : [ 329.0, 239.0, 206.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 12.0, 104.5, 312.0, 22.0 ],
 					"style" : "",
-					"text" : "envwarp 120. 120. 1200. 1320."
+					"text" : "envwarp 58.27 58.27 582.7 640.97"
 				}
 
 			}
@@ -623,7 +623,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 44.0, 328.0, 64.0, 22.0 ],
+					"patching_rect" : [ 150.0, 397.0, 64.0, 22.0 ],
 					"style" : "",
 					"text" : "send~ #1t"
 				}
@@ -673,7 +673,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 99.0, 11.0, 225.0, 22.0 ],
 					"style" : "",
-					"text" : "vn1 1",
+					"text" : "1w 1.2 vn1 1 vn2 2 va 1 vc 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -921,23 +921,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1" : [ "live.gain~", "transform", 0 ]
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "fx-input.maxpat",
-				"bootpath" : "~/Documents/fred-arditti/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "supervp.trans~.mxe",
-				"type" : "iLaF"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

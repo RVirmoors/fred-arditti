@@ -68,7 +68,6 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.290196, 0.309804, 0.301961, 0.04 ],
-					"cantchange" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"format" : 6,
@@ -78,7 +77,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 316.245605, 700.325012, 58.0, 22.0 ],
+					"patching_rect" : [ 384.0, 693.325012, 58.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 138.0, 105.0, 53.0, 22.0 ],
 					"style" : "",
@@ -295,7 +294,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 717.0, 1107.0, 1194.0, 22.0 ],
 					"style" : "",
-					"text" : "47.28582 0.275657 105.128922 0.239981 159.252823 0.18518 211.23 0.193282 260.391388 0.18461"
+					"text" : "59.547066 0.490597 117.692032 0.521886 229.3 0.479589 262.740814 0.535845 342.13382 0.341072 401.043518 0.369202 530.473511 0.34496"
 				}
 
 			}
@@ -2499,7 +2498,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 136.0, 233.0, 1077.0, 631.0 ],
+						"rect" : [ 526.0, 259.0, 1077.0, 631.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2547,7 +2546,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 306.0, 517.0, 71.0, 22.0 ],
+									"patching_rect" : [ 306.0, 557.0, 71.0, 22.0 ],
 									"style" : "",
 									"text" : "v firstOnset"
 								}
@@ -2561,7 +2560,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 306.0, 485.0, 50.0, 22.0 ],
+									"patching_rect" : [ 306.0, 525.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2573,7 +2572,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 306.0, 424.0, 60.0, 22.0 ],
+									"patching_rect" : [ 306.0, 464.0, 60.0, 22.0 ],
 									"style" : "",
 									"text" : "gettime 1"
 								}
@@ -2586,7 +2585,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 306.0, 452.0, 152.0, 22.0 ],
+									"patching_rect" : [ 306.0, 492.0, 152.0, 22.0 ],
 									"style" : "",
 									"text" : "mubu.track capture onsets"
 								}
@@ -2623,14 +2622,14 @@
 									"fontname" : "Arial",
 									"fontsize" : 14.0,
 									"id" : "obj-17",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 50.0, 191.200012, 738.0, 73.0 ],
+									"patching_rect" : [ 50.0, 190.200012, 738.0, 89.0 ],
 									"style" : "",
-									"text" : "mubu.process capture audio slice:fft:sum:scale:onseg @name onsets @process 0 @prepad 2000 @slice.size 1024 @slice.hop 256 @slice.norm power @fft.mode power @fft.weighting itur468 @sum.colname Loudness @scale.inmin 1 @scale.inmax 10 @scale.outmin 0 @scale.outmax 10 @scale.func log @scale.base 10 @onseg.filtersize 5 @onseg.duration 1 @onseg.threshold 1.3 @onseg.offthresh -120 @info gui \"interface markers, autobounds 1\""
+									"text" : "mubu.process capture audio slice:fft:sum:scale:onseg @name onsets @process 0 @prepad 2000 @slice.size 1024 @slice.hop 256 @slice.norm power @fft.mode power @fft.weighting itur468 @sum.colname Loudness @scale.inmin 1 @scale.inmax 10 @scale.outmin 0 @scale.outmax 10 @scale.func log @scale.base 10 @onseg.filtersize 5 @onseg.duration 1 @onseg.threshold 1.3 @onseg.offthresh -120 @info gui \"interface markers, autobounds 1\" @priority 0 @progressoutput off"
 								}
 
 							}
@@ -2641,7 +2640,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 50.0, 370.751953, 24.0, 24.0 ],
+									"patching_rect" : [ 50.0, 410.751953, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -2653,7 +2652,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 78.0, 370.751953, 68.0, 22.0 ],
+									"patching_rect" : [ 78.0, 410.751953, 68.0, 22.0 ],
 									"style" : "",
 									"text" : "route done"
 								}
@@ -2665,7 +2664,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 410.0, 67.0, 22.0 ],
+									"patching_rect" : [ 50.0, 450.0, 67.0, 22.0 ],
 									"style" : "",
 									"text" : "s end-proc"
 								}
@@ -2674,14 +2673,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 50.0, 316.251953, 952.0, 36.0 ],
+									"patching_rect" : [ 50.0, 330.251953, 738.0, 50.0 ],
 									"style" : "",
-									"text" : "mubu.process capture audio descr:onseg @name descr @descr.winsize 1710 @descr.hopsize 100 @descr.minfreq 50 1 @onseg.colindex 1 @onseg.numcols 4 @onseg.max 1 @onseg.threshold 0.01 @onseg.maxsize 100 @progressoutput input @process 0 @timetagged 1"
+									"text" : "mubu.process capture audio descr:onseg @name descr @descr.winsize 1710 @descr.hopsize 100 @descr.minfreq 50 1 @onseg.colindex 1 @onseg.numcols 4 @onseg.max 1 @onseg.threshold 0.01 @onseg.maxsize 100 @process 0 @timetagged 1 @priority 0 @progressoutput off"
 								}
 
 							}
@@ -2692,7 +2691,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 50.0, 282.751953, 24.0, 24.0 ],
+									"patching_rect" : [ 50.0, 296.751953, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -2704,7 +2703,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 78.0, 282.751953, 68.0, 22.0 ],
+									"patching_rect" : [ 78.0, 296.751953, 68.0, 22.0 ],
 									"style" : "",
 									"text" : "route done"
 								}
@@ -2730,9 +2729,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 50.0, 71.251953, 717.0, 64.0 ],
+									"patching_rect" : [ 50.0, 71.251953, 738.0, 64.0 ],
 									"style" : "",
-									"text" : "mubu.process capture audio slice:fft:peaks @name peaks @slice.wind hann @slice.size 256 @slice.hop 10 @fft.size 256 @fft.mode logpower @peaks.numpeaks 10 @peaks.keep strongest @peaks.thdev 15 @process 0 @info gui \"autobounds 1, interface traces, colormode fgcolor, paramcols Frequency Amplitude, shape steps, paramautodisplayrange color 1, mixedlayout superposed\" @timetagged 1"
+									"text" : "mubu.process capture audio slice:fft:peaks @name peaks @slice.wind hann @slice.size 256 @slice.hop 10 @fft.size 256 @fft.mode logpower @peaks.numpeaks 10 @peaks.keep strongest @peaks.thdev 15 @process 0 @info gui \"autobounds 1, interface traces, colormode fgcolor, paramcols Frequency Amplitude, shape steps, paramautodisplayrange color 1, mixedlayout superposed\" @timetagged 1 @priority 0 @progressoutput off"
 								}
 
 							}
@@ -2757,7 +2756,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.0, 286.251953, 150.0, 22.0 ],
+									"patching_rect" : [ 149.0, 300.251953, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -3164,6 +3163,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -3556,15 +3562,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
-					"order" : 1,
-					"source" : [ "obj-74", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-39", 0 ],
-					"order" : 0,
 					"source" : [ "obj-74", 0 ]
 				}
 
@@ -3613,7 +3610,48 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-12" : [ "live.gain~[1]", "capture", 0 ]
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "fx-input.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.granular~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "pipo~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.knn.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

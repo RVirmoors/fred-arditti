@@ -220,11 +220,19 @@ NOTE Db4 1/7 ;e8
 NOTE C4 1/7 ;e9
 NOTE 0 3/7
 NOTE G2 1/7 ;e10
-1/5 input-sel 2 
+4/7 input-sel 2 
 
-NOTE 0 2 pause
+NOTE A4 1/7
+NOTE 0 1/7
+NOTE G#3 1/7
+NOTE 0 5/7
+NOTE D3 1/6
+NOTE G2 1/6 
+NOTE 0 1/6
 
-EVENT 1 m15		; TODO: fix (move tracking to vn2?)
+TRILL (G#3 D3) 1 ;m15
+	1 input-sel 1
+	
 NOTE C3 1/5 ;e1
 NOTE F4 1/5 ;e2
 NOTE A2 1/5 ;e3
@@ -266,7 +274,7 @@ EVENT 10 m18
 
 ; ...
 
-loadfile takes/p1-m30-37.wav
+30 loadfile takes/p1-m30-37.wav
 if ($playing == 0) {
 	demoms 1
 }

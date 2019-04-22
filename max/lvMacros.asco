@@ -102,7 +102,7 @@
 	3-out 1t
 	mugran play 1
 	playmode 2
-	mugran periodvar 250
+	mugran periodvar 50, resamplingvar 0.1, levelvar 7
 	record 0
 	1-remix 0.1 0.5 0.8 0 0.5 ; sin noiz trans relax error
 	1-envwarp 98 1.2	; G2
