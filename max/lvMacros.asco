@@ -58,6 +58,7 @@
 }
 
 @macro_def @noiseRec($in) {
+	clear buffer
 	capture $in
 	mugran play 0
 	record 1
@@ -102,7 +103,6 @@
 	3-out 1t
 	mugran play 1
 	playmode 2
-	mugran periodvar 50, resamplingvar 0.1, levelvar 7
 	record 0
 	1-remix 0.1 0.5 0.8 0 0.5 ; sin noiz trans relax error
 	1-envwarp 98 1.2	; G2
@@ -116,8 +116,8 @@
 	2-out d2
 	1-tdel 0.36
 	mirror grains_on_off 1
-	mirror highpass 9000, lowpass 15555	
-	mirror feedbk 0.9, grain_freq 128, scrub_freq 75
+	mirror highpass 7777, lowpass 14444	
+	mirror feedbk 0.8, grain_freq 128, scrub_freq 75
 	getfreq 1
 
 	whenever FFUND ($fund) {

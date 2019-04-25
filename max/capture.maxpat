@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1096.0, 922.0 ],
+		"rect" : [ 42.0, 85.0, 1393.0, 922.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,14 +38,41 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-35",
-					"maxclass" : "newobj",
+					"data" : 					{
+						"clips" : [ 							{
+								"filename" : "bosch.256.rom.aif",
+								"filekind" : "audiofile",
+								"selection" : [ 0.0, 1.0 ],
+								"loop" : 1,
+								"content_state" : 								{
+									"pitchcorrection" : [ 0 ],
+									"timestretch" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"speed" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"mode" : [ "basic" ],
+									"quality" : [ "basic" ],
+									"formant" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"originaltempo" : [ 120.0 ],
+									"originallengthms" : [ 0.0 ],
+									"slurtime" : [ 0.0 ],
+									"formantcorrection" : [ 0 ],
+									"play" : [ 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"id" : "obj-49",
+					"maxclass" : "playlist~",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 802.5, 138.0, 34.0, 22.0 ],
-					"style" : "",
-					"text" : "t b b"
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"patching_rect" : [ 744.0, 26.0, 150.0, 30.0 ],
+					"style" : ""
 				}
 
 			}
@@ -57,7 +84,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 802.5, 109.0, 56.0, 22.0 ],
+					"patching_rect" : [ 923.0, 644.5, 56.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 283.0, 79.5, 44.0, 22.0 ],
 					"style" : "",
@@ -335,7 +362,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -645,7 +672,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -689,7 +716,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x86",
 											"modernui" : 1
 										}
@@ -968,7 +995,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1260,7 +1287,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1378,7 +1405,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x86",
 											"modernui" : 1
 										}
@@ -2202,7 +2229,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -2476,7 +2503,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 696.0, 738.5, 349.0, 36.0 ],
+					"patching_rect" : [ 923.0, 722.0, 349.0, 36.0 ],
 					"style" : "",
 					"text" : "mubu.track capture 1 audio @samplerate audio @maxsize 15s @predef yes"
 				}
@@ -2493,12 +2520,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 526.0, 259.0, 1077.0, 631.0 ],
+						"rect" : [ 886.0, 498.0, 1077.0, 631.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2525,6 +2552,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -3060,7 +3088,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 99.0, 11.0, 225.0, 22.0 ],
 					"style" : "",
-					"text" : "off",
+					"text" : "va 1 vn2 0.5",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -3088,7 +3116,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 696.0, 708.5, 50.0, 22.0 ],
+					"patching_rect" : [ 923.0, 692.0, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "clear"
 				}
@@ -3191,7 +3219,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-35", 0 ],
+					"destination" : [ "obj-52", 0 ],
 					"source" : [ "obj-20", 0 ]
 				}
 
@@ -3318,21 +3346,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"color" : [ 0.65098, 0.65098, 0.65098, 0.0 ],
-					"destination" : [ "obj-29", 0 ],
-					"source" : [ "obj-35", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
-					"source" : [ "obj-35", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
 					"source" : [ "obj-36", 0 ]
 				}
@@ -3417,6 +3430,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-46", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-49", 0 ]
 				}
 
 			}
@@ -3610,48 +3630,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-12" : [ "live.gain~[1]", "capture", 0 ]
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "fx-input.maxpat",
-				"bootpath" : "~/Documents/fred-arditti/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.granular~.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "pipo~.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.knn.mxe",
-				"type" : "iLaF"
-			}
-, 			{
-				"name" : "mubu.mxe",
-				"type" : "iLaF"
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
