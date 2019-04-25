@@ -11,6 +11,8 @@ $playing := 0
 
 @start ; reset initial params
 demoms 0
+loadfile takes/p1-m30-37.wav
+mubuffer readall capture_init.mubu
 
 input-sel 1 ; vn1
 input-gain 1
@@ -18,6 +20,18 @@ input-gain 1
 ;=====================================
 
 
-@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
+;@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
 
 ; todo: add trans (in jos)
+
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x
+			mugran positionvar ($x/50), period 0 (1 + $x/1000), periodvar ($x/500), resampling ($x/500*(@rand_int(200)-100)), levelvar ($x / 500)} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			15 {15000}
+		}
+	}
