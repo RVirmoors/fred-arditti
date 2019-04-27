@@ -206,7 +206,9 @@ NOTE D5 1/6	m14-r
 	antescofo::suivi 1
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
+	3-out off
 	@resoGrill(vn1 1 vn2 1 va 0.8)
+	curve @command {mirror feedbk} 0.001, 0.1 50 ; from here to m24...
 	$spatResoL := ::spat_teleport(1)
 	$spatResoR := ::spat_teleport(2)
 	@noiseRec(vn1 1)
@@ -237,6 +239,7 @@ NOTE 0 1/6
 
 TRILL (G#3 D3) 1 ;m15
 	1 input-sel 1
+	@resoGrill(vn1 1)
 	
 NOTE C3 1/5 ;e1
 NOTE F4 1/5 ;e2
@@ -256,6 +259,8 @@ if ($playing == 0) {
 	demoms 89189
 }
 EVENT 10 m16-p
+	input-sel 3
+	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
 	$a[2] := -75
 	abort $spatTone
 	$spatLoop := ::spat_circular(3, 2) ; start spinning loop
@@ -281,13 +286,16 @@ if ($playing == 0) {
 MULTI (D4 E6) 4 m18 
 	antescofo::suivi 1
 	@noiseStop
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
 MULTI (E6 E5) 1
+	input-sel 1
 	antescofo::suivi 0
 
 EVENT 5 m19-r
 	@noiseRec(vn1 1 vn2 1 va 1)
 EVENT 10 m20-p
 	@noiseStop
+	@resoGrill(vn1 1 vn2 1 vc 1)
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
@@ -303,7 +311,8 @@ EVENT 10 m20-p
 EVENT 10 m22
 	@noiseRec(vn1 1 vn2 1 va 1)
 EVENT 10 m24
-	@noiseStop
+	@noiseStop	
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
@@ -315,14 +324,17 @@ EVENT 10 m24
 			15 {15000}
 		}
 	}
+	curve @command {mirror feedbk} 0.8 5
 
 EVENT 5 m26
-	@noiseStop
+	@noiseStop	
+	@resoGrill(vn1 1 vn2 1)
 
 EVENT 5 m27
 	@noiseRec(vn1 1 vn2 1 vc 1)
 EVENT 10 m28
-	@noiseStop
+	@noiseStop	
+	@resoGrill(vn1 1 vn2 1 va 1)
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
@@ -340,13 +352,20 @@ EVENT 10 m28
 	loadfile takes/p1-m30-37.wav
 	demoms 1
 }
-EVENT 10 m30
+EVENT 10 m30	
+	@mirror(va 1 vc 1.5)
+	2 @resoGrill(vn1 1 vn2 1)
 
-print at m30
+EVENT 10 m32
+	input-sel 2
+	@mirror(va 1 vn2 1)
+	1 @resoGrill(vn2 1 vc 1)
+
 ; ...
 
-loadfile takes/p1-m56-64.wav
-if ($playing == 0) {
+
+10 if ($playing == 0) {
+	loadfile takes/p1-m56-64.wav
 	demoms 1
 }
 EVENT 10 m56

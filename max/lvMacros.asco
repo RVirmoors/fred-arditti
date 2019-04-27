@@ -111,22 +111,23 @@
 }
 
 @macro_def @resoGrill($in) {
-	;1-partials $in
+	1-partials $in
 	1-teeth $in
-	gran 1w 2 $in
+	gran 1w 1 $in
 	1-out d1
 	2-out d2
+	3-out 1p
 	1-tdel 0.36
 	mirror grains_on_off 1
 	mirror highpass 293, lowpass 14080
-	mirror feedbk 0.8, grain_freq 128, scrub_freq 75
+	mirror grain_freq 128, scrub_freq 75
 	getfreq 1
 
 	whenever FFUND ($fund) {
 		mirror max_delay ($fund / 4)
 	}
 	@energy_mirror(0.45, 0.75)
-	;1-setpartials @grillHarms(293.66, 36.7, 1) ; from D4
+	1-setpartials @grillHarms(1760, 176, 1) ; from D4 293.66 36.7
 }
 
 @macro_def @mirror($in) {
@@ -160,6 +161,13 @@
 	getfreq 0
 ;	2 2-out off
 ;	3-out off
+}
+
+@macro_def @doubler($in, $freq) {
+	1-trans $in
+	3-out 1t
+	1-remix 0.9 0.5 0.4 0 0.5 ; sin noiz trans relax error
+	1-envwarp 98 1.2	; G2
 }
 
 
