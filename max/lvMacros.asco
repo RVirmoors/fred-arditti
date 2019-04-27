@@ -44,6 +44,7 @@
 	$peaks := 0
 	$energy := 0
 	$periodicity := 0
+	$fund := 0
 	mugran duration 512, durationvar 64, positionvar 512, periodvar 50
 	spat room 1 infinite 0
 }
@@ -163,11 +164,15 @@
 ;	3-out off
 }
 
-@macro_def @doubler($in, $freq) {
+@macro_def @doubler($in) {
 	1-trans $in
 	3-out 1t
-	1-remix 0.9 0.5 0.4 0 0.5 ; sin noiz trans relax error
-	1-envwarp 98 1.2	; G2
+	1-remix 0.2 1 0.1 1 1 ; sin noiz trans relax error
+	repel 3 1
+;	curve @command {1-envwarp 200} 1, 2.1 10
+	loop DOUB 1 {
+		1-envwarp @round($fund/16) (1.05 + $periodicity)
+	}
 }
 
 

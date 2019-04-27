@@ -352,8 +352,9 @@ EVENT 10 m28
 	loadfile takes/p1-m30-37.wav
 	demoms 1
 }
-EVENT 10 m30	
-	@mirror(va 1 vc 1.5)
+EVENT 10 m30
+	getfreq 1
+	@doubler(va 1 vc 1.5, $fund)
 	2 @resoGrill(vn1 1 vn2 1)
 
 EVENT 10 m32
