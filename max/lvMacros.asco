@@ -22,6 +22,7 @@
 	spat source 1 aed -90 0 1
 	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1
+	repel 1 0, 2 0, 3 0	; spat repel off
 	1-out off
 	2-out off
 	3-out off

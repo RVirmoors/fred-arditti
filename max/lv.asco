@@ -190,6 +190,8 @@ CHORD (F#6 D#7) 4 ;TA
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
 	abort $spatRepel1
 	abort $spatRepel2
+	repel 1 0
+	repel 2 0
 
 if ($playing == 0) {
 	demoms 74262
@@ -344,3 +346,7 @@ if ($playing == 0) {
 	demoms 1
 }
 EVENT 10 m56
+	$spatGran1 := ::spat_circular(1, 1) ; start spinning screen1
+	$spatGran2 := ::spat_circular(2, -1) ; start spinning screen2
+	$spatRepel1 := ::spat_repelAttacks(1)
+	$spatRepel2 := ::spat_repelAttacks(2)

@@ -20,14 +20,7 @@ input-gain 1
 ;=====================================
 
 
-repel 1 0
-$a[0] := 0
-$a[2] := 180
-$a := $a
 
-$spatRepel1 := ::spat_repelAttacks(1)
-$sr := ::spat_radial(1)
-1-out vn2
-;@resoGrill(vn1 1 vn2 1 va 0.8)
+@resoGrill(vn1 1 vn2 1 va 0.8)
 
 ; todo: add trans (in jos)
