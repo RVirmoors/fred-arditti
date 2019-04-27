@@ -348,29 +348,103 @@ EVENT 10 m28
 	}
 
 
-10 if ($playing == 0) {
+if ($playing == 0) {
 	loadfile takes/p1-m30-37.wav
 	demoms 1
 }
 EVENT 10 m30
+	abort $spatLoop
+	::spat_goto(3, 55, 2, 10)
 	getfreq 1
-	@doubler(va 1 vc 1.5, $fund)
-	2 @resoGrill(vn1 1 vn2 1)
-
-EVENT 10 m32
+	@doubler(va 2 vc 2.5)
+	@resoGrill(vn1 1 vn2 1)
+	mirror feedbk 0.1 
+EVENT 5 m32
 	input-sel 2
-	@mirror(va 1 vn2 1)
+	@doubler(va 2 vn2 2)
+	::spat_goto(3, 35, 1.5, 2)
 	1 @resoGrill(vn2 1 vc 1)
+	1 ::spat_goto(3, 145, 1.5, 2)
+EVENT 11 m33
+	::spat_goto(3, 235, 2.5, 11)
+	@resoGrill(vn1 1 va 1 vc 0.5)
+EVENT 24 m35
+	::spat_goto(3, 360, 1.5, 4)
+	@doubler(vn1 1.5 vn2 2)
+	@resoGrill(va 1 vc 1)
+	4 ::spat_goto(3, 0, 1.5, 0.1)
+	2 ::spat_goto(3, 60, 1, 5)
+	5 ::spat_goto(3, -60, 0.5, 5)
+	5 ::spat_goto(3, 25, 2, 5)
 
-; ...
+EVENT 10 m40
+	input-sel 3
+	@doubler(vn1 2 vn2 2 va 1)
+	@resoGrill(va 0.5 vc 1)
+EVENT 10 m42
+	input-sel 1
+	@resoGrill(vn1 1 vc 1)
+	@doubler(vn2 2 va 1.5)
+EVENT 27 m44
+	input-sel 2
+	@resoGrill(va 1 vc 1)
+	@doubler(vn1 1.5 vn2 2)
+EVENT 3 m49
+	@doubler(vn1 2 vn2 2 va 1.5)
+	@noiseRec(vn1 1 vn2 1 va 1)
+	@resoGrill(vc 1)
+EVENT 5 m50
+	@resoGrill(vn1 1 vn2 1 vc 1)
+	@noiseStop
+	@loopScreen
+	curve playLoop 
+		@action := {cursor $x
+		mugran positionvar ($x/30), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)} 
+		@grain := 0.01
+		{
+		$x {
+			{0}
+			5 {3000}
+		}
+	}
+EVENT 15 m51
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
+	7 @resoGrill(vn1 1 vn2 1 vc 1)
+	@doubler(va 1)
+	1 @resoGrill(vn1 1 vn2 1)
+	@doubler(va 1.5 vc 1)
+EVENT 10 m54
+	input-sel 3
+	@resoGrill(va 1 vc 0.4)
+	@doubler(vn2 1.5 vc 2)
 
 
-10 if ($playing == 0) {
+if ($playing == 0) {
 	loadfile takes/p1-m56-64.wav
 	demoms 1
 }
-EVENT 10 m56
+EVENT 5 m56
+	input-sel 1
 	$spatGran1 := ::spat_circular(1, 1) ; start spinning screen1
 	$spatGran2 := ::spat_circular(2, -1) ; start spinning screen2
 	$spatRepel1 := ::spat_repelAttacks(1)
 	$spatRepel2 := ::spat_repelAttacks(2)
+	@doubler(va 1.5)
+	@resoGrill(off)
+	@mirror(vc 0.2)
+
+EVENT 10 m57
+	@mirror(vn2 1 va 1 vc 1 vn1 1)
+	@toneScreen(vn1 1, 0.88)
+
+EVENT 16 m59
+	@mirrorOff
+	@resoScreen(vn1 1 vn2 1 va 1)
+	@toneScreen(vc 1, 0.99)
+
+EVENT 4 m62
+	@mirror(vn2 1 va 1 vc 1 vn1 1)
+	@toneScreen(vc 1 va 0.5, 0.99)
+
+
+

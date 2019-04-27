@@ -63,3 +63,18 @@ whenever ($a[2] || $d[2]) {
 @proc_def ::spat_spray($source, $a, $d) {
 
 }
+
+@proc_def ::spat_goto($source, $to_a, $to_d, $time) {
+	@local $start_a, $start_d
+	$start_a := $a[($source-1)]
+	$start_d := $d[($source-1)]
+	curve GOTO @Grain := 0.05s, @Action := {
+		$a[($source-1)] := $x1
+		$d[($source-1)] := $x2
+		$a := $a
+	}
+	{ $x1, $x2 {
+		{$start_a, $start_d}
+		$time {$to_a, $to_d}
+	}}	
+}
