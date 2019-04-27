@@ -20,7 +20,6 @@ input-gain 1
 ;=====================================
 
 
-
-@resoGrill(vn1 1 vn2 1 va 0.8)
-
-; todo: add trans (in jos)
+3-out va
+	$a[2] := -75
+	$spatLoop := ::spat_circular(3, 1) ; start spinning loop

@@ -188,10 +188,11 @@ NOTE D6 1 ;m13
 	@toneScreen(vc 0.7, 0.97)
 CHORD (F#6 D#7) 4 ;TA
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
+	abort $spatGran1
+	abort $spatGran2
 	abort $spatRepel1
 	abort $spatRepel2
-	repel 1 0
-	repel 2 0
+	repel 1 0, 2 0
 
 if ($playing == 0) {
 	demoms 74262
@@ -205,7 +206,7 @@ NOTE D5 1/6	m14-r
 	antescofo::suivi 1
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
-	@resoGrill(vn1 1.5 vn2 1.5 va 0.8)
+	@resoGrill(vn1 1 vn2 1 va 0.8)
 	$spatResoL := ::spat_teleport(1)
 	$spatResoR := ::spat_teleport(2)
 	@noiseRec(vn1 1)
@@ -256,12 +257,15 @@ if ($playing == 0) {
 }
 EVENT 10 m16-p
 	$a[2] := -75
-	$spatLoop := ::spat_circular(3, 1) ; start spinning loop
+	abort $spatTone
+	$spatLoop := ::spat_circular(3, 2) ; start spinning loop
 	@noiseStop
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
-			mugran positionvar ($x/500), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)} 
+			mugran positionvar ($x/500), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)
+			$d[2] := 1 - ($x / 15000)
+		} 
 		@grain := 0.01
 		{
 		$x {

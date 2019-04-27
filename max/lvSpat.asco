@@ -36,7 +36,6 @@ whenever ($a[2] || $d[2]) {
 @proc_def ::spat_teleport($source) {
 	@local $start_a, $start_d, $rand
 	$start_d := $d[($source-1)]
-	repel $source $start_d
 	whenever ($BEAT_POS) { // for each new event, teleport
 		if (@rand_int(100) < 33) {
 			$start_a := $a[($source-1)]

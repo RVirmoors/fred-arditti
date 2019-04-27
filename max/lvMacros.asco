@@ -125,7 +125,7 @@
 	whenever FFUND ($fund) {
 		mirror max_delay ($fund / 4)
 	}
-	@energy_mirror(0.45, 0.7)
+	@energy_mirror(0.45, 0.75)
 	;1-setpartials @grillHarms(293.66, 36.7, 1) ; from D4
 }
 
@@ -136,17 +136,17 @@
 	mirror grains_on_off 1
 	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 333
 	mirror highpass 1760, lowpass 14080		; A6 to A9
-	@energy_mirror(0.3, 0.7)
+	@energy_mirror(0.3, 0.75)
 }
 
 @macro_def @energy_mirror($on_thresh, $off_thresh) {
-	whenever ENMIR ($energy) {
+	whenever ENMIR ($periodicity) {
 ;		mirror max_delay (50 + (1-$energy) * 550)
-		if ($energy < $on_thresh && $energy > 0.1 ) {
+		if ($periodicity < $on_thresh && $periodicity > 0.1 ) {
 			mirror grains_on_off 1
 			spat room 1 infinite 0
 		}
-		if ($energy > $off_thresh || $energy < 0.001) {
+		if ($periodicity > $off_thresh || $periodicity < 0.001) {
 			mirror grains_on_off 0
 			spat room 1 infinite 1
 		}
