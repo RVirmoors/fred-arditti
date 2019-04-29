@@ -434,6 +434,7 @@ EVENT 5 m56
 	@mirror(vc 0.2)
 
 EVENT 10 m57
+	spat room 1 reverberance 65 ; restore reverberance
 	@mirror(vn2 1 va 1 vc 1 vn1 1)
 	@toneScreen(vn1 1, 0.88)
 

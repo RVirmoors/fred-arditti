@@ -86,7 +86,7 @@
 	playmode 1
 	mugran periodvar 50
 	record 0
-	1-svpcross 0.05 1 0.95 0
+	1-svpcross 0.1 1 0.9 0
 	mirror grains_on_off 1
 	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
 }
@@ -159,8 +159,6 @@
 	abort ENMIR
 	abort FFUND
 	getfreq 0
-;	2 2-out off
-;	3-out off
 }
 
 @macro_def @doubler($in) {

@@ -21,32 +21,50 @@ loadfile takes/p2-A1-3.wav
 ; ==============
 
 
-input-gain 10 ; start is very quiet!!!
+input-gain 8 ; start is very quiet!!!
 input-sel 1 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
 EVENT 15 A
 ;	$spatReso := ::spat_circular(1, 1) ; start spinning screen1
-	$spatNoise := ::spat_radial(2)
+	$spatNoise1 := ::spat_radial(1)
+	$spatNoise2 := ::spat_radial(2)
 ;	$spatTone := ::spat_teleport(3)
 	@noiseRec(vn2 2)
 	10 @noiseStop
-	@noiseScreen(vn1 1 vn2 0.5 va 1 vc 1)
+	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
+	mirror feedbk 0.9, grain_freq 18, max_delay 250
 NOTE Bb3 3 A2
 	antescofo::suivi 1
-NOTE A3 5
-	print note
-TRILL (A3 G3) 2
+	$spatRepel1 := ::spat_repelAttacks(1)
+	$spatRepel2 := ::spat_repelAttacks(2)
+NOTE A3 6
+	print slide-down
+TRILL (A3 G3) 3
 	print irr
-	2 input-sel 2	; vn2
+	3 input-sel 2	; vn2
 NOTE Ab4 1/2
 	print up
-NOTE 
+NOTE G3 1/2
+	print down
+NOTE 0 1
+NOTE A5	4
+	print notehigh
+TRILL (G6 D5 A3) 1
+	print irr
+	1 input-sel 1
+NOTE A5 1
+	print FL
+NOTE G#5 3
+	print delic
+	antescofo::suivi 0
+	print we are $playing
 
 
 
-
-70 loadfile takes/p2-B1-3.wav
-input-gain 1
+if ($playing == 0) {
+	loadfile takes/p2-B1-3.wav
+}
+	input-gain 1
 EVENT 70 B
 	@mirror(vn1 1 vn2 1 va 1 vc 1)
 	mirror grains_on_off 1
@@ -61,8 +79,22 @@ EVENT 70 B
 		mirror max_delay $md
 	}
 	{ $sfr, $md {
-			{0.01, 200}
+			{ 0.01, 200 }
 		20	{ 0.66, 2000}
 	}}
 
+EVENT 70 C
+	curve DELAYS @Grain := 0.05s, @Action := {
+		mirror scrub_freq $sfr
+		mirror max_delay $md
+	}
+	{ $sfr, $md {
+			{ 0.66, 2000}
+		50	{ 0.01, 200 }
+		20  { 5	  , 50 }
+	}}
+
+EVENT 70 D ; back to section A settings
+	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
+	mirror feedbk 0.9, grain_freq 18, max_delay 250
 ;EVENT 1 end
