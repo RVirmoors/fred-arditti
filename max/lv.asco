@@ -263,7 +263,7 @@ if ($playing == 0) {
 	demoms 89189
 }
 EVENT 10 m16-p
-	input-sel 3
+;	input-sel 3		; TODO: restore for final performance!!
 	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
 	$a[2] := -75
 	abort $spatTone
