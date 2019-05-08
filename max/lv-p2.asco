@@ -57,9 +57,6 @@ NOTE A5 1
 NOTE G#5 3
 	print delic
 	antescofo::suivi 0
-	print we are $playing
-
-
 
 if ($playing == 0) {
 	loadfile takes/p2-B1-3.wav
