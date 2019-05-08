@@ -37,12 +37,12 @@ TRILL (C4 D#6) 3	m1
 
 	3 input-sel 4	; CELLO
 
-NOTE F1 5 @fermata ;cl-low 
+NOTE F1 5 @fermata cl-low 
 
 	@toneScreen(vc 5, 0.73) ; 3-out
-	curve 3-gain -30., 0.0	4
+	curve 3-gain -30, 0.0	4
 	@noiseScreen(vn2 5)
-	3 @resoScreen(vn2 28)	; reopen
+	3 @resoScreen(vn2 25)	; reopen
 	@noiseStop
 	@noiseRec(vc 15)
 	2 input-sel 3 ; VA
@@ -56,7 +56,6 @@ NOTE E3 5 ;va-e3
 	@noiseScreen(vn1 5)
 
 NOTE A3 1 ;va-a3
-	3-gain 0.0
 	@toneScreen(vc 3 va 5 vn1 5, 0.7)
 	@noiseScreen(vn2 1)
 	input-gain 8
@@ -85,11 +84,13 @@ TRILL (A3) 2 ;atrill
 	@resoScreen(off)
 	1.5 print before m6...
 	@noiseScreen(vn2 1)
+	antescofo::suivi 0
 
 if ($playing == 0) {
 	demoms 29400
 }
 CHORD (Ab3 E4) 2 m6	
+	antescofo::suivi 1
 	@toneScreen(vn1 1 vn2 1 va 1, 0.53)	
 	curve 3-gain -30., 0.0	4
 	@noiseScreen(vc 1)
@@ -120,10 +121,12 @@ TRILL (Eb4 E5) 3 @fermata ;v2-improv
 	1 print inside m8...
 	@resoScreen(off)
 
+	antescofo::suivi 0
 if ($playing == 0) {
 	demoms 46464
 }
 NOTE 0 1/2 m9
+	antescofo::suivi 1
 	abort $spatGran2
 	$spatGran2 := ::spat_circular(2, 1.1) ; match direction w/ 1out
 	@resoScreen(vn1 1.5 vn2 1.5)

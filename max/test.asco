@@ -2,7 +2,7 @@
 @insert lvSpat.asco
 
 antescofo::analysis 4096 512
-antescofo::suivi 0
+antescofo::suivi 1
 antescofo::pedal 0
 
 BPM 60 ; 1 beat = 1 second
@@ -24,6 +24,9 @@ getfreq 1
 EVENT 10 next
 @doubler(vn2 1 va 1)
 ::spat_goto(3, -55, 1, 1)
+
+
+	curve 3-gain -30., 0.0	4
 
 
 ; todo reverb infinite (replace w/ long?)
