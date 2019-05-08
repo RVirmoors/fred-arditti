@@ -40,7 +40,7 @@ TRILL (C4 D#6) 3	m1
 NOTE F1 5 @fermata ;cl-low 
 
 	@toneScreen(vc 5, 0.73) ; 3-out
-	curve 3-gain -20, 0.0	5
+	curve 3-gain -30., 0.0	4
 	@noiseScreen(vn2 5)
 	3 @resoScreen(vn2 28)	; reopen
 	@noiseStop
@@ -90,7 +90,8 @@ if ($playing == 0) {
 	demoms 29400
 }
 CHORD (Ab3 E4) 2 m6	
-	@toneScreen(vn1 1 vn2 1 va 1, 0.53)
+	@toneScreen(vn1 1 vn2 1 va 1, 0.53)	
+	curve 3-gain -30., 0.0	4
 	@noiseScreen(vc 1)
 
 	2 input-sel 4 ; CL
@@ -110,7 +111,7 @@ TRILL (F5 G6) 2 ;v1-improv
 NOTE -F5 2 ;m8
 	input-gain 3
 	@resoScreen(vn1 1 va 1)
-	@noiseScreen(vc 1)
+	@noiseScreen(vc 1.8)
 
 	2 input-sel 2 ; VN2
 	input-gain 10

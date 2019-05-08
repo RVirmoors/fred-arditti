@@ -159,6 +159,7 @@
 	abort ENMIR
 	abort FFUND
 	getfreq 0
+	spat room 1 infinite 0
 }
 
 @macro_def @doubler($in) {
