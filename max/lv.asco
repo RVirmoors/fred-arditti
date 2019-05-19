@@ -65,7 +65,7 @@ CHORD (-A3 F#3) 2 ;imperc
 	@resoScreen(vn2 22 vc 20)
 	@noiseStop
 
-NOTE 0 3 @fermata ;silence
+NOTE 0 3 @fermata ;silence m4
 	@toneScreen(vn2 5, 0.58)
 	@resoScreen(off)
 	2 print in m4...
@@ -167,7 +167,6 @@ NOTE 0 3/5
 NOTE F2 2/5 @pizz ;vpizz1
 NOTE 0 1/5 ;m11
 NOTE F2 2/5 @pizz ;vpizz2
-;	@mirror(vc 1)
 	1-cross c 1 vn2 1
 NOTE 0 2/5
 NOTE F2 2/5 @pizz ;vpizz3
@@ -263,7 +262,7 @@ if ($playing == 0) {
 	demoms 89189
 }
 EVENT 10 m16-p
-;	input-sel 3		; TODO: restore for final performance!!
+	input-sel 3		; TODO: restore for final performance!!
 	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
 	$a[2] := -75
 	abort $spatTone
