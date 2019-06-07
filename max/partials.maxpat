@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1852.0, 930.0 ],
+		"rect" : [ 42.0, 85.0, 1852.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -250,7 +250,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -835,9 +835,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1002.0, 666.0, 169.0, 202.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 7,
-					"presentation_rect" : [ 12.0, 197.5, 335.0, 105.0 ],
 					"style" : "",
 					"text" : "29.14 0.2 17 87.42 0.2 2 145.7 0.24 6 203.98 0.26 14 49 0.4 6 147 0.4 11 245 0.48 4 343 0.52 5 110 0.8 36 330 0.8 17 550 0.96 6 770 1.04 0 130.81 1 41 392.43 1 15 654.05 1.2 6 915.67 1.3 15 196 1 18 588 1 6 980 1.2 8 1372 1.3 5 293.66 1 32 880.98 1 2 1468.3 1.2 4 2055.620117 1.3 18 440 1.1 39 1320 1.1 4 2200 1.32 7 3080 1.43 3 659 1.2 22 1977 1.2 3 3295 1.44 8 4613 1.56 7"
 				}
@@ -1296,6 +1293,34 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-10" : [ "live.gain~[5]", "partials", 0 ]
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "fx-input.maxpat",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "common-partials-reso.js",
+				"bootpath" : "~/Documents/fred-arditti/max",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "resonators~.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "resdisplay.mxe",
+				"type" : "iLaF"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

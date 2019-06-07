@@ -1,0 +1,35 @@
+; F.P. - lvbeet
+
+@insert lvMacros.asco
+@insert lvSpat.asco
+
+antescofo::analysis 4096 512
+antescofo::suivi 0
+antescofo::pedal 0
+
+; DEMO BUFFER RECORDING
+rec 0
+
+BPM 60 ; 1 beat = 1 second
+
+$playing := 0 ; for debugging
+
+@start ; reset initial params
+
+loadfile takes/p3-ABC.wav
+
+; ==============
+
+
+input-sel 1 ; 1=vn1, 2=vn2, 3=va, 4=cl.
+
+EVENT 25 A
+
+EVENT 39 B
+
+EVENT 90 C
+
+EVENT 45 D 
+
+EVENT 155 E
+loadfile takes/p3-E1.wav

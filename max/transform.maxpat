@@ -338,7 +338,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
@@ -347,7 +346,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 184.0, 54.0, 54.0, 22.0 ],
-									"presentation_rect" : [ 197.0, 44.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "$1 1000"
 								}
@@ -361,7 +359,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 184.0, 81.0, 43.0, 22.0 ],
-									"presentation_rect" : [ 197.0, 71.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "line 0."
 								}
@@ -693,8 +690,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 329.0, 239.0, 206.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 104.5, 312.0, 22.0 ],
 					"style" : "",
 					"text" : "envwarp 58.27 58.27 582.7 640.97"
 				}

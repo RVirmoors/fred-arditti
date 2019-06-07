@@ -58,21 +58,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 1,
 								"content_state" : 								{
-									"slurtime" : [ 0.0 ],
 									"basictuning" : [ 440 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"play" : [ 0 ],
 									"quality" : [ "basic" ],
-									"speed" : [ 1.0 ],
+									"formant" : [ 1.0 ],
 									"followglobaltempo" : [ 0 ],
 									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"formantcorrection" : [ 0 ],
-									"mode" : [ "basic" ],
-									"formant" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
-									"timestretch" : [ 0 ]
+									"formantcorrection" : [ 0 ],
+									"speed" : [ 1.0 ],
+									"mode" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
+									"slurtime" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"play" : [ 0 ],
+									"pitchshift" : [ 1.0 ]
 								}
 
 							}
@@ -2977,8 +2977,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.745605, 649.325012, 121.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 129.0, 312.0, 22.0 ],
 					"style" : "",
 					"text" : "levelvar 0"
 				}
