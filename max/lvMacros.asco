@@ -24,21 +24,23 @@
 	spat source 3 aed 0 0 1
 	repel 1 0, 2 0, 3 0	; spat repel off
 	1-out off
-	2-out off
-	3-out off
+	2-outL off
+	2-outR off
+	3-outL off
+	3-outR off
 	1-gain 0
 	2-gain 0
 	3-gain 0
 	getfreq 0
 	gran off
-;	1-granset Dry/Wet 50, Envelope 1, Time 86, Length 100, Shift 25, "Time Noise" 15, Silence 15, Jump 66, Reverse 20
 	1-partials off
 	1-teeth off
 	1-tw 0.58 164.83 1. 0.38 0.15 0.37
 	1-trans off
 	1-cross off
 	delay off
-	mirror dry -70, grains_on_off 0
+	gmirror dry -70, grains_on_off 0
+	dmirror dry -70, grains_on_off 0
 	capture off
 	mubuffer clearall
 	$peaks := 0
@@ -52,11 +54,11 @@
 @macro_def @resoScreen($in) {
 	1-partials $in
 	gran 1p 1.5 ;$in
-	1-out d1
-	2-out d2
+	3-outL g1
+	3-outR g2
 	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
-	mirror grains_on_off 1
-	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
+	gmirror grains_on_off 1
+	gmirror feedbk 0.7, grain_freq 6.14, scrub_freq 0.5, max_delay 250
 }
 
 @macro_def @noiseRec($in) {
@@ -80,21 +82,21 @@
 	capture $in
 	1-cross c 1 $in
 	delay 1x 1 c 0.2
-	1-out d1
-	2-out d2
+	2-outL d1
+	2-outR d2
 	mugran play 1
 	playmode 1
 	mugran periodvar 50
 	record 0
 	1-svpcross 0.1 1 0.9 0
-	mirror grains_on_off 1
-	mirror feedbk 0.5, grain_freq 6.14, scrub_freq 5, max_delay 50
+	dmirror grains_on_off 1
+	dmirror feedbk 0.5, grain_freq 18, scrub_freq 5, max_delay 50
 }
 
 @macro_def @toneScreen($in, $delay) {
 	1-teeth $in
 	1-trans 1w 1.2 $in
-	3-out 1t
+	1-out 1t
 	1-tdel $delay 
 	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
 	1-envwarp 58.27 1.1
@@ -103,7 +105,7 @@
 
 @macro_def @loopScreen {
 	1-trans c 1
-	3-out 1t
+	1-out 1t
 	mugran play 1
 	playmode 2
 	record 0
@@ -115,16 +117,16 @@
 	1-partials $in
 	1-teeth $in
 	gran 1w 1 $in
-	1-out d1
-	2-out d2
+	3-outL g1
+	3-outR g2
 	1-tdel 0.36
-	mirror grains_on_off 1
-	mirror highpass 293, lowpass 14080
-	mirror grain_freq 128, scrub_freq 75
+	gmirror grains_on_off 1
+	gmirror highpass 293, lowpass 14080
+	gmirror grain_freq 128, scrub_freq 75
 	getfreq 1
 
 	whenever FFUND ($fund) {
-		mirror max_delay ($fund / 4)
+		gmirror max_delay ($fund / 4)
 	}
 	@energy_mirror(0.45, 0.75)
 	1-setpartials @grillHarms(1760, 176, 1) ; from D4 293.66 36.7
@@ -132,11 +134,11 @@
 
 @macro_def @mirror($in) {
 	delay $in
-	1-out d1
-	2-out d2
-	mirror grains_on_off 1
-	mirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 333
-	mirror highpass 1760, lowpass 14080		; A6 to A9
+	2-outL d1
+	2-outR d2
+	dmirror grains_on_off 1
+	dmirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 333
+	dmirror highpass 1760, lowpass 14080		; A6 to A9
 	@energy_mirror(0.3, 0.75)
 }
 
@@ -144,11 +146,13 @@
 	whenever ENMIR ($periodicity) {
 ;		mirror max_delay (50 + (1-$energy) * 550)
 		if ($periodicity < $on_thresh && $periodicity > 0.1 ) {
-			mirror grains_on_off 1
+			dmirror grains_on_off 1
+			gmirror grains_on_off 1
 			spat room 1 infinite 0
 		}
 		if ($periodicity > $off_thresh || $periodicity < 0.001) {
-			mirror grains_on_off 0
+			dmirror grains_on_off 0
+			gmirror grains_on_off 0
 			spat room 1 infinite 1
 		}
 	}
@@ -171,7 +175,7 @@
 		$ff := 298
 	}
 	1-trans $in
-	3-out 1t
+	1-out 1t
 	1-remix 0.2 1 0.1 1 1 ; sin noiz trans relax error
 	repel 3 1
 	curve @command {1-envwarp $ff} 1, 2.1 10

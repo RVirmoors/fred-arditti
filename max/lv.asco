@@ -39,7 +39,7 @@ TRILL (C4 D#6) 3	m1
 
 NOTE F1 5 @fermata ;cl-low 
 
-	@toneScreen(vc 5, 0.73) ; 3-out
+	@toneScreen(vc 5, 0.73) ; 1-out
 	curve 3-gain -30, 0.0	4
 	@noiseScreen(vn2 5)
 	3 @resoScreen(vn2 25)	; reopen
@@ -209,9 +209,9 @@ NOTE D5 1/6	m14-r
 	antescofo::suivi 1
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
-	3-out off
+	1-out off
 	@resoGrill(vn1 1 vn2 1 va 0.8)
-	curve @command {mirror feedbk} 0.001, 0.1 50 ; from here to m24...
+	curve @command {rmirror feedbk} 0.001, 0.1 50 ; from here to m24...
 	$spatResoL := ::spat_teleport(1)
 	$spatResoR := ::spat_teleport(2)
 	@noiseRec(vn1 1)
@@ -327,7 +327,7 @@ EVENT 10 m24
 			15 {15000}
 		}
 	}
-	curve @command {mirror feedbk} 0.8 5
+	curve @command {rmirror feedbk} 0.8 5
 
 EVENT 5 m26
 	@noiseStop	
@@ -361,7 +361,7 @@ EVENT 10 m30
 	getfreq 1
 	@doubler(va 2 vc 2.5)
 	@resoGrill(vn1 1 vn2 1)
-	mirror feedbk 0.1 
+	gmirror feedbk 0.1 
 EVENT 5 m32
 	input-sel 2
 	@doubler(va 2 vn2 2)

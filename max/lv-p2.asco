@@ -32,7 +32,7 @@ EVENT 15 A
 	@noiseRec(vn2 2)
 	10 @noiseStop
 	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
-	mirror feedbk 0.9, grain_freq 18, max_delay 250
+	dmirror feedbk 0.9, grain_freq 18, max_delay 250
 NOTE Bb3 3 A2
 	antescofo::suivi 1
 	$spatRepel1 := ::spat_repelAttacks(1)
@@ -64,16 +64,16 @@ if ($playing == 0) {
 	input-gain 1
 EVENT 70 B
 	@mirror(vn1 1 vn2 1 va 1 vc 1)
-	mirror grains_on_off 1
-	mirror feedbk 0.07, grain_freq 19.7
-	mirror highpass 13400, lowpass 22000
-	mirror scrub_freq 0.66, max_delay 2000
+	dmirror grains_on_off 1
+	dmirror feedbk 0.07, grain_freq 19.7
+	dmirror highpass 13400, lowpass 22000
+	dmirror scrub_freq 0.66, max_delay 2000
 	; scrub_freq is a measure of delay randomness. 
 	; we start from a fairly low value (precise repeats) and vary it across the section
 
 	curve DELAYS @Grain := 0.05s, @Action := {
-		mirror scrub_freq $sfr
-		mirror max_delay $md
+		dmirror scrub_freq $sfr
+		dmirror max_delay $md
 	}
 	{ $sfr, $md {
 			{ 0.01, 200 }
@@ -82,8 +82,8 @@ EVENT 70 B
 
 EVENT 70 C
 	curve DELAYS @Grain := 0.05s, @Action := {
-		mirror scrub_freq $sfr
-		mirror max_delay $md
+		dmirror scrub_freq $sfr
+		dmirror max_delay $md
 	}
 	{ $sfr, $md {
 			{ 0.66, 2000}
@@ -93,5 +93,5 @@ EVENT 70 C
 
 EVENT 70 D ; back to section A settings
 	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
-	mirror feedbk 0.9, grain_freq 18, max_delay 250
+	dmirror feedbk 0.9, grain_freq 18, max_delay 250
 ;EVENT 1 end
