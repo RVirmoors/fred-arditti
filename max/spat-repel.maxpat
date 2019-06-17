@@ -160,7 +160,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 275.5, 219.0, 112.0, 22.0 ],
 					"style" : "",
-					"text" : "expr $f1 * 1.2 + 0.8"
+					"text" : "expr $f1 * 0.2 + 0.8"
 				}
 
 			}

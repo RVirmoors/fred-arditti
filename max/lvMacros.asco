@@ -19,9 +19,9 @@
 
 @macro_def @start {
 	spat room 1 reverberance 90, room 1 air 1, room 1 size 666
-	spat source 1 aed -90 0 1
-	spat source 2 aed 90 0 1
-	spat source 3 aed 0 0 1
+	spat source 1 aed -60 0 1
+	spat source 2 aed 60 0 1
+	spat source 3 aed 180 0 1
 	repel 1 0, 2 0, 3 0	; spat repel off
 	1-out off
 	2-outL off
@@ -100,9 +100,9 @@
 	1-trans $in
 	1-teeth 1t 1 $in
 	1-out 1w
-	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
+	1-remix 1. 0.015 0.8 0 0.1 ; sin noiz trans relax error
 	1-tdel $delay 
-	1-envwarp 58.27 1.1
+	1-envwarp 58.27 1.5
 }
 
 
@@ -119,7 +119,7 @@
 @macro_def @resoGrill($in) {
 	1-partials $in
 	1-teeth $in
-	gran 1w 1 $in
+	gran 1w 1 
 	3-outL g1
 	3-outR g2
 	1-tdel 0.36
@@ -169,8 +169,9 @@
 	spat room 1 infinite 0
 }
 
-@macro_def @doubler($in) {
+@macro_def @doubler($in, $scale) {
 	$ff := $fund
+	print $ff
 	if ($ff  > 1000) {
 		$ff := $ff / 16
 	}
@@ -181,7 +182,7 @@
 	1-out 1t
 	1-remix 0.2 1 0.1 1 1 ; sin noiz trans relax error
 	repel 3 1
-	curve @command {1-envwarp $ff} 1, 2.1 10
+	curve @command {1-envwarp $ff} 1, $scale 10
 ;	loop DOUB 1 {
 ;		1-envwarp @round($fund/16) (1.05 + $periodicity)
 ;	}

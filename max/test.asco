@@ -25,10 +25,30 @@ input-gain 1
 ;@doubler(vn2 1 va 1)
 ;::spat_goto(3, -55, 1, 1)
 
-@noiseScreen(vn2 22 vn1 20)
+EVENT 10 m30	
+	loadfile takes/p1-m30-37.wav
+	spat source 1 aed 55 0 2
+	spat source 3 aed 55 0 2
+	::spat_goto(1, 55, 2, 10)
+	::spat_goto(3, 55, 2, 10)
+	getfreq 1
+	@doubler(va 2 vc 2.5, 0.15)
+	@resoGrill(vn1 1 vn2 1)
+	gmirror feedbk 0.1 
+EVENT 5 m32
+	input-sel 2
+	@doubler(va 2 vn2 2, 5)
+	::spat_goto(1, 35, 1.5, 2)
+	::spat_goto(3, 35, 1.5, 2)
+	1 @resoGrill(vn2 1 vc 1)
+	1 ::spat_goto(3, 145, 1.5, 2)
+	::spat_goto(1, 145, 1.5, 2)
 
 
 ;	curve 3-gain -30., 0.0	4
 
 
 ; todo reverb infinite (replace w/ long?)
+; TODO : fx-input fade out to zero slower
+
+; todo spat noises random
