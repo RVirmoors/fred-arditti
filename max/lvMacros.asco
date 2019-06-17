@@ -18,7 +18,7 @@
 }
 
 @macro_def @start {
-	spat room 1 reverberance 90, room 1 air 0
+	spat room 1 reverberance 90, room 1 air 1, room 1 size 666
 	spat source 1 aed -90 0 1
 	spat source 2 aed 90 0 1
 	spat source 3 aed 0 0 1
@@ -58,7 +58,8 @@
 	3-outR g2
 	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
 	gmirror grains_on_off 1
-	gmirror feedbk 0.7, grain_freq 6.14, scrub_freq 0.5, max_delay 250
+	gmirror lowpass 22000
+	gmirror feedbk 0.7, grain_freq 45, scrub_freq 0.5, max_delay 250
 }
 
 @macro_def @noiseRec($in) {
@@ -81,8 +82,8 @@
 @macro_def @noiseScreen($in) {
 	capture $in
 	1-cross c 1 $in
-	2-trans 1x
-	delay 2t 1 c 0.2
+	2-trans 1x 1
+	delay 2t 1.5 c 0.2
 	2-outL d1
 	2-outR d2
 	mugran play 1
@@ -90,17 +91,17 @@
 	mugran periodvar 50
 	record 0
 	1-svpcross 0.1 1 0.9 0
-	2-remix 0.05 1 1 0 0.1 ; sin noiz trans relax error
+	2-remix 0.15 1 1 0 0.12 ; sin noiz trans relax error
 	dmirror grains_on_off 1
 	dmirror feedbk 0.5, grain_freq 18, scrub_freq 5, max_delay 50
 }
 
 @macro_def @toneScreen($in, $delay) {
-	1-teeth $in
-	1-trans 1w 1.2 $in
-	1-out 1t
-	1-tdel $delay 
+	1-trans $in
+	1-teeth 1t 1 $in
+	1-out 1w
 	1-remix 1. 0.5 0.8 0 0.1 ; sin noiz trans relax error
+	1-tdel $delay 
 	1-envwarp 58.27 1.1
 }
 

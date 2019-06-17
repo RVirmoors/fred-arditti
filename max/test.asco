@@ -25,7 +25,7 @@ input-gain 1
 ;@doubler(vn2 1 va 1)
 ;::spat_goto(3, -55, 1, 1)
 
-
+@noiseScreen(vn2 22 vn1 20)
 
 
 ;	curve 3-gain -30., 0.0	4

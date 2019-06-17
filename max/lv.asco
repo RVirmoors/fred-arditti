@@ -37,7 +37,7 @@ TRILL (C4 D#6) 3	m1
 NOTE F1 5 @fermata ;cl-low 
 
 	@toneScreen(vc 5, 0.73) ; 1-out
-	curve 3-gain -30, 0.0	4
+	curve 1-gain -30, 0.0	4
 	@noiseScreen(vn2 5)
 	3 @resoScreen(vn2 25)	; reopen
 	@noiseStop
@@ -69,7 +69,7 @@ NOTE 0 3 @fermata ;silence m4
 	@noiseScreen(vn2 1 vc 1)
 
 TRILL (A4 G5) 2 ;delic
-	@toneScreen(off, 0)
+;	@toneScreen(off, 0)
 	@resoScreen(va 1)
 	@noiseStop
 NOTE G#3 1 ;gsharp
@@ -89,7 +89,7 @@ if ($playing == 0) {
 CHORD (Ab3 E4) 2 m6	
 	antescofo::suivi 1
 	@toneScreen(vn1 1 vn2 1 va 1, 0.53)	
-	curve 3-gain -30., 0.0	4
+	curve 1-gain -30., 0.0	4
 	@noiseScreen(vc 1)
 
 	2 input-sel 4 ; CL
@@ -155,6 +155,7 @@ MULTI ((F1 G1) -> (C1 G1)) 2 ;m10
 	@noiseScreen(va 1 vn2 0.5)
 	1-cross c 1 vc 1
 	@toneScreen(vn2 2, 0.81)
+	curve 1-gain -30, 0.0	1.5
 NOTE C1 1	;down
 NOTE F3 1	;up
 
@@ -173,8 +174,8 @@ NOTE F2 2/5 @pizz ;vpizz4
 NOTE 0 1/5
 NOTE F2 2/5 @pizz ;vpizz5
 NOTE 0 2/5
-	@mirror(vc 1 va 1)
-	@noiseStop
+	@noiseScreen(vc 1 va 1)
+
 	input-sel 1 ; VN1
 CHORD (F#5 G5) 1 ;vn1
 NOTE F4 3 ;m12
@@ -184,8 +185,8 @@ NOTE G5 1/2 ;g
 NOTE G6 1 ;g_hi
 
 NOTE D6 1 ;m13
-	@mirrorOff
-	@toneScreen(vc 0.7, 0.97)
+	@toneScreen(vn2 2 vc 0.7, 0.97)
+	@noiseStop
 CHORD (F#6 D#7) 4 ;TA
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
 	abort $spatGran1
@@ -201,6 +202,7 @@ if ($playing == 0) {
 input-sel 1 ; vn1
 input-gain 1
 antescofo::suivi 0
+	@mirrorOff
 
 NOTE D5 1/6	m14-r
 	antescofo::suivi 1
