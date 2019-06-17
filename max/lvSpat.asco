@@ -60,8 +60,11 @@ whenever ($a[2] || $d[2]) {
 	}
 }
 
-@proc_def ::spat_spray($source, $a, $d) {
-
+@proc_def ::spat_spray($source) {
+	whenever ($periodicity) {
+		$a[($source-1)] := ($periodicity - 0.15) * 1800
+		$a := $a
+	}
 }
 
 @proc_def ::spat_goto($source, $to_a, $to_d, $time) {
