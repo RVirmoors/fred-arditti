@@ -155,7 +155,7 @@
 		if ($periodicity > $off_thresh || $periodicity < 0.001) {
 			dmirror grains_on_off 0
 			gmirror grains_on_off 0
-			spat room 1 infinite 1
+			spat room 1 infinite 0
 		}
 	}
 }

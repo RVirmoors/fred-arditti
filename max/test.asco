@@ -18,15 +18,17 @@ input-sel 1 ; vn1
 input-gain 1
 
 ;=====================================
-getfreq 1
-@doubler(vn1 1 vn2 1)
-::spat_goto(3, 55, 2, 1)
-EVENT 10 next
-@doubler(vn2 1 va 1)
-::spat_goto(3, -55, 1, 1)
+;getfreq 1
+;@doubler(vn1 1 vn2 1)
+;::spat_goto(3, 55, 2, 1)
+;EVENT 10 next
+;@doubler(vn2 1 va 1)
+;::spat_goto(3, -55, 1, 1)
 
 
-	curve 3-gain -30., 0.0	4
+
+
+;	curve 3-gain -30., 0.0	4
 
 
 ; todo reverb infinite (replace w/ long?)
