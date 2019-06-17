@@ -81,7 +81,8 @@
 @macro_def @noiseScreen($in) {
 	capture $in
 	1-cross c 1 $in
-	delay 1x 1 c 0.2
+	2-trans 1x
+	delay 2t 1 c 0.2
 	2-outL d1
 	2-outR d2
 	mugran play 1
@@ -89,6 +90,7 @@
 	mugran periodvar 50
 	record 0
 	1-svpcross 0.1 1 0.9 0
+	2-remix 0.05 1 1 0 0.1 ; sin noiz trans relax error
 	dmirror grains_on_off 1
 	dmirror feedbk 0.5, grain_freq 18, scrub_freq 5, max_delay 50
 }
