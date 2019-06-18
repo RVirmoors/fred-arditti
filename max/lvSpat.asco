@@ -58,6 +58,24 @@ whenever ($a[2] || $d[2]) {
 	}
 }
 
+@proc_def ::spat_cross($source) {
+	@local $start_a, $start_d
+	whenever ($switch_button) {
+		$start_a := $a[($source-1)]
+		$start_d := $d[($source-1)]
+		curve GOTO @Grain := 0.05s, @Action := {
+			$a[($source-1)] := $x1
+			$d[($source-1)] := $x2
+			$a := $a
+		}
+		{ $x1, $x2 {
+			{$start_a, $start_d}
+			0.5 {($start_a + @rand_int(60) - 30), ($start_d * -1)}
+		}}			
+	}
+
+}
+
 @proc_def ::spat_spray($source) {
 	@local $start_a
 	whenever ($periodicity) {

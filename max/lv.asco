@@ -425,10 +425,13 @@ EVENT 10 m42
 	2 ::spat_goto(3, -45, 3, 1)
 EVENT 27 m44
 	input-sel 2
+	::spat_goto(3, 30, 5, 2)
 	@resoGrill(va 1 vc 1)
 	@doubler(vn1 1.5 vn2 2, 2.5)
+	10 ::spat_goto(3, 120, 5, 5)
 EVENT 3 m49
 	@doubler(vn1 2 vn2 2 va 1.5, 3)
+	::spat_goto(3, 355, 2, 1)
 	@noiseRec(vn1 1 vn2 1 va 1)
 	@resoGrill(vc 1)
 EVENT 5 m50
@@ -447,13 +450,17 @@ EVENT 5 m50
 		}
 	}
 EVENT 15 m51
+	::spat_goto(3, 120, 5, 1)
 	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
 	7 @resoGrill(vn1 1 vn2 1 vc 1)
+	::spat_goto(3, 270, 6, 1)
 	@doubler(va 1, 0.5)
 	1 @resoGrill(vn1 1 vn2 1)
+	::spat_goto(3, 380, 6, 1)
 	@doubler(va 1.5 vc 1, 0.45)
 EVENT 10 m54
 	input-sel 3
+	::spat_goto(3, 166, 3, 1)
 	@resoGrill(va 1 vc 0.4)
 	@doubler(vn2 1.5 vc 2, 0.5)
 

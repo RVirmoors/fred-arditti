@@ -44,13 +44,9 @@ EVENT 5 m32
 	1 ::spat_goto(3, 145, 1.5, 2)
 	::spat_goto(1, 145, 1.5, 2)
 
-
-;	curve 3-gain -30., 0.0	4
-
-
-; todo reverb infinite (replace w/ long?)
 ; TODO : fx-input fade out to zero slower
 
-; todo spat noises random
 ; todo dynamics m10-13 fade out, for CONTRAST w/ m14
 ; todo same for p2-A into B
+
+; todo MERGE 3 parts into one score file, test for leaking processes!
