@@ -217,10 +217,10 @@ NOTE D5 1/6	m14-r
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
 	1-out off
-	@resoGrill(vn1 1 vn2 1 va 0.8)
-	curve @command {rmirror feedbk} 0.001, 0.1 50 ; from here to m24...
-	$spatResoL := ::spat_teleport(1)
-	$spatResoR := ::spat_teleport(2)
+	@resoGrill(vn1 1 vn2 1 va 0.2)
+;	@doubler(vn1 1 va 2 vc 2.5, 0.15)
+	curve @command {gmirror feedbk} 0.01, 0.20 50 ; from here to m24...
+	$spatReso := ::spat_teleport(3)
 	@noiseRec(vn1 1)
 NOTE Eb5 1/6 ;e2
 NOTE 0 1/3
@@ -272,7 +272,7 @@ EVENT 10 m16-p
 	input-sel 3		; TODO: restore for final performance!!
 	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
 	$a[2] := -75
-	abort $spatTone
+;	abort $spatTone
 	$spatLoop := ::spat_circular(3, 2) ; start spinning loop
 	@noiseStop
 	@loopScreen
@@ -438,27 +438,26 @@ if ($playing == 0) {
 EVENT 5 m56
 	loadfile takes/p1-m56-64.wav
 	input-sel 1
-	$spatGran1 := ::spat_circular(1, 1) ; start spinning screen1
-	$spatGran2 := ::spat_circular(2, -1) ; start spinning screen2
-	$spatRepel1 := ::spat_repelAttacks(1)
-	$spatRepel2 := ::spat_repelAttacks(2)
+;	$spatGran1 := ::spat_circular(1, 1) ; start spinning screen1
+;	$spatGran2 := ::spat_circular(2, -1) ; start spinning screen2
+;	$spatRepel1 := ::spat_repelAttacks(1)
+;	$spatRepel2 := ::spat_repelAttacks(2)
 	@doubler(va 1.5, 0.75)
 	@resoGrill(off)
 	@mirror(vc 0.2)
 
 EVENT 10 m57
-	spat room 1 reverberance 65 ; restore reverberance
+	spat room 1 reverberance 90 ; restore reverberance
 	@mirror(vn2 1 va 1 vc 1 vn1 1)
 	@toneScreen(vn1 1, 0.88)
+	::spat_goto(3, 30, 0.5, 5)
 
 EVENT 16 m59
 	@mirrorOff
 	@resoScreen(vn1 1 vn2 1 va 1)
 	@toneScreen(vc 1, 0.99)
+	::spat_goto(2, 0, 4, 10)
 
 EVENT 4 m62
 	@mirror(vn2 1 va 1 vc 1 vn1 1)
 	@toneScreen(vc 1 va 0.5, 0.99)
-
-
-

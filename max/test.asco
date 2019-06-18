@@ -52,3 +52,5 @@ EVENT 5 m32
 ; TODO : fx-input fade out to zero slower
 
 ; todo spat noises random
+; todo dynamics m10-13 fade out, for CONTRAST w/ m14
+; todo same for p2-A into B

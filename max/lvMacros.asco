@@ -19,9 +19,6 @@
 
 @macro_def @start {
 	spat room 1 reverberance 90, room 1 air 1, room 1 size 666
-	spat source 1 aed -60 0 1
-	spat source 2 aed 60 0 1
-	spat source 3 aed 180 0 1
 	repel 1 0, 2 0, 3 0	; spat repel off
 	1-out off
 	2-outL off
@@ -117,21 +114,20 @@
 }
 
 @macro_def @resoGrill($in) {
-	1-partials $in
+;	1-partials $in
 	1-teeth $in
 	gran 1w 1 
 	3-outL g1
 	3-outR g2
-	1-tdel 0.36
-	gmirror grains_on_off 1
+	1-tdel 0.97
+	gmirror grains_on_off 1, dry -20
 	gmirror highpass 293, lowpass 14080
 	gmirror grain_freq 128, scrub_freq 75
 	getfreq 1
-
 	whenever FFUND ($fund) {
-		gmirror max_delay ($fund / 4)
+		gmirror max_delay ($fund / 2)
 	}
-	@energy_mirror(0.45, 0.75)
+;	@energy_mirror(0.45, 0.75)
 	1-setpartials @grillHarms(1760, 176, 1) ; from D4 293.66 36.7
 }
 
@@ -140,7 +136,7 @@
 	2-outL d1
 	2-outR d2
 	dmirror grains_on_off 1
-	dmirror feedbk 0.7, grain_freq 30, scrub_freq 0.25, max_delay 333
+	dmirror feedbk 0.6, grain_freq 30, scrub_freq 0.25, max_delay 333
 	dmirror highpass 1760, lowpass 14080		; A6 to A9
 	@energy_mirror(0.3, 0.75)
 }
