@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 82.0, 1144.0, 920.0 ],
+		"rect" : [ 42.0, 82.0, 1190.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1172,14 +1172,14 @@
 							"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"dry" : -70.0,
-									"feedbk" : 0.7,
-									"grain_freq" : 458.654022,
+									"dry" : -20.0,
+									"feedbk" : 0.775939,
+									"grain_freq" : 597.520081,
 									"grains_on_off" : 1.0,
 									"highpass" : 2504.628174,
-									"lowpass" : 22000.0,
-									"max_delay" : 707.106812,
-									"scrub_freq" : 26.465528,
+									"lowpass" : 17599.5,
+									"max_delay" : 223.101471,
+									"scrub_freq" : 93.060402,
 									"wet" : -0.237205
 								}
 
@@ -1203,14 +1203,14 @@
 										"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"dry" : -70.0,
-												"feedbk" : 0.7,
-												"grain_freq" : 458.654022,
+												"dry" : -20.0,
+												"feedbk" : 0.775939,
+												"grain_freq" : 597.520081,
 												"grains_on_off" : 1.0,
 												"highpass" : 2504.628174,
-												"lowpass" : 22000.0,
-												"max_delay" : 707.106812,
-												"scrub_freq" : 26.465528,
+												"lowpass" : 17599.5,
+												"max_delay" : 223.101471,
+												"scrub_freq" : 93.060402,
 												"wet" : -0.237205
 											}
 
@@ -2325,7 +2325,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 860.0, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "1p 1.5",
+					"text" : "1w 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2569,7 +2569,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1864.0, 345.0, 52.0, 36.0 ],
 					"style" : "",
-					"text" : "grains_on_off 0"
+					"text" : "lowpass 14080"
 				}
 
 			}
@@ -2769,7 +2769,6 @@
 									}
 ,
 									"patching_rect" : [ 1144.0, 224.0, 33.0, 22.0 ],
-									"presentation_rect" : [ 1148.0, 174.0, 0.0, 0.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2918,7 +2917,6 @@
 									}
 ,
 									"patching_rect" : [ 1088.0, 224.0, 33.0, 22.0 ],
-									"presentation_rect" : [ 1088.0, 221.0, 0.0, 0.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3055,7 +3053,6 @@
 									}
 ,
 									"patching_rect" : [ 1040.0, 224.0, 33.0, 22.0 ],
-									"presentation_rect" : [ 1040.0, 226.0, 0.0, 0.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3277,7 +3274,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 992.0, 88.332397, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "71 96"
+									"text" : "73 41"
 								}
 
 							}
@@ -4921,7 +4918,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 2444.0, 296.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "71 96"
+					"text" : "73 41"
 				}
 
 			}
@@ -5001,9 +4998,9 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"dry" : -70.0,
-									"feedbk" : 0.7,
+									"feedbk" : 0.6,
 									"grain_freq" : 413.357239,
-									"grains_on_off" : 0.0,
+									"grains_on_off" : 1.0,
 									"highpass" : 6213.42627,
 									"lowpass" : 17599.5,
 									"max_delay" : 816.088257,
@@ -5032,9 +5029,9 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"dry" : -70.0,
-												"feedbk" : 0.7,
+												"feedbk" : 0.6,
 												"grain_freq" : 413.357239,
-												"grains_on_off" : 0.0,
+												"grains_on_off" : 1.0,
 												"highpass" : 6213.42627,
 												"lowpass" : 17599.5,
 												"max_delay" : 816.088257,
@@ -5205,7 +5202,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 765.5, 536.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "off",
+					"text" : "d1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5232,7 +5229,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 715.0, 536.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "off",
+					"text" : "1t",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5330,7 +5327,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.0, 259.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1"
+									"text" : "14"
 								}
 
 							}
@@ -7194,7 +7191,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 429.0, 215.5, 36.0, 22.0 ],
-									"presentation_rect" : [ 470.0, 253.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~ 1."
 								}
@@ -7208,7 +7204,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 233.0, 215.5, 36.0, 22.0 ],
-									"presentation_rect" : [ 264.0, 218.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~ 1."
 								}
@@ -8505,6 +8500,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
+					"text" : "m28",
 					"textjustification" : 1
 				}
 
@@ -8904,13 +8900,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 176.5, 147.0, 50.0, 35.0 ],
 									"style" : "",
-									"text" : "0."
+									"text" : "0.997732"
 								}
 
 							}
@@ -10544,10 +10541,10 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"loopend" : [ 0.0, "ms" ],
-						"loopstart" : [ 0.0, "ms" ],
+						"loopstart" : [ 0.997732, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 0.0, "ticks" ],
-						"originaltempo" : 120.0,
+						"originaltempo" : 120.000008,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -12388,25 +12385,25 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-10::obj-1" : [ "live.gain~[11]", "transform", 0 ],
-			"obj-16::obj-1" : [ "live.gain~[12]", "transform", 0 ],
-			"obj-58" : [ "live.gain~[4]", "gain", 0 ],
 			"obj-129::obj-1" : [ "live.gain~[3]", "w teeth", 0 ],
-			"obj-207" : [ "amxd~[1]", "amxd~", 0 ],
-			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ],
 			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
 			"obj-60::obj-607" : [ "live.button[1]", "live.button", 0 ],
-			"obj-168" : [ "amxd~", "amxd~", 0 ],
-			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
-			"obj-48" : [ "output", "output", 0 ],
+			"obj-16::obj-1" : [ "live.gain~[12]", "transform", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
-			"obj-2::obj-10" : [ "live.gain~", "x cross", 0 ],
 			"obj-60::obj-55" : [ "live.text[3]", "live.text", 0 ],
+			"obj-5::obj-12" : [ "live.gain~[1]", "capture", 0 ],
+			"obj-2::obj-10" : [ "live.gain~", "x cross", 0 ],
+			"obj-168" : [ "amxd~", "amxd~", 0 ],
 			"obj-141" : [ "live.gain~[10]", "3", 0 ],
 			"obj-138" : [ "live.gain~[9]", "2", 0 ],
-			"obj-103" : [ "live.gain~[8]", "1", 0 ]
+			"obj-48" : [ "output", "output", 0 ],
+			"obj-103" : [ "live.gain~[8]", "1", 0 ],
+			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ],
+			"obj-207" : [ "amxd~[1]", "amxd~", 0 ],
+			"obj-10::obj-1" : [ "live.gain~[11]", "transform", 0 ],
+			"obj-58" : [ "live.gain~[4]", "gain", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

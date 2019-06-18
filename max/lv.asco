@@ -24,13 +24,15 @@ mubuffer readall capture_init.mubu
 input-gain 30 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
+$a := [-90, 90, 0]
+$d := [1, 1, 1]
+
 TRILL (C4 D#6) 3	m1
-;	$spatGran1 := ::spat_circular(1, 3) ; start spinning screen1
-;	$spatGran2 := ::spat_circular(3, -3) ; start spinning screen2
+	$spatTone := ::spat_circular(1, 3) ; start spinning screen1
+	$spatReso := ::spat_circular(3, -3) ; start spinning screen2
 	$spatRepel1 := ::spat_repelAttacks(1)
 	$spatRepel3 := ::spat_repelAttacks(3)
 	$spatNoise := ::spat_spray(2)
-
 
 	3 input-sel 4	; CELLO
 
@@ -124,10 +126,13 @@ if ($playing == 0) {
 }
 NOTE 0 1/2 m9
 	antescofo::suivi 1
-	spat source 1 aed 15 0 0.2
-	spat source 3 aed -15 0 0.2
-;	$spatGran2 := ::spat_circular(2, 1.1) ; match direction w/ 1out
-;	abort $spatGran2
+	abort $spatTone
+	abort $spatReso
+	$a[0] := 15
+	$d[0] := 0.2
+	$a[2] := -15
+	$d[2] := 0.2
+	$a := $a
 	@resoScreen(vn1 1 vn2 1)
 	1-gain 0
 	@toneScreen(vc 1, 0.58)
@@ -157,7 +162,6 @@ NOTE F1 1/2 @pizz ;cpizz5
 	}}
 	@resoScreen(vn1 1.5 vc 1)
 
-
 MULTI ((F1 G1) -> (C1 G1)) 2 ;m10
 	@noiseScreen(va 1 vn2 0.5)
 	1-cross c 1 vc 1
@@ -166,7 +170,14 @@ MULTI ((F1 G1) -> (C1 G1)) 2 ;m10
 NOTE C1 1	;down
 NOTE F3 1	;up
 
-	input-sel 3 ; VA
+	input-sel 3 ; VA	
+	abort $spatRepel1
+	abort $spatRepel3
+	repel 1 0, 3 0
+	$d[2] := 1
+	::spat_goto(1, 45, 1.5, 10)
+	::spat_goto(3, 180, 1, 7)
+	$spatReso := ::spat_radial(3)
 
 NOTE 0 3/5
 NOTE F2 2/5 @pizz ;vpizz1
@@ -186,6 +197,8 @@ NOTE 0 2/5
 	input-sel 1 ; VN1
 CHORD (F#5 G5) 1 ;vn1
 NOTE F4 3 ;m12
+	::spat_goto(1, -60, 4.5, 10)
+
 NOTE G6 1 ;FL
 NOTE F#5 1/2 ;fs
 NOTE G5 1/2 ;g 
@@ -197,11 +210,6 @@ NOTE D6 1 ;m13
 	abort $spatNoise
 CHORD (F#6 D#7) 4 ;TA
 	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
-;	abort $spatGran1
-;	abort $spatGran2
-	abort $spatRepel1
-	abort $spatRepel2
-	repel 1 0, 2 0
 
 if ($playing == 0) {
 	demoms 74262
@@ -213,6 +221,7 @@ antescofo::suivi 0
 	@mirrorOff
 
 NOTE D5 1/6	m14-r
+	abort $spatReso
 	antescofo::suivi 1
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
@@ -269,17 +278,18 @@ if ($playing == 0) {
 	demoms 89189
 }
 EVENT 10 m16-p
-	input-sel 3		; TODO: restore for final performance!!
+	input-sel 3	
 	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
+	abort $spatReso
 	$a[2] := -75
-;	abort $spatTone
-	$spatLoop := ::spat_circular(3, 2) ; start spinning loop
+	::spat_goto(3, 180, 2, 10)
+	$spatLoop := ::spat_circular(1, 2) ; start spinning loop
 	@noiseStop
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
 			mugran positionvar ($x/500), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)
-			$d[2] := 1 - ($x / 15000)
+			$d[0] := 1 - ($x / 15000)
 		} 
 		@grain := 0.01
 		{
@@ -298,18 +308,25 @@ MULTI (D4 E6) 4 m18
 	@noiseStop
 	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
 MULTI (E6 E5) 1
+	::spat_goto(3, -100, 0.2, 0.7)
 	input-sel 1
 	antescofo::suivi 0
 
 EVENT 5 m19-r
 	@noiseRec(vn1 1 vn2 1 va 1)
+	::spat_goto(3, -30, 1, 2.9)
+	3 ::spat_goto(3, 0, 2, 1)
 EVENT 10 m20-p
 	@noiseStop
 	@resoGrill(vn1 1 vn2 1 vc 1)
+	$d[0] := 1
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
-			mugran positionvar ($x/500), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)} 
+			mugran positionvar ($x/500), period 0 (1 + $x/10000), periodvar ($x/500), duration 0 (1 + $x/15000), durationvar 0 ($x/15000), resampling ($x/50000*(@rand_int(200)-100)), levelvar ($x / 5000)
+			$d[2] := $x/2000
+			$a[2] := $x/200
+		} 
 		@grain := 0.01
 		{
 		$x {
@@ -334,7 +351,9 @@ EVENT 10 m24
 			15 {15000}
 		}
 	}
-	curve @command {rmirror feedbk} 0.8 5
+	curve @command {gmirror feedbk} 0.8 5
+	$spatReso := ::spat_circular(3, -3)
+
 
 EVENT 5 m26
 	@noiseStop	
@@ -373,8 +392,8 @@ EVENT 10 m30
 EVENT 5 m32
 	input-sel 2
 	@doubler(va 2 vn2 2, 2.5)
-	::spat_goto(1, 35, 1.5, 2)
-	::spat_goto(3, 35, 1.5, 2)
+	::spat_goto(1, 35, 1.5, 1)
+	::spat_goto(3, 35, 1.5, 1)
 	1 @resoGrill(vn2 1 vc 1)
 	1 ::spat_goto(3, 145, 1.5, 2)
 	::spat_goto(1, 145, 1.5, 2)
@@ -445,6 +464,8 @@ EVENT 5 m56
 	@doubler(va 1.5, 0.75)
 	@resoGrill(off)
 	@mirror(vc 0.2)
+	::spat_goto(1, 145, 1.5, 0.2)
+	::spat_goto(2, 45, 1, 0.2)
 
 EVENT 10 m57
 	spat room 1 reverberance 90 ; restore reverberance
@@ -461,3 +482,5 @@ EVENT 16 m59
 EVENT 4 m62
 	@mirror(vn2 1 va 1 vc 1 vn1 1)
 	@toneScreen(vc 1 va 0.5, 0.99)
+	::spat_goto(3, 0, 1, 3)
+	10 ::spat_goto(3, 60, 0.15, 5)

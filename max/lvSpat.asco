@@ -18,10 +18,7 @@ whenever ($a[2] || $d[2]) {
 	@local $start_d
 	$start_d := $d[($source-1)]
 	repel $source $start_d
-;	whenever ($energy) {
-;		$d[($source-1)] := $start_d * ($energy*3 + 0.5)
-;		$d := $d 	; trigger update
-;	}
+	print repel $source $start_d
 }
 
 @proc_def ::spat_circular($source, $dir) {
@@ -57,7 +54,7 @@ whenever ($a[2] || $d[2]) {
 	@local $start_a
 	$start_a := $a[($source-1)]
 	whenever ($periodicity) {
-		spat source $source azim ($start_a + ($periodicity - 0.5) * 20)
+		spat source $source azim ($start_a + ($periodicity - 0.5) * 15)
 	}
 }
 
