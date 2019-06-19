@@ -40,7 +40,7 @@ NOTE F1 5 @fermata ;cl-low
 
 	@toneScreen(vc 1, 0.73) ; 1-out
 	curve 1-gain -30, 0.0	4
-	@noiseScreen(vn2 5)
+	@noiseScreen(vn2 5, 0.9)
 	3 @resoScreen(vn2 25)	; reopen
 	@noiseStop
 	@noiseRec(vc 15)
@@ -50,13 +50,13 @@ NOTE F1 5 @fermata ;cl-low
 NOTE E3 5 ;va-e3
 	@toneScreen(vc 1 va 1.2, 0.77)
 	@noiseStop
-	0.1 @noiseScreen(vn2 5 vn1 3)
+	0.1 @noiseScreen(vn2 5 vn1 3, 1.1)
 	2.9 @resoScreen(vn2 26 vc 20)
-	@noiseScreen(vn1 5)
+	@noiseScreen(vn1 5, 0.9)
 
 NOTE A3 1 ;va-a3
 	@toneScreen(vc 1 va 1.2 vn1 5, 0.7)
-	@noiseScreen(vn2 1)
+	@noiseScreen(vn2 1, 1.1)
 	input-gain 8
 
 CHORD (-A3 F#3) 2 ;imperc
@@ -68,21 +68,21 @@ NOTE 0 3 @fermata ;silence m4
 	@toneScreen(vn2 1.2, 0.58)
 	@resoScreen(off)
 	2 print in m4...
-	@noiseScreen(vn2 1 vc 1)
+	@noiseScreen(vn2 1 vc 1, 0.9)
 
 TRILL (A4 G5) 2 ;delic
 ;	@toneScreen(off, 0)
 	@resoScreen(va 1)
 	@noiseStop
 NOTE G#3 1 ;gsharp
-	@noiseScreen(vn2 1)
+	@noiseScreen(vn2 1, 1.1)
 	@resoScreen(vn1 1)
 NOTE 0 1 @fermata ;silence
 	@noiseStop
 TRILL (A3) 2 ;atrill
 	@resoScreen(off)
 	1.5 print before m6...
-	@noiseScreen(vn2 1)
+	@noiseScreen(vn2 1, 1.05)
 	antescofo::suivi 0
 
 if ($playing == 0) {
@@ -92,7 +92,7 @@ CHORD (Ab3 E4) 2 m6
 	antescofo::suivi 1
 	@toneScreen(vn1 1 vn2 1 va 1, 0.53)	
 	curve 1-gain -30., 0.0	4
-	@noiseScreen(vc 1)
+	@noiseScreen(vc 1, 0.95)
 
 	2 input-sel 4 ; CL
 	@noiseStop
@@ -111,7 +111,7 @@ TRILL (F5 G6) 2 ;v1-improv
 NOTE -F5 2 ;m8
 	input-gain 3
 	@resoScreen(vn1 1 va 1)
-	@noiseScreen(vc 0.77)
+	@noiseScreen(vc 0.77, 0.85)
 
 	2 input-sel 2 ; VN2
 	input-gain 10
@@ -163,7 +163,7 @@ NOTE F1 1/2 @pizz ;cpizz5
 	@resoScreen(vn1 1.5 vc 1)
 
 MULTI ((F1 G1) -> (C1 G1)) 2 ;m10
-	@noiseScreen(va 1 vn2 0.5)
+	@noiseScreen(va 1 vn2 0.5, 1.05)
 	1-cross c 1 vc 1
 	@toneScreen(vn2 2, 0.81)
 	;curve 1-gain -30, 0.0	1.5
@@ -192,7 +192,7 @@ NOTE F2 2/5 @pizz ;vpizz4
 NOTE 0 1/5
 NOTE F2 2/5 @pizz ;vpizz5
 NOTE 0 2/5
-	@noiseScreen(vc 1 va 1)
+	@noiseScreen(vc 1 va 1, 0.9)
 
 	input-sel 1 ; VN1
 CHORD (F#5 G5) 1 ;vn1
@@ -226,8 +226,7 @@ NOTE D5 1/6	m14-r
 	spat room 1 reverberance 65 ; reduce reverb, tighter sound
 	@toneScreen(off, 0)
 	1-out off
-	@resoGrill(vn1 1 vn2 1 va 0.2)
-;	@doubler(vn1 1 va 2 vc 2.5, 0.15)
+	@resoGrill(vn1 1 vn2 1 va 0.2, -20, 0)
 	curve @command {gmirror feedbk} 0.01, 0.20 50 ; from here to m24...
 	$spatReso := ::spat_teleport(3)
 	@noiseRec(vn1 1)
@@ -258,7 +257,7 @@ NOTE 0 1/6
 
 TRILL (G#3 D3) 1 ;m15
 	1 input-sel 1
-	@resoGrill(vn1 1)
+	@resoGrill(vn1 1, -20, 0)
 	
 NOTE C3 1/5 ;e1
 NOTE F4 1/5 ;e2
@@ -279,7 +278,7 @@ if ($playing == 0) {
 }
 EVENT 10 m16-p
 	input-sel 3	
-	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5)
+	@resoGrill(vn1 1 vn2 1 va 1 vc 0.5, -20, 0)
 	abort $spatReso
 	$a[2] := -75
 	::spat_goto(3, 180, 2, 10)
@@ -306,7 +305,7 @@ if ($playing == 0) {
 MULTI (D4 E6) 4 m18 
 	antescofo::suivi 1
 	@noiseStop
-	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1, -20, 0)
 MULTI (E6 E5) 1
 	::spat_goto(3, -100, 0.2, 0.7)
 	input-sel 1
@@ -318,7 +317,8 @@ EVENT 5 m19-r
 	3 ::spat_goto(3, 0, 2, 1)
 EVENT 10 m20-p
 	@noiseStop
-	@resoGrill(vn1 1 vn2 1 vc 1)
+	@resoGrill(vn1 1 vn2 1 vc 1, -20, 0)
+;	$spatRepel3 := ::spat_repelAttacks(3)
 	$d[0] := 1
 	@loopScreen
 	curve playLoop 
@@ -335,11 +335,13 @@ EVENT 10 m20-p
 		}
 	}
 
-EVENT 10 m22
+EVENT 10 m22-r
 	@noiseRec(vn1 1 vn2 1 va 1)
-EVENT 10 m24
+	::spat_goto(3, 135, 1.5, 10)
+EVENT 5 m24-p
 	@noiseStop	
-	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1, -20, 0)
+	::spat_goto(3, 225, 1.5, 1)
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
@@ -350,20 +352,24 @@ EVENT 10 m24
 			{0}
 			15 {15000}
 		}
-	}
-	curve @command {gmirror feedbk} 0.8 5
+	}	
 	$spatReso := ::spat_circular(3, -3)
+
+EVENT 5 m25
+	 ::spat_goto(3, 30, 2.5, 3)
+	 curve @command {gmirror feedbk} 0.8 5
 
 
 EVENT 5 m26
 	@noiseStop	
-	@resoGrill(vn1 1 vn2 1)
+	@resoGrill(vn1 1 vn2 1, -20, 0)
+	::spat_goto(3, 0, 2, 4)
 
-EVENT 5 m27
+EVENT 5 m27-r
 	@noiseRec(vn1 1 vn2 1 vc 1)
-EVENT 10 m28
+EVENT 10 m28-p
 	@noiseStop	
-	@resoGrill(vn1 1 vn2 1 va 1)
+	@resoGrill(vn1 1 vn2 1 va 1, -20, 0)
 	@loopScreen
 	curve playLoop 
 		@action := {cursor $x
@@ -387,27 +393,31 @@ EVENT 10 m30
 	::spat_goto(1, 55, 2, 10)
 	::spat_goto(3, 55, 2, 10)
 	getfreq 1
-	@doubler(va 2 vc 2.5, 0.15)
-	@resoGrill(vn1 1 vn2 1)
+	@doubler(va 2 vc 2.5, 0.15, 16000)
+	@resoGrill(vn1 1 vn2 1, -20, 0)
 	gmirror feedbk 0.1 
 EVENT 5 m32
 	input-sel 2
-	@doubler(va 2 vn2 2, 2.5)
+	@doubler(va 2 vn2 2, 2.1, 22000)
 	::spat_goto(1, 35, 1.5, 1)
 	::spat_goto(3, 35, 1.5, 1)
-	1 @resoGrill(vn2 1 vc 1)
+	1 @resoGrill(vn2 1 vc 1, -20, 0)
 	1 ::spat_goto(3, 145, 1.5, 2)
 	::spat_goto(1, 145, 1.5, 2)
 EVENT 11 m33
-	::spat_goto(3, 235, 2.5, 11)
 	whenever MIRSPAT ($a[2]) {
 		$a[0] := -$a[2]
 	}
-	@resoGrill(vn1 1 va 1 vc 0.5)
+	@resoGrill(vn1 1 va 1 vc 0.5, -20, 0)
+	::spat_goto(3, 145, 3, 1)
+	1 ::spat_goto(3, 145, 1, 1)
+	1 ::spat_goto(3, 145, 3, 1)
+	2 ::spat_goto(3, 145, 1, 1)
+	::spat_goto(3, 235, 2.5, 8)
 EVENT 24 m35
 	::spat_goto(3, 360, 1.5, 4)
-	@doubler(vn1 1.5 vn2 2, 3)
-	@resoGrill(va 1 vc 1)
+	@doubler(vn1 1.2 vn2 2, 2.4, 22000)
+	@resoGrill(va 1 vc 1, -20, 0)
 	4 ::spat_goto(3, 0, 1.5, 0.1)
 	2 ::spat_goto(3, 60, 1, 5)
 	5 ::spat_goto(3, -60, 0.5, 5)
@@ -416,26 +426,26 @@ EVENT 24 m35
 EVENT 10 m40
 	::spat_goto(3, 205, 1, 5)
 	input-sel 3
-	@doubler(vn1 2 vn2 2 va 1, 3.5)
-	@resoGrill(va 0.5 vc 1)
+	@doubler(vn1 2 vn2 2 va 1, 2.5, 22000)
+	@resoGrill(va 0.5 vc 1, -20, 0)
 EVENT 10 m42
 	input-sel 1
-	@resoGrill(vn1 1 vc 1)
-	@doubler(vn2 2 va 1.5, 3)
+	@resoGrill(vn1 1 vc 1, -20, 0)
+	@doubler(vn2 2 va 1.5, 2.3, 20500)
 	2 ::spat_goto(3, -45, 3, 1)
 EVENT 27 m44
 	input-sel 2
 	::spat_goto(3, 30, 5, 2)
-	@resoGrill(va 1 vc 1)
-	@doubler(vn1 1.5 vn2 2, 2.5)
+	@resoGrill(va 1 vc 1, -20, 0)
+	@doubler(vn1 1.5 vn2 2, 2.1, 22000)
 	10 ::spat_goto(3, 120, 5, 5)
 EVENT 3 m49
-	@doubler(vn1 2 vn2 2 va 1.5, 3)
+	@doubler(vn1 2 vn2 2 va 1.5, 3, 20500)
 	::spat_goto(3, 355, 2, 1)
 	@noiseRec(vn1 1 vn2 1 va 1)
-	@resoGrill(vc 1)
+	@resoGrill(vc 1, -20, 0)
 EVENT 5 m50
-	@resoGrill(vn1 1 vn2 1 vc 1)
+	@resoGrill(vn1 1 vn2 1 vc 1, -20, 0)
 	@noiseStop
 	@loopScreen
 	curve playLoop 
@@ -451,18 +461,18 @@ EVENT 5 m50
 	}
 EVENT 15 m51
 	::spat_goto(3, 120, 5, 1)
-	@resoGrill(vn1 1 vn2 1 va 1 vc 1)
-	7 @resoGrill(vn1 1 vn2 1 vc 1)
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1, -20, 0)
+	7 @resoGrill(vn1 1 vn2 1 vc 1, -20, 0)
 	::spat_goto(3, 270, 6, 1)
-	@doubler(va 1, 0.5)
-	1 @resoGrill(vn1 1 vn2 1)
+	@doubler(va 1, 0.5, 19500)
+	1 @resoGrill(vn1 1 vn2 1, -20, 0)
 	::spat_goto(3, 380, 6, 1)
-	@doubler(va 1.5 vc 1, 0.45)
+	@doubler(va 1.5 vc 1, 0.45, 16500)
 EVENT 10 m54
 	input-sel 3
 	::spat_goto(3, 166, 3, 1)
-	@resoGrill(va 1 vc 0.4)
-	@doubler(vn2 1.5 vc 2, 0.5)
+	@resoGrill(va 1 vc 0.4, -20, 0)
+	@doubler(vn2 1.5 vc 2, 0.5, 19000)
 
 
 if ($playing == 0) {
@@ -472,8 +482,8 @@ EVENT 5 m56
 	loadfile takes/p1-m56-64.wav
 	input-sel 1
 	abort MIRSPAT
-	@doubler(va 1.5, 0.75)
-	@resoGrill(off)
+	@doubler(va 1.5, 0.75, 20000)
+	@resoGrill(off, 0, 0)
 	@mirror(vc 0.2)
 	::spat_goto(1, 145, 1.5, 0.2)
 	::spat_goto(2, 45, 1, 0.2)

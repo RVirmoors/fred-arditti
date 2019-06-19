@@ -50,3 +50,7 @@ EVENT 5 m32
 ; todo same for p2-A into B
 
 ; todo MERGE 3 parts into one score file, test for leaking processes!
+
+; todo Negative Repel? for p3-A
+
+; todo: spat (mixing desk) instructions for raw sound.

@@ -58,6 +58,28 @@ whenever ($a[2] || $d[2]) {
 	}
 }
 
+@proc_def ::spat_circle_walk($source, $per) {
+	@local $start_a, $start_d, $period, $random
+	$period := $per
+	loop CIRC $period {
+		kill GOTOC
+		$random := @rand_int(60)
+		$start_a := $a[($source-1)]
+		$start_d := $d[($source-1)]
+		curve GOTOC @Grain := 0.05s, @Action := {
+			$a[($source-1)] := $x1
+			$a := $a
+		}
+		{ $x1, $x2 {
+			{$start_a, $start_d}
+			($per/2) {($start_a + $random*6 - 150), $start_d}
+		}}
+;		$period := $per + (@rand_int(50) / 25)	; TODO put this back in?	
+	}
+
+}
+
+
 @proc_def ::spat_cross($source) {
 	@local $start_a, $start_d
 	whenever ($switch_button) {

@@ -23,12 +23,10 @@ input-gain 8 ; start is very quiet!!!
 input-sel 1 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
 EVENT 15 A
-;	$spatReso := ::spat_circular(1, 1) ; start spinning screen1
 	$spatNoise := ::spat_radial(2)
-;	$spatTone := ::spat_teleport(3)
 	@noiseRec(vn2 2)
 	4 @noiseStop
-	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
+	@noiseScreen(vn1 2 vn2 1 va 2 vc 1, 0.97)
 	curve 2-gain -30, 0.0	2.1
 	$spatNoise := ::spat_spray(2)
 	dmirror feedbk 0.9, grain_freq 18, max_delay 250
@@ -73,12 +71,15 @@ EVENT 70 B
 	$spatReso := ::spat_cross(3)
 	repel 2 0
 	$a := [0, -90, 90]
+	$d := [1, 2, 1]
+	$a := $a
 	enable_switch 1
 	$switch_button := 1 ; start with mirror
 	@mirror(vn1 1 vn2 1 va 1 vc 1)
-	@resoGrill(vn1 1 vn2 1 va 1 vc 1) ; [s]witch MANUALLY between the two
+	@resoGrill(vn1 1 vn2 1 va 1 vc 1, -15, -15) ; [s]witch MANUALLY between the two
 
 	0.2 dmirror grains_on_off 1
+	1-teeth off
 	dmirror feedbk 0.07, grain_freq 19.7
 	dmirror highpass 13400, lowpass 22000
 	dmirror scrub_freq 0.66, max_delay 2000
@@ -99,7 +100,7 @@ EVENT 70 C
 	enable_switch 0
 	$switch_button := 0
 	@mirror(vn1 1 vn2 1 va 1 vc 1)
-	@resoGrill(vn1 0.2 vn2 0.2 va 0.1)
+	@resoGrill(vn1 0.2 vn2 0.2 va 0.1, -20, -10)
 	abort $spatMirr
 	abort $spatReso
 	$spatMirr := ::spat_circular(2, 1)
@@ -119,7 +120,7 @@ EVENT 70 C
 	}}
 
 EVENT 70 D ; back to section A settings
-	@noiseScreen(vn1 2 vn2 1 va 2 vc 1)
+	@noiseScreen(vn1 2 vn2 1 va 2 vc 1, 1.1)
 	$spatNoise := ::spat_spray(2)
 	dmirror feedbk 0.9, grain_freq 18, max_delay 250
 ;EVENT 1 end
