@@ -162,4 +162,20 @@ loadfile takes/p3-E1.wav
 			{ 0.66, 500}
 		5	{ 0.01, 100 }
 		5	{ 5	  , 50 }
-	}}
+	}} ;TODO spat & envelopes for more pages
+
+EVENT 39 F-end ;TODO check for leaks
+
+	@doubler(vn1 3 vn2 3 va 3 vc 2.5, 0.5, 600)
+	$a[0] := 0 ; doubler
+	$d[0] := 0.6
+	$a := $a
+
+	@noiseScreen(vn1 2 vn2 1 va 2 vc 1, 1.1)
+;	$spatNoise := ::spat_spray(2)
+	dmirror feedbk 0.9, grain_freq 18, max_delay 250
+
+	@resoScreen(vn1 2 vn2 2)
+	abort $spatTone
+	repel 1 0
+	$spatTone := ::spat_circle_walk(1, 3)

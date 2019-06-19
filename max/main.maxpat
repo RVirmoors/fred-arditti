@@ -1172,10 +1172,10 @@
 							"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"dry" : -20.0,
-									"feedbk" : 0.8,
+									"dry" : -15.0,
+									"feedbk" : 0.716,
 									"grain_freq" : 597.520081,
-									"grains_on_off" : 0.0,
+									"grains_on_off" : 1.0,
 									"highpass" : 2504.628174,
 									"lowpass" : 17599.5,
 									"max_delay" : 223.101471,
@@ -1203,10 +1203,10 @@
 										"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"dry" : -20.0,
-												"feedbk" : 0.8,
+												"dry" : -15.0,
+												"feedbk" : 0.716,
 												"grain_freq" : 597.520081,
-												"grains_on_off" : 0.0,
+												"grains_on_off" : 1.0,
 												"highpass" : 2504.628174,
 												"lowpass" : 17599.5,
 												"max_delay" : 223.101471,
@@ -2569,7 +2569,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1864.0, 345.0, 52.0, 36.0 ],
 					"style" : "",
-					"text" : "grains_on_off 0"
+					"text" : "max_delay 50"
 				}
 
 			}
@@ -3274,7 +3274,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 992.0, 88.332397, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "72 96"
+									"text" : "72 99"
 								}
 
 							}
@@ -4918,7 +4918,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 2444.0, 296.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "72 96"
+					"text" : "72 99"
 				}
 
 			}
@@ -4998,13 +4998,13 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"dry" : -70.0,
-									"feedbk" : 0.2,
+									"feedbk" : 0.6,
 									"grain_freq" : 413.357239,
-									"grains_on_off" : 0.0,
+									"grains_on_off" : 1.0,
 									"highpass" : 6213.42627,
 									"lowpass" : 17599.5,
-									"max_delay" : 576.194397,
-									"scrub_freq" : 22.141979,
+									"max_delay" : 316.227753,
+									"scrub_freq" : 47.269875,
 									"wet" : -0.237205
 								}
 
@@ -5029,13 +5029,13 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"dry" : -70.0,
-												"feedbk" : 0.2,
+												"feedbk" : 0.6,
 												"grain_freq" : 413.357239,
-												"grains_on_off" : 0.0,
+												"grains_on_off" : 1.0,
 												"highpass" : 6213.42627,
 												"lowpass" : 17599.5,
-												"max_delay" : 576.194397,
-												"scrub_freq" : 22.141979,
+												"max_delay" : 316.227753,
+												"scrub_freq" : 47.269875,
 												"wet" : -0.237205
 											}
 
@@ -5132,7 +5132,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 438.5, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "vn1 1 vn2 1.2 va 1",
+					"text" : "vn2 1 va 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5327,7 +5327,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.0, 259.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "9"
+									"text" : "10"
 								}
 
 							}
@@ -8653,7 +8653,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 43.0 ],
 					"style" : "",
-					"text" : "m15",
+					"text" : "E",
 					"textjustification" : 1
 				}
 
@@ -9053,14 +9053,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 176.5, 147.0, 50.0, 35.0 ],
 									"style" : "",
-									"text" : "94999.984375"
+									"text" : "0."
 								}
 
 							}
@@ -10692,8 +10691,8 @@
 						"basictuning" : 440,
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
-						"loopend" : [ 0.0, "ms" ],
-						"loopstart" : [ 94999.984375, "ms" ],
+						"loopend" : [ 16484.240234, "ms" ],
+						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
 						"originallength" : [ 0.0, "ticks" ],
 						"originaltempo" : 120.0,
