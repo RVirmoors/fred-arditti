@@ -24,8 +24,13 @@ input-gain 1
 ;EVENT 10 next
 ;@doubler(vn2 1 va 1)
 ;::spat_goto(3, -55, 1, 1)
+$a := [-90, 90, 0]
+$d := [1, 1, 1]
 
-@simpleCurve(gmirror feedbk, 0, 0.20, 50)
+	$spatTone := ::spat_circular(1, 3) ; start spinning screen1
+	$spatReso := ::spat_circular(3, -3) ; start spinning screen2
+;	$spatRepel1 := ::spat_repelAttacks(1)
+;	$spatRepel3 := ::spat_repelAttacks(3)
 
 ; TODO : fx-input fade out to zero slower
 
