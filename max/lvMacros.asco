@@ -43,16 +43,24 @@
 	3-gain 0
 	getfreq 0
 	gran off
+	granXtime 50
+	gmirror dry -70, grains_on_off 0
 	1-partials off
+	1-partialsXtime 100
 	1-teeth off
+	1-teethXtime 100
 	1-tw 0.58 164.83 1. 0.38 0.15 0.37
 	1-trans off
+	1-transXtime 100
 	2-trans off
+	2-transXtime 100
 	1-cross off
+	1-crossXtime 100
 	delay off
-	gmirror dry -70, grains_on_off 0
+	delayXtime 500
 	dmirror dry -70, grains_on_off 0
 	capture off
+	captureXtime 50
 	mubuffer clearall
 	$peaks := 0
 	$energy := 0

@@ -38,6 +38,34 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1866.5, 104.0, 77.0, 22.0 ],
+					"style" : "",
+					"text" : "r delayXtime"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.941176, 0.690196, 0.196078, 1.0 ],
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1913.0, 603.0, 73.0, 22.0 ],
+					"style" : "",
+					"text" : "r granXtime"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-222",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -981,14 +1009,14 @@
 							"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"dry" : -20.0,
-									"feedbk" : 0.2,
-									"grain_freq" : 597.520081,
+									"dry" : -70.0,
+									"feedbk" : 0.7,
+									"grain_freq" : 458.654022,
 									"grains_on_off" : 1.0,
 									"highpass" : 2504.628174,
-									"lowpass" : 17599.5,
-									"max_delay" : 223.101471,
-									"scrub_freq" : 93.060402,
+									"lowpass" : 22000.0,
+									"max_delay" : 707.106812,
+									"scrub_freq" : 26.465528,
 									"wet" : 0.0
 								}
 
@@ -1012,14 +1040,14 @@
 										"origname" : "~/Documents/fred-arditti/max/Granular Mirror Maze 1.0.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"dry" : -20.0,
-												"feedbk" : 0.2,
-												"grain_freq" : 597.520081,
+												"dry" : -70.0,
+												"feedbk" : 0.7,
+												"grain_freq" : 458.654022,
 												"grains_on_off" : 1.0,
 												"highpass" : 2504.628174,
-												"lowpass" : 17599.5,
-												"max_delay" : 223.101471,
-												"scrub_freq" : 93.060402,
+												"lowpass" : 22000.0,
+												"max_delay" : 707.106812,
+												"scrub_freq" : 26.465528,
 												"wet" : 0.0
 											}
 
@@ -2177,7 +2205,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 860.0, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "1w 1",
+					"text" : "1p 1.5",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2421,7 +2449,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1864.0, 345.0, 52.0, 35.0 ],
 					"style" : "",
-					"text" : "lowpass 14080"
+					"text" : "max_delay 50"
 				}
 
 			}
@@ -4989,13 +5017,13 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"dry" : -70.0,
-									"feedbk" : 0.6,
-									"grain_freq" : 413.357239,
+									"feedbk" : 0.5,
+									"grain_freq" : 361.816467,
 									"grains_on_off" : 1.0,
 									"highpass" : 6213.42627,
 									"lowpass" : 17599.5,
-									"max_delay" : 816.088257,
-									"scrub_freq" : 22.141979,
+									"max_delay" : 316.227753,
+									"scrub_freq" : 47.269875,
 									"wet" : -0.237205
 								}
 
@@ -5020,13 +5048,13 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"dry" : -70.0,
-												"feedbk" : 0.6,
-												"grain_freq" : 413.357239,
+												"feedbk" : 0.5,
+												"grain_freq" : 361.816467,
 												"grains_on_off" : 1.0,
 												"highpass" : 6213.42627,
 												"lowpass" : 17599.5,
-												"max_delay" : 816.088257,
-												"scrub_freq" : 22.141979,
+												"max_delay" : 316.227753,
+												"scrub_freq" : 47.269875,
 												"wet" : -0.237205
 											}
 
@@ -5090,7 +5118,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "fx-input.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
@@ -5123,7 +5151,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 438.5, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "off",
+					"text" : "2t 1.5 c 0.2",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5220,7 +5248,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 715.0, 536.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "1t",
+					"text" : "1w",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5318,7 +5346,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.0, 259.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "10"
+									"text" : "2"
 								}
 
 							}
@@ -8133,7 +8161,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 793.0, 306.0, 640.0, 480.0 ],
+						"rect" : [ 1159.0, 798.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8724,16 +8752,15 @@
 					"fontface" : 0,
 					"fontsize" : 30.0,
 					"id" : "obj-17",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 108.5, 935.0, 71.0, 76.0 ],
+					"patching_rect" : [ 108.5, 935.0, 71.0, 42.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 730.5, 103.0, 110.5, 42.0 ],
 					"style" : "",
-					"text" : "m22-r",
+					"text" : "m1",
 					"textjustification" : 1
 				}
 
@@ -10875,7 +10902,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "fx-input.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
@@ -11817,6 +11844,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-124", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-199", 0 ],
 					"disabled" : 0,
 					"hidden" : 1,
@@ -11957,6 +11993,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-23", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-172", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -12735,8 +12780,8 @@
 			"obj-16::obj-1" : [ "live.gain~[12]", "transform", 0 ],
 			"obj-60::obj-50" : [ "live.numbox[6]", "live.numbox", 0 ],
 			"obj-60::obj-21" : [ "live.numbox[4]", "live.numbox", 0 ],
-			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ],
 			"obj-60::obj-35" : [ "live.numbox[5]", "live.numbox", 0 ],
+			"obj-4::obj-10" : [ "live.gain~[5]", "partials", 0 ],
 			"obj-60::obj-606" : [ "live.text[2]", "live.text", 0 ],
 			"obj-141" : [ "live.gain~[10]", "3", 0 ],
 			"obj-138" : [ "live.gain~[9]", "2", 0 ],
