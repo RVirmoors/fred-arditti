@@ -227,7 +227,7 @@ NOTE D5 1/6	m14-r
 	@toneScreen(off, 0)
 	1-out off
 	@resoGrill(vn1 1 vn2 1 va 0.2, -20, 0)
-	curve @command {gmirror feedbk} 0.01, 0.20 50 ; from here to m24...
+	@simpleCurve(gmirror feedbk, 0.01, 0.20, 50) ; from here to m24...
 	$spatReso := ::spat_teleport(3)
 	@noiseRec(vn1 1)
 NOTE Eb5 1/6 ;e2
@@ -357,7 +357,7 @@ EVENT 5 m24-p
 
 EVENT 5 m25
 	 ::spat_goto(3, 30, 2.5, 3)
-	 curve @command {gmirror feedbk} 0.8 5
+	 @simpleCurve(gmirror feedbk, 0.2, 0.8, 5)
 
 
 EVENT 5 m26

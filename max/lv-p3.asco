@@ -32,7 +32,6 @@ EVENT 25 A
 	$d[2] := 0.2
 	$a := $a
 
-;	curve @command {spat room 1 reverberance} 20, 90 10
 	curve granMirror @Grain := 0.05s, @Action := {gmirror feedbk $x, grain_freq $y}
 	{ $x, $y {
 			{ 0.9, 128 }
@@ -113,11 +112,11 @@ EVENT 10 C
 
 EVENT 10 m8 
 	::spat_goto(3, -40, 1, 5)
-	curve @command {gmirror feedbk} 0.5, 0.8 5
+	@simpleCurve(gmirror feedbk, 0.5, 0.8, 5)
 
 EVENT 5 m10
 	::spat_goto(3, -200, 0.7, 3)
-	curve @command {dmirror feedbk} 0.7, 0.2 5
+	@simpleCurve(dmirror feedbk, 0.7, 0.20, 5)
 
 EVENT 11 m11
 	::spat_goto(3, -155, 1, 4)

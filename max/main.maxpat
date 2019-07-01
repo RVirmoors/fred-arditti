@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 82.0, 1312.0, 920.0 ],
+		"rect" : [ 42.0, 82.0, 1309.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -982,13 +982,13 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"dry" : -70.0,
-									"feedbk" : 0.7,
-									"grain_freq" : 458.654022,
+									"feedbk" : 0.2,
+									"grain_freq" : 597.520081,
 									"grains_on_off" : 0.0,
 									"highpass" : 2504.628174,
-									"lowpass" : 22000.0,
-									"max_delay" : 707.106812,
-									"scrub_freq" : 26.465528,
+									"lowpass" : 17599.5,
+									"max_delay" : 223.101471,
+									"scrub_freq" : 93.060402,
 									"wet" : 0.0
 								}
 
@@ -1013,13 +1013,13 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"dry" : -70.0,
-												"feedbk" : 0.7,
-												"grain_freq" : 458.654022,
+												"feedbk" : 0.2,
+												"grain_freq" : 597.520081,
 												"grains_on_off" : 0.0,
 												"highpass" : 2504.628174,
-												"lowpass" : 22000.0,
-												"max_delay" : 707.106812,
-												"scrub_freq" : 26.465528,
+												"lowpass" : 17599.5,
+												"max_delay" : 223.101471,
+												"scrub_freq" : 93.060402,
 												"wet" : 0.0
 											}
 
@@ -2176,7 +2176,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 860.0, 587.0, 313.5, 22.0 ],
 					"style" : "",
-					"text" : "1p 1.5",
+					"text" : "off",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -4988,13 +4988,13 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"dry" : -70.0,
-									"feedbk" : 0.5,
-									"grain_freq" : 361.816467,
+									"feedbk" : 0.6,
+									"grain_freq" : 413.357239,
 									"grains_on_off" : 0.0,
 									"highpass" : 6213.42627,
 									"lowpass" : 17599.5,
-									"max_delay" : 316.227753,
-									"scrub_freq" : 47.269875,
+									"max_delay" : 816.088257,
+									"scrub_freq" : 22.141979,
 									"wet" : -0.237205
 								}
 
@@ -5019,13 +5019,13 @@
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"dry" : -70.0,
-												"feedbk" : 0.5,
-												"grain_freq" : 361.816467,
+												"feedbk" : 0.6,
+												"grain_freq" : 413.357239,
 												"grains_on_off" : 0.0,
 												"highpass" : 6213.42627,
 												"lowpass" : 17599.5,
-												"max_delay" : 316.227753,
-												"scrub_freq" : 47.269875,
+												"max_delay" : 816.088257,
+												"scrub_freq" : 22.141979,
 												"wet" : -0.237205
 											}
 
@@ -5165,7 +5165,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 814.125, 536.241211, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "g1",
+					"text" : "off",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5317,7 +5317,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.0, 259.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1"
+									"text" : "7"
 								}
 
 							}
@@ -5529,7 +5529,7 @@
 					"fontsize" : 16.0,
 					"id" : "obj-149",
 					"ignoreclick" : 1,
-					"items" : [ "m1", ",", "m6", ",", "m9", ",", "m14-r", ",", "m16-p", ",", "m18", ",", "m19-r", ",", "m20-p", ",", "m22-r", ",", "m24-p", ",", "m25", ",", "m26", ",", "m27-r", ",", "m28-p", ",", "m30", ",", "m32", ",", "m33", ",", "m35", ",", "m40", ",", "m42", ",", "m44", ",", "m49", ",", "m50", ",", "m51", ",", "m54", ",", "m56", ",", "m57", ",", "m59", ",", "m62" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7218,7 +7218,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"id" : "obj-94",
-					"items" : [ "m1", ",", "m6", ",", "m9", ",", "m14-r", ",", "m16-p", ",", "m18", ",", "m19-r", ",", "m20-p", ",", "m22-r", ",", "m24-p", ",", "m25", ",", "m26", ",", "m27-r", ",", "m28-p", ",", "m30", ",", "m32", ",", "m33", ",", "m35", ",", "m40", ",", "m42", ",", "m44", ",", "m49", ",", "m50", ",", "m51", ",", "m54", ",", "m56", ",", "m57", ",", "m59", ",", "m62" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
