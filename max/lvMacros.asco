@@ -19,10 +19,10 @@
 
 @macro_def @simpleCurve($receiver, $from, $to, $in) {
 	 curve sC 
-	     @action := { $receiver $a },
+	     @action := { $receiver $asc },
 	     @grain := 0.1
 	     {
-	            $a
+	            $asc
 	            {
 	                   { $from } @type "linear"
 	                 $in { $to } @type "linear"

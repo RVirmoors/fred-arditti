@@ -26,15 +26,17 @@ input-gain 1
 ;::spat_goto(3, -55, 1, 1)
 $a := [-90, 90, 0]
 $d := [1, 1, 1]
+	spat room 1 reverberance 65 ; reduce reverb, tighter sound
+	@toneScreen(off, 0)
+	1-out off
+	@resoGrill(vn1 1 vn2 1 va 0.2, -20, 0)
+	@simpleCurve(gmirror feedbk, 0.01, 0.20, 50) ; from here to m24...
+	$spatReso := ::spat_teleport(3)
 
-$spatTone := ::spat_circular(1, 3) ; start spinning screen1
-$spatRepel1 := ::spat_repelAttacks(1)
-
-3 abort $spatTone
-print stopped
-
-2 $spatTone := ::spat_circular(1, 1)
-print go
+EVENT 1 bang1
+EVENT 1 bang2
+EVENT 1 bang3
+EVENT 1 bang4
 
 ; TODO : fx-input fade out to zero slower
 

@@ -124,8 +124,8 @@ whenever ($a[2] || $d[2]) {
 	$start_a := $a[($source-1)]
 	$start_d := $d[($source-1)]
 	curve GOTO @Grain := 0.05s, @Action := {
-		$a[($source-1)] := $x1
-		$d[($source-1)] := $x2
+		let $a[($source-1)] := $x1
+		let $d[($source-1)] := $x2
 		$a := $a
 	}
 	{ $x1, $x2 {
