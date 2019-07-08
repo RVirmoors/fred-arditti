@@ -18,16 +18,20 @@ whenever ($a[2] || $d[2]) {
 	@local $start_d
 	$start_d := $d[($source-1)]
 	repel $source $start_d
-	print repel $source $start_d
 }
 
 @proc_def ::spat_circular($source, $dir) {
 	@local $start_a
-	loop circular 0.5 {
+;	loop circular 0.5 {
 		$start_a := $a[($source-1)]
-		$a[($source-1)] := $start_a + $dir * (1.1 - $periodicity)
-		$a := $a
-	}
+		circ $source $start_a $dir
+;	}
+
+;	loop circular 0.5 {
+;		$start_a := $a[($source-1)]
+;		$a[($source-1)] := $start_a + $dir * (1.1 - $periodicity)
+;		$a := $a
+;	}
 }
 
 @proc_def ::spat_teleport($source) {
