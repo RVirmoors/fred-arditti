@@ -27,7 +27,7 @@ whenever ($a[2] || $d[2]) {
 ;		circ $source $start_a $dir
 ;	}
 
-	loop circular 0.1 {
+	loop circular 0.4 {
 		$start_a := $a[($source-1)]
 		$a[($source-1)] := $start_a + $dir * (1.1 - $periodicity)
 		$a := $a
