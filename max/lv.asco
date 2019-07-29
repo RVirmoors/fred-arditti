@@ -16,7 +16,7 @@ $playing := 0 ; for debugging
 loadfile takes/p1-m1-29.wav
 mubuffer readall capture_init.mubu
 
-@resoScreen(vn2 25)
+@resoScreen(vn2 25)	; screen 3
 
 ; ==============
 
@@ -40,7 +40,7 @@ NOTE F1 5 @fermata ;cl-low
 
 	@toneScreen(vc 1, 0.73) ; 1-out
 	curve 1-gain -30, 0.0	4
-	@noiseScreen(vn2 5, 0.9)
+	@noiseScreen(vn2 5, 0.9)	; 2-out
 	3 @resoScreen(vn2 25)	; reopen
 	@noiseStop
 	@noiseRec(vc 15)
@@ -282,7 +282,7 @@ EVENT 10 m16-p
 	abort $spatReso
 	$a[2] := -75
 	::spat_goto(3, 180, 2, 10)
-	$spatLoop := ::spat_circular(1, 2) ; start spinning loop
+	$spatLoop := ::spat_circular(1, 3) ; start spinning loop
 	@noiseStop
 	@loopScreen
 	curve playLoop 

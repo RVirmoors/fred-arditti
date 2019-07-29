@@ -26,12 +26,10 @@ input-gain 1
 ;::spat_goto(3, -55, 1, 1)
 $a := [-90, 90, 0]
 $d := [1, 1, 1]
-	spat room 1 reverberance 65 ; reduce reverb, tighter sound
-	@toneScreen(off, 0)
-	1-out off
-	@resoGrill(vn1 1 vn2 1 va 0.2, -20, 0)
-	@simpleCurve(gmirror feedbk, 0.01, 0.20, 50) ; from here to m24...
-	$spatReso := ::spat_teleport(3)
+
+	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
+
+	$spatLoop := ::spat_circular(1, 2) ; start spinning loop
 
 EVENT 1 bang1
 EVENT 1 bang2

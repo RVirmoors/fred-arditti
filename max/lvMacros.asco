@@ -17,7 +17,7 @@
     return $output
 }
 
-@macro_def @simpleCurve($receiver, $from, $to, $in) {
+@macro_def @simpleCurve($receiver, $from, $to, $within) {
 	 curve sC 
 	     @action := { $receiver $asc },
 	     @grain := 0.1
@@ -25,7 +25,7 @@
 	            $asc
 	            {
 	                   { $from } @type "linear"
-	                 $in { $to } @type "linear"
+	                 $within { $to } @type "linear"
 	            }
 	     }
 } 
@@ -215,7 +215,8 @@
 	1-remix 0.2 1 0.1 1 1 ; sin noiz trans relax error
 	1-lowpass $lowpass
 	repel 1 1
-	curve @command {1-envwarp $ff} 1, $scale 10
+;	curve @command {1-envwarp $ff} 1, $scale 10
+	@simpleCurve(1-envwarp $ff, 1, $scale, 10)
 ;	loop DOUB 1 {
 ;		1-envwarp @round($fund/16) (1.05 + $periodicity)
 ;	}
