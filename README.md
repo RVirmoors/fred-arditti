@@ -8,13 +8,33 @@ Max patches are in the [/max/](/max/) subfolder. Performance version to be relea
 
 Copy "Granular Mirror Maze 1.0.amxd" to your Max program folder (I have it in c:\Program Files (x86)\Cycling '74\Max 7\resources\packages\Max for Live\patchers\ )
 
+## quick start
+
+* open /max/main.maxpat
+* turn audio on 
+* set MIDI faders 1-3 and 8 to performance level (should be around zero)
+* press ESC (or click on "start") to get ready to accept input
+* press SPACE (or click on "nextlabeltempo") to pass through the score markers
+* press ESC (or click on "start") to restart the piece 
+
+## MIDI faders
+
+The external controller is defined in the "axiom-ctrl" subpatch. Currently a Behringer X-Touch Compact is defined, as follows:
+* faders 1-3 control the level of the 3 transform lines (attn: the target parameters are the Spat Inputs. You can see them by clicking "open" in the OUTPUT/SPAT section. The sliders in the Max presentation come before the final Spat output stage, which is controlled by the MIDI faders.)
+* fader 8 controls the master output multiplier (seen to the left of the OUTPUT/SPAT slider. Again, the MIDI fader doesn't control the actual slider, but rather multiplies it by a value.)
+
+Controlling the faders over the piece is done by taste. 
+The exact implementation of the 3 voices varies, but usually: output 1 is a resonator, output 2 is a semi-standard delay, and output 3 is a more densely granulated delay.
+
+At any point, you can trace the active chain for any voice. E.g. in the screenshot below: output 1 receives 1w (teeth). 1w receives 1t (transform) and vn1 vn2 va. And finally 1t receives vn1 vn2 va. Basically this voice is a mix of 3 instruments, passed through the spectral transform and the teeth resonator modules.
+
 # how to use the Max performance patch
 
 The overall interface looks something like:
 
 <img src="/readme/overview.PNG" alt="sshot" width="400px"/>
 
-We distinguish 4 areas: input (top-left), scofo (top-right), transform (lower-left), and output (mid-right).
+We distinguish 4 areas: input (top-left), scofo (top-right), output (mid-right), and transform (left and bottom).
 
 ## Input section
 
@@ -36,6 +56,16 @@ Antescofo is used for:
 * signal routing
 
 All orange receivers get messages from Antescofo. [r source] gets the instrument to be followed at a certain point in the piece.
+
+## Output
+
+By default, the piece works over 8 speakers, arranged in a circle. To select or create alternate configurations:
+* enter the Inspector for the output bpatcher
+* choose a different output file. Options: output-8chan (default), output-stereo (screenshot above), output-7ch-cinetic (for 7-channel testing at CINETic lab)
+* if none of the above configurations apply, feel free to create your own by duplicating and editing one of the output .maxpats
+
+The output module is controlled via Ircam Spat. As with all routing, three (or more, if needed) signal lines can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
+
 
 ## Transform modules
 
@@ -119,12 +149,6 @@ D implements the [Granular Mirror Maze](https://www.amazingnoises.com/free-devic
 
 Receivers:
 * mirror - control the following parameters: feedbk, grains_on_off, grain_freq, scrub_freq, max_delay, highpass, lowpass
-
-## Output section
-
-The output module is controlled via Ircam Spat. As with all routing, three (or more, if needed) signal lines can be dynamically assigned. Spat also handles (global) reverb and (per-source) EQ processing.
-
-The spatialised signal is sent to 6 analog output channels.
 
 
 ### Annex: TEETH~ FB DELAY <-> FUNDAMENTAL FREQ
