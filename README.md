@@ -32,7 +32,7 @@ At any point, you can trace the active chain for any voice. E.g. in the screensh
 
 The overall interface looks something like:
 
-<img src="/readme/overview.PNG" alt="sshot" width="400px"/>
+<img src="/readme/overview.PNG" alt="sshot" width="600px"/>
 
 We distinguish 4 areas: input (top-left), scofo (top-right), output (mid-right), and transform (left and bottom).
 
