@@ -59,7 +59,7 @@ All orange receivers get messages from Antescofo. [r source] gets the instrument
 
 ## Output
 
-By default, the piece works over 8 speakers, arranged in a circle. To select or create alternate configurations:
+By default, the piece works over 8 speakers, arranged clockwise around the audience. To select or create alternate configurations:
 * enter the Inspector for the output bpatcher
 * choose a different output file. Options: output-8chan (default), output-stereo (screenshot above), output-7ch-cinetic (for 7-channel testing at CINETic lab)
 * if none of the above configurations apply, feel free to create your own by duplicating and editing one of the output .maxpats
