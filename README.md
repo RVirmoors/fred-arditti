@@ -19,11 +19,11 @@ Copy "Granular Mirror Maze 1.0.amxd" to your Max program folder (I have it in c:
 
 ## MIDI faders
 
-The external controller is defined in the "axiom-ctrl" subpatch. Currently a Behringer X-Touch Compact is defined, as follows:
+The external controller is defined in the [axiom-ctrl] subpatch. Currently a Behringer X-Touch Compact is defined, as follows:
 * faders 1-3 control the level of the 3 transform lines (attn: the target parameters are the Spat Inputs. You can see them by clicking "open" in the OUTPUT/SPAT section. The sliders in the Max presentation come before the final Spat output stage, which is controlled by the MIDI faders.)
 * fader 8 controls the master output multiplier (seen to the left of the OUTPUT/SPAT slider. Again, the MIDI fader doesn't control the actual slider, but rather multiplies it by a value.)
 
-Controlling the faders over the piece is done by taste. 
+Controlling the faders over the piece is done by taste. The general point is to track (and exaggerate) the dynamics of the quartet.
 The exact implementation of the 3 voices varies, but usually: output 1 is a resonator, output 2 is a semi-standard delay, and output 3 is a more densely granulated delay.
 
 At any point, you can trace the active chain for any voice. E.g. in the screenshot below: output 1 receives 1w (teeth). 1w receives 1t (transform) and vn1 vn2 va. And finally 1t receives vn1 vn2 va. Basically this voice is a mix of 3 instruments, passed through the spectral transform and the teeth resonator modules.
@@ -38,13 +38,11 @@ We distinguish 4 areas: input (top-left), scofo (top-right), output (mid-right),
 
 ## Input section
 
-For testing purposes, we can load a 4-track multichannel wave file. In the performance patch, the waveform display will likely be hidden away.
+For testing purposes, we can load a 4-track multichannel wave file.
 
 For performance, the first 4 analog inputs will be used (activate "audio in").
 
-"monitor" sends the inputs straight to the Stereo Out, will be off in performance.
-
-"calibration mode" sends the actively followed track to the Stereo Out.
+"monitor" sends the inputs straight to the Stereo Out. Should be off in performance.
 
 ## Score following
 
