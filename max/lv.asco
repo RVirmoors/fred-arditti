@@ -1,7 +1,398 @@
 ; F.P. - lvbeet
 
-@insert lvMacros.asco
-@insert lvSpat.asco
+//@insert lvMacros.asco
+//@insert lvSpat.asco
+
+;@fun_def @note2hz($note) {
+;	@midicent2hz(@symb2midicent($note))
+;} 
+
+// freq-amp-decayrate triplets for use with [resonators]
+@macro_def @oddHarms($root, $amp) {$root $amp @rand_int(50) ($root * 3) $amp @rand_int(20) ($root * 5) ($amp * 1.2) @rand_int(10) ($root * 7) ($amp * 1.3) @rand_int(20); ($root * 9) 0.53 @rand_int(13) ($root * 11) 0.6 @rand_int(25) ($root * 13) 0.8 @rand_int(18) ($root * 15) 0.9 @rand_int(31) ($root * 17) 0.95 @rand_int(20) ($root * 19) 1 @rand_int(50)
+}
+
+// root, interval, amp -> triplets for [resonators]
+@fun_def @grillHarms($root, $i, $amp) {
+	$t := [ $x | $x in $root+$i .. ($root*2+1) : $i ]
+	$output := $root + " " + $amp + " " + 10
+	forall $freq in $t 
+	{
+		$output := $output + " " + $freq + " " + $amp * (@rand(0.5)+0.5) + " " + @rand_int(10)
+	}
+    return $output
+}
+
+@macro_def @simpleCurve($receiver, $from, $to, $within) {
+	 curve sC 
+	     @action := { $receiver $asc },
+	     @grain := 0.1
+	     {
+	            $asc
+	            {
+	                   { $from } @type "linear"
+	                 $within { $to } @type "linear"
+	            }
+	     }
+} 
+
+@macro_def @start {
+	spat room 1 reverberance 90, room 1 air 1, room 1 size 666
+	repel 1 0, 2 0, 3 0	; spat repel off
+	1-out off
+	2-outL off
+	2-outR off
+	3-outL off
+	3-outR off
+	//1-gain 0
+	//2-gain 0
+	//3-gain 0
+	getfreq 0
+	gran off
+	granXtime 50
+	gmirror dry -70, grains_on_off 0
+	1-partials off
+	1-partialsXtime 100
+	1-teeth off
+	1-teethXtime 100
+	1-tw 0.58 164.83 1. 0.38 0.15 0.37
+	1-trans off
+	1-transXtime 100
+	2-trans off
+	2-transXtime 100
+	1-cross off
+	1-crossXtime 100
+	delay off
+	delayXtime 500
+	dmirror dry -70, grains_on_off 0
+	capture off
+	captureXtime 50
+	mubuffer clearall
+	$peaks := 0
+	$energy := 0
+	$periodicity := 0
+	$switch_button := 0
+	$fund := 0
+	mugran duration 512, durationvar 64, positionvar 512, periodvar 50
+	spat room 1 infinite 0
+}
+
+@macro_def @resoScreen($in) {
+	1-partials $in
+	gran 1p 1.5 ;$in
+	3-outL g1
+	3-outR g2
+	1-setpartials @oddHarms(29.14, 0.2) @oddHarms(49, 0.4) @oddHarms(110, 0.8) @oddHarms(130.81, 1) @oddHarms(196, 1) @oddHarms(293.66, 1) @oddHarms(440, 1.1) @oddHarms(659, 1.2) ; Bb0 G1 D2 A2 C3 G3 D4 A4 E5
+	gmirror grains_on_off 1
+	gmirror lowpass 22000
+	gmirror feedbk 0.7, grain_freq 45, scrub_freq 0.5, max_delay 250
+}
+
+@macro_def @noiseRec($in) {
+	clear buffer
+	capture $in
+	mugran play 0
+	record 1
+	playmode 0
+}
+
+@macro_def @noiseStop {
+	capture off
+;	@noiseScreen(off)
+	mugran play 0
+	abort playLoop
+	record 0
+	playmode 0
+}
+
+@macro_def @noiseScreen($in, $envscale) {
+	capture $in
+	1-cross c 1 $in
+	2-trans 1x 1
+	delay 2t 1.5 c 0.2
+	2-outL d1
+	2-outR d2
+	mugran play 1
+	playmode 1
+	mugran periodvar 50
+	record 0
+	1-svpcross 0.1 0.9 0.9 0.1
+	2-remix 0.15 1 1 0 0.12 ; sin noiz trans relax error
+	2-envwarp 205 $envscale
+	dmirror grains_on_off 1
+	dmirror feedbk 0.5, grain_freq 18, scrub_freq 5, max_delay 50
+}
+
+@macro_def @toneScreen($in, $delay) {
+	1-trans $in
+	1-teeth 1t 1 $in
+	1-out 1w
+	1-remix 1. 0.015 0.8 0 0.1 ; sin noiz trans relax error
+	1-tdel $delay 
+	1-envwarp 58.27 1.5
+}
+
+
+@macro_def @loopScreen {
+	1-trans c 1
+	1-out 1t
+	mugran play 1
+	playmode 2
+	record 0
+	1-remix 0.1 0.5 0.8 0 0.5 ; sin noiz trans relax error
+	1-envwarp 98 1.5	; G2
+}
+
+@macro_def @resoGrill($in, $dry, $wet) {
+	1-teeth $in
+	whenever ($switch_button) {	; for S == 2
+		if ($switch_button != 1) {
+			1-teeth $in
+		} else {
+			0.5 1-teeth off
+		}
+	}
+	gran 1w 1 
+	3-outL g1
+	3-outR g2
+	1-tdel 0.88 ; 0.97
+	gmirror grains_on_off 1, dry $dry, wet $wet
+	gmirror highpass 293, lowpass 14080
+	gmirror grain_freq 128, scrub_freq 75
+	getfreq 1
+	whenever FFUND ($fund) {
+		gmirror max_delay ($fund / 2)
+	}
+;	@energy_mirror(0.45, 0.75)
+}
+
+@macro_def @mirror($in) {
+	delay $in
+	whenever ($switch_button) {	; for S == 1
+		if ($switch_button < 2) {
+			delay $in
+		} else {
+			0.5 delay off
+		}
+	}
+	2-outL d1
+	2-outR d2
+	dmirror grains_on_off 1
+	dmirror feedbk 0.6, grain_freq 30, scrub_freq 0.25, max_delay 333
+	dmirror highpass 1760, lowpass 14080		; A6 to A9
+	@energy_mirror(0.3, 0.75)
+}
+
+@macro_def @energy_mirror($on_thresh, $off_thresh) {
+	whenever ENMIR ($periodicity) {
+;		mirror max_delay (50 + (1-$energy) * 550)
+		if ($periodicity < $on_thresh && $periodicity > 0.1 ) {
+			dmirror grains_on_off 1
+			gmirror grains_on_off 1
+			spat room 1 infinite 0
+		}
+		if ($periodicity > $off_thresh || $periodicity < 0.001) {
+			dmirror grains_on_off 0
+			gmirror grains_on_off 0
+			spat room 1 infinite 0
+		}
+	}
+}
+
+@macro_def @mirrorOff {	
+	@mirror(off)
+	abort ENMIR
+	abort FFUND
+	getfreq 0
+	spat room 1 infinite 0
+}
+
+@macro_def @doubler($in, $scale, $lowpass) {
+	$ff := $fund
+	print $ff
+	if ($ff  > 1000) {
+		$ff := $ff / 16
+	}
+	if ($ff  < 20) {
+		$ff := 298
+	}
+	1-trans $in
+	1-out 1t
+	1-remix 0.2 1 0.1 1 1 ; sin noiz trans relax error
+	1-lowpass $lowpass
+	repel 1 1
+;	curve @command {1-envwarp $ff} 1, $scale 10
+	@simpleCurve(1-envwarp $ff, 1, $scale, 10)
+;	loop DOUB 1 {
+;		1-envwarp @round($fund/16) (1.05 + $periodicity)
+;	}
+}
+
+
+; TEETH FB DELAY <-> FUNDAMENTAL FREQ
+; https://docs.cycling74.com/max7/maxobject/teeth~
+;
+; 1.03 - 245 (B)
+; 1 - 1002 (B+)
+; 0.99 - 256 (B-C)
+; 0.97 - 525 (C)
+; 0.94 - 269 (C+)
+; 0.92 - 1102 (C#)
+; 0.89 - 283 (D--)
+; 0.88 - 580 (D-)
+; 0.86 - 298 (D+)
+; 0.83 - 1225 (D#-)
+; 0.81 - 315 (D#+)
+; 0.79 - 648 (E-)
+; 0.77 - 334 (E+)
+; 0.73 - 1378 (F-)
+; 0.71 - 356 (F+)
+; 0.70 = 735 (F#)
+; 0.67 - 380 (F#-G)
+; 0.64 - 1575 (G+)
+; 0.62 - 408 (G#-)
+; 0.60 - 848 (G#+)
+; 0.58 - 441 (A)
+; 0.56 - 1837 (A#-)
+; 0.53 - 479 (A#-B)
+; 0.5 - 1002 (B+)
+
+$a := [-90, 90, 0]
+$d := [1, 1, 1]
+
+whenever ($a[0] || $d[0]) {
+	spat source 1 aed ($a[0]) 0 ($d[0])
+}
+whenever ($a[1] || $d[1]) {
+	spat source 2 aed ($a[1]) 0 ($d[1])
+}
+whenever ($a[2] || $d[2]) {
+	spat source 3 aed ($a[2]) 0 ($d[2])
+}
+
+
+// dynamic spat processes
+
+@proc_def ::spat_repelAttacks($source) {
+	@local $start_d
+	$start_d := $d[($source-1)]
+	repel $source $start_d
+}
+
+@proc_def ::spat_circular($source, $dir) {
+	@local $start_a
+;	loop circular 0.5 {
+;		$start_a := $a[($source-1)]
+;		circ $source $start_a $dir
+;	}
+
+	loop circular 0.4 {
+		$start_a := $a[($source-1)]
+		$a[($source-1)] := $start_a + $dir * (1.1 - $periodicity)
+		$a := $a
+	}
+}
+
+@proc_def ::spat_teleport($source) {
+	@local $start_a, $start_d, $rand
+	$start_d := $d[($source-1)]
+	whenever ($BEAT_POS) { // for each new event, teleport
+		if (@rand_int(100) < 75) {
+			;print teleport $rand
+			$start_a := $a[($source-1)]
+			$rand := @rand_int(90) * (@rand_int(2) * 2 - 1)
+			curve MOVE @Grain := 0.05s, @Action := {
+				$a[($source-1)] := $x1; $a[($source-1)] + @rand_int(360)
+				$a := $a
+			}
+			{ $x1 {
+					{ $start_a }
+				0.5	{ ($start_a + $rand) }
+			} }			
+		}
+	}
+}
+
+@proc_def ::spat_radial($source) {
+	@local $start_a
+	$start_a := $a[($source-1)]
+	whenever ($periodicity) {
+		spat source $source azim ($start_a + ($periodicity - 0.5) * 15)
+	}
+}
+
+@proc_def ::spat_circle_walk($source, $per) {
+	@local $start_a, $start_d, $period, $random
+	$period := $per
+	loop CIRC $period {
+		kill GOTOC
+		$random := @rand_int(60)
+		$start_a := $a[($source-1)]
+		$start_d := $d[($source-1)]
+		curve GOTOC @Grain := 0.05s, @Action := {
+			$a[($source-1)] := $x1
+			$a := $a
+		}
+		{ $x1, $x2 {
+			{$start_a, $start_d}
+			($per/2) {($start_a + $random*6 - 150), $start_d}
+		}}
+;		$period := $per + (@rand_int(50) / 25)	; TODO put this back in?	
+	}
+
+}
+
+
+@proc_def ::spat_cross($source) {
+	@local $start_a, $start_d
+	whenever ($switch_button) {
+		$start_a := $a[($source-1)]
+		$start_d := $d[($source-1)]
+		curve GOTO @Grain := 0.05s, @Action := {
+			$a[($source-1)] := $x1
+			$d[($source-1)] := $x2
+			$a := $a
+		}
+		{ $x1, $x2 {
+			{$start_a, $start_d}
+			0.5 {($start_a + @rand_int(60) - 30), ($start_d * -1)}
+		}}			
+	}
+
+}
+
+@proc_def ::spat_spray($source) {
+	@local $start_a
+	whenever ($periodicity) {
+		$start_a := $a[($source-1)]
+		curve MOVE @Grain := 0.05s, @Action := {
+			$a[($source-1)] := $x1 
+			$a := $a
+		}
+		{
+			$x1 {
+				{ $start_a }
+				1	{ (($periodicity - 0.15) * 1800) }
+			}
+		}
+	}
+}
+
+@proc_def ::spat_goto($source, $to_a, $to_d, $time) {
+	@local $start_a, $start_d
+	$start_a := $a[($source-1)]
+	$start_d := $d[($source-1)]
+	curve GOTO @Grain := 0.05s, @Action := {
+		let $a[($source-1)] := $x1
+		let $d[($source-1)] := $x2
+		$a := $a
+	}
+	{ $x1, $x2 {
+		{$start_a, $start_d}
+		$time {$to_a, $to_d}
+	}}	
+}
+
+// ---------------------------
 
 antescofo::analysis 4096 512
 antescofo::suivi 1
@@ -21,7 +412,7 @@ mubuffer readall capture_init.mubu
 // ======= Part 1 =======
 
 
-input-gain 28 ; start is very quiet!!!
+input-gain 10 ; start is very quiet!!!
 input-sel 2 ; 1=vn1, 2=vn2, 3=va, 4=cl.
 
 $a := [-90, 90, 0]
@@ -527,7 +918,6 @@ NOTE G#5 3
 
 	input-gain 1
 	1-gain 0
-	2-gain 0
 	
 EVENT 70 B-swit
 	spat room 1 size 1333	
@@ -624,7 +1014,7 @@ EVENT 25 P3-A
 	2 ::spat_goto(3, 60, 1, 9)
 	2 @noiseStop
 	@noiseScreen(vn1 1 vn2 1 va 1.5 vc 1, 2)
-	curve 2-gain -30, 0.0	2.1	; fade in Noise
+	//curve 2-gain -30, 0.0	2.1	; fade in Noise
 	$spatNoise := ::spat_radial(2)
 	$spatTone := ::spat_radial(1)
 	::spat_goto(2, 160, 1, 10)
@@ -637,7 +1027,7 @@ EVENT 25 P3-A
 	::spat_goto(3, 180, 3.5, 10)
 
 
-EVENT 39 B-grap
+EVENT 39 P3B-gr
 
 	@doubler(vn1 3 vn2 3 va 3 vc 2.5, 0.5, 600)
 	$a[0] := 0 ; doubler
@@ -654,7 +1044,7 @@ EVENT 39 B-grap
 	$spatTone := ::spat_circle_walk(1, 3)
 
 
-EVENT 10 C
+EVENT 10 P3-C
 	input-sel 3
 	spat room 1 reverberance 90
 	spat room 1 size 2000
@@ -680,29 +1070,28 @@ EVENT 10 C
 	0.1 dmirror feedbk 0.7, max_delay 166 
 	gmirror feedbk 0.5
 
-EVENT 10 m8 
+EVENT 10 P3-m8 
 	::spat_goto(3, -40, 1, 5)
 	@simpleCurve(gmirror feedbk, 0.5, 0.8, 5)
 
-EVENT 5 m10
+EVENT 5 P3m10
 	::spat_goto(3, -200, 0.7, 3)
 	@simpleCurve(dmirror feedbk, 0.7, 0.20, 5)
 
-EVENT 11 m11
+EVENT 11 P3m11
 	::spat_goto(3, -155, 1, 4)
 
-EVENT 9 m13
+EVENT 9 P3m13
 	::spat_goto(3, 15, 0.8, 1)
 
-EVENT 25 m15 
+EVENT 25 P3m15 
 	::spat_goto(3, 333, 2, 15)
 
-EVENT 45 D 
+EVENT 45 P3-D 
 
-EVENT 155 E
+EVENT 155 P3-E
 
 	1-gain 0
-	2-gain 0
 	3-gain 0
 	spat room 1 size 1000
 	spat room 1 reverberance 65	
@@ -732,7 +1121,7 @@ EVENT 155 E
 		5	{ 5	  , 50 }
 	}} ;TODO spat & envelopes for more pages
 
-EVENT 39 F-grap
+EVENT 39 P3-F-gr
 
 	abort DELAYS	
 	@resoGrill(off, 0, 0)
