@@ -67,7 +67,7 @@ The output module is controlled via Ircam Spat. As with all routing, three (or m
 
 ## Transform modules
 
-All modules have 4 inputs (which are summed together), except for X (cross) which has 2 (independent). All transform modules have one output.
+All modules have 4 inputs (which are summed together), except for X (cross) which has 2 (independent). All transform modules have one output, except for D and G which are stereo.
 
 If needed, you can add more instances of an effect by creating e.g. [bpatcher freeze @args 2] etc.
 
@@ -146,8 +146,16 @@ It is typically placed at the end of a chain. It's the only module with a stereo
 D implements the [Granular Mirror Maze](https://www.amazingnoises.com/free-devices/granular-mirror-maze/) M4L object by Maurizio Giri. 
 
 Receivers:
-* mirror - control the following parameters: feedbk, grains_on_off, grain_freq, scrub_freq, max_delay, highpass, lowpass
+* dmirror - control the following parameters: feedbk, grains_on_off, grain_freq, scrub_freq, max_delay, highpass, lowpass
 
+### G / gran
+
+4 ins - 2 outs
+
+Similar to D above.
+
+Receivers:
+* gmirror
 
 ### Annex: TEETH~ FB DELAY <-> FUNDAMENTAL FREQ
 https://docs.cycling74.com/max7/maxobject/teeth~
