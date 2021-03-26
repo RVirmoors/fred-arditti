@@ -1,5 +1,7 @@
 <img src="/readme/stageplot.PNG" alt="stageplot"/>
 
+designed for the piece lvbeet130/133dec.com by composer Fred Popovici. Premiered with the Arditti Quartet in 2019.
+
 # dependencies
 
 Max 7 / SuperVP, MuBu, Spat v4, Antescofo (all available at Ircam Forum) + CNMAT Externals
