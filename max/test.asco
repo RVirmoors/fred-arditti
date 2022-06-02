@@ -27,7 +27,7 @@ input-gain 1
 $a := [-90, 90, 0]
 $d := [1, 1, 1]
 
-	@toneScreen(vn1 1 vn2 2 va 1 vc 1, 0.97)
+	@toneScreen(vn1 1, 0.97)
 
 	$spatLoop := ::spat_circular(1, 2) ; start spinning loop
 

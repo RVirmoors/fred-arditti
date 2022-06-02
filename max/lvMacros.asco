@@ -120,7 +120,8 @@
 @macro_def @toneScreen($in, $delay) {
 	1-trans $in
 	1-teeth 1t 1 $in
-	1-out 1w
+	delay 1w 1
+	1-out dmirror
 	1-remix 1. 0.015 0.8 0 0.1 ; sin noiz trans relax error
 	1-tdel $delay 
 	1-envwarp 58.27 1.5
